@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Niu Zhiqiang's blog
 subtitle:
 description:
-author: John Doe
+author: Niu Zhiqiang
 language:
 timezone:
 
@@ -67,5 +67,7 @@ theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: master
-  type:
+deploy:
+  type: git
+  repo: https://github.com/niuzhiqiang90/niuzhiqiang90.github.io.git
+  branch: master
