@@ -13,6 +13,12 @@ keywords: "Hexo, NexT"
 # Set rss to specific value if you have burned your feed already.
 rss:
 
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+    hub:
+
 # Specify the date when the site was setup
 #since: 2015
 
@@ -395,3 +401,4 @@ images: images
 
 # Theme version
 version: 5.0.1
+
