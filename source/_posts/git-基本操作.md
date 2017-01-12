@@ -1,6 +1,7 @@
 ---
 title: git 基本操作 
 date: 2017-01-11 11:54:12
+categories: git
 tags: git
 ---
 
