@@ -11,9 +11,12 @@ language: zh-Hans
 timezone:
 avatar: /images/avatar.png
 
+search:
+    path: search.xml
+    field: post
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://niuzhiqiang90.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -72,3 +75,5 @@ deploy:
   type: git
   repo: https://github.com/niuzhiqiang90/niuzhiqiang90.github.io.git
   branch: master
+
+      

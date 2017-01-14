@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Niu Zhiqiang&#39;s blog</title>
+<search>
   
-  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://niuzhiqiang90.github.io/"/>
-  <updated>2017-01-14T05:27:32.553Z</updated>
-  <id>http://niuzhiqiang90.github.io/</id>
-  
-  <author>
-    <name>Niu Zhiqiang</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>git cherry-pick</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/14/git-cherry-pick/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/14/git-cherry-pick/</id>
-    <published>2017-01-14T05:06:14.000Z</published>
-    <updated>2017-01-14T05:27:32.553Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
+    <entry>
+      <title><![CDATA[git cherry-pick]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/14/git-cherry-pick/</url>
+      <content type="html"><![CDATA[<h2 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
 <p>cherry-pick的作用是在当前分支上应用某一个提交，在合并的时候特别有用。<br>当前在 fixbug 分支上，做了3次修改并提交到本地</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* fixbug</div><div class="line">  master</div><div class="line"></div><div class="line">$ git log --oneline </div><div class="line">43f50dd fix bug3</div><div class="line">b24931f fix bug2</div><div class="line">9ab09b7 fix bug1</div></pre></td></tr></table></figure>
 <p>这时候我发现 fix bug1 这个提交是不需要的，之需要将后2次合并进主分支即可。 可以这么操作:</p>
@@ -43,54 +27,22 @@
 <p>保存退出，手动提交</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git add b</div><div class="line">$ git commit -m &quot;merge by handler&quot;</div><div class="line">$ git push</div></pre></td></tr></table></figure>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-用法&quot;&gt;&lt;a href=&quot;#1-用法&quot; class=&quot;headerlink&quot; title=&quot;1. 用法&quot;&gt;&lt;/a&gt;1. 用法&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git分支操作</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/12/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/12/git-分支操作/</id>
-    <published>2017-01-12T08:42:22.000Z</published>
-    <updated>2017-01-12T08:51:44.701Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-新建分支"><a href="#1-新建分支" class="headerlink" title="1 新建分支"></a>1 新建分支</h2><h3 id="1-1-新建本地分支"><a href="#1-1-新建本地分支" class="headerlink" title="1.1 新建本地分支"></a>1.1 新建本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b &lt;branchName&gt;</div></pre></td></tr></table></figure>
+    <entry>
+      <title><![CDATA[git分支操作]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/12/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h2 id="1-新建分支"><a href="#1-新建分支" class="headerlink" title="1 新建分支"></a>1 新建分支</h2><h3 id="1-1-新建本地分支"><a href="#1-1-新建本地分支" class="headerlink" title="1.1 新建本地分支"></a>1.1 新建本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b &lt;branchName&gt;</div></pre></td></tr></table></figure>
 <h3 id="1-2-推送本地分支到远程"><a href="#1-2-推送本地分支到远程" class="headerlink" title="1.2 推送本地分支到远程"></a>1.2 推送本地分支到远程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin &lt;localBranch&gt;:&lt;remoteBranch&gt;</div></pre></td></tr></table></figure>
 <h2 id="2-删除分支"><a href="#2-删除分支" class="headerlink" title="2 删除分支"></a>2 删除分支</h2><h3 id="2-1-删除本地分支"><a href="#2-1-删除本地分支" class="headerlink" title="2.1 删除本地分支"></a>2.1 删除本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -D &lt;branchName&gt;</div></pre></td></tr></table></figure>
 <h3 id="2-2-删除远程分支"><a href="#2-2-删除远程分支" class="headerlink" title="2.2 删除远程分支"></a>2.2 删除远程分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete &lt;branchName&gt;</div></pre></td></tr></table></figure>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-新建分支&quot;&gt;&lt;a href=&quot;#1-新建分支&quot; class=&quot;headerlink&quot; title=&quot;1 新建分支&quot;&gt;&lt;/a&gt;1 新建分支&lt;/h2&gt;&lt;h3 id=&quot;1-1-新建本地分支&quot;&gt;&lt;a href=&quot;#1-1-新建本地分支&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell style guide</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/12/shell-style-guide/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/12/shell-style-guide/</id>
-    <published>2017-01-12T06:06:39.000Z</published>
-    <updated>2017-01-12T06:09:56.811Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Shell-Style-Guide"><a href="#Shell-Style-Guide" class="headerlink" title="Shell Style Guide"></a>Shell Style Guide</h1><h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a><span id="contents">Contents</span></h2><p>1.<a href="#a">Shell Files and Interpreter Invocation</a></p>
+    <entry>
+      <title><![CDATA[shell style guide]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/12/shell-style-guide/</url>
+      <content type="html"><![CDATA[<h1 id="Shell-Style-Guide"><a href="#Shell-Style-Guide" class="headerlink" title="Shell Style Guide"></a>Shell Style Guide</h1><h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a><span id="contents">Contents</span></h2><p>1.<a href="#a">Shell Files and Interpreter Invocation</a></p>
 <ul>
 <li><p>1.1 File Extensions</p>
 </li>
@@ -353,28 +305,12 @@
 <p>Please take a few minutes to read the Parting Words section at the bottom of the <strong>C++ Guide</strong>.</p>
 <p><strong><a href="#contents">Go Contents</a></strong></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Shell-Style-Guide&quot;&gt;&lt;a href=&quot;#Shell-Style-Guide&quot; class=&quot;headerlink&quot; title=&quot;Shell Style Guide&quot;&gt;&lt;/a&gt;Shell Style Guide&lt;/h1&gt;&lt;h2 id=&quot;Conte
-    
-    </summary>
-    
-      <category term="shell" scheme="http://niuzhiqiang90.github.io/categories/shell/"/>
-    
-    
-      <category term="shell" scheme="http://niuzhiqiang90.github.io/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vim-surround插件</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/12/vim-surround%E6%8F%92%E4%BB%B6/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/12/vim-surround插件/</id>
-    <published>2017-01-12T05:08:49.000Z</published>
-    <updated>2017-01-12T05:25:25.407Z</updated>
-    
-    <content type="html"><![CDATA[<p>Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.</p>
+    <entry>
+      <title><![CDATA[vim-surround插件]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/12/vim-surround%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.</p>
 <h1 id="1-修改-cs原符号要修改的符号"><a href="#1-修改-cs原符号要修改的符号" class="headerlink" title="1. 修改 cs原符号要修改的符号"></a>1. 修改 cs原符号要修改的符号</h1><h2 id="1-1-修改双引号为单引号-cs-quot-39"><a href="#1-1-修改双引号为单引号-cs-quot-39" class="headerlink" title="1.1 修改双引号为单引号 cs&quot;&#39;"></a>1.1 修改双引号为单引号 <code>cs&quot;&#39;</code></h2><p>It’s easiest to explain with examples. Press <code>cs&quot;&#39;</code> inside</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;Hello world!&quot;</div></pre></td></tr></table></figure>
 <p>to change it to</p>
@@ -397,51 +333,22 @@
 <p>This plugin is very powerful for HTML and XML editing, a niche which currently seems underfilled in Vim land. (As opposed to HTML/XML inserting, for which many plugins are available). Adding, changing, and removing pairs of tags simultaneously is a breeze.</p>
 <p>The . command will work with ds, cs, and yss if you install repeat.vim.</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delet
-    
-    </summary>
-    
-      <category term="vim" scheme="http://niuzhiqiang90.github.io/categories/vim/"/>
-    
-    
-      <category term="vim插件" scheme="http://niuzhiqiang90.github.io/tags/vim%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>修改最后一次commit</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/11/%E4%BF%AE%E6%94%B9%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1commit/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/11/修改最后一次commit/</id>
-    <published>2017-01-11T13:42:43.000Z</published>
-    <updated>2017-01-12T01:18:35.458Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>对于已经修改提交过的注释，如果需要修改，可以使用<code>git commit --amend</code>。</p>
+    <entry>
+      <title><![CDATA[修改最后一次commit]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/11/%E4%BF%AE%E6%94%B9%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1commit/</url>
+      <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>对于已经修改提交过的注释，如果需要修改，可以使用<code>git commit --amend</code>。</p>
 <h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>在operation/bin里最新的提交就是 resolving the problem，我现在需要将其改为 resolving the problem for some errors</p>
 <p>在framework/base下输入git commit –amend,就会进入一个文本编辑界面（如下）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">     resolving the problem</div><div class="line">     Change-Id: I7e7daffd2e8a5e65130629dc1c56dee5f5c4b5f7</div><div class="line"># Please enter the commit message for your changes. Lines starting</div><div class="line"># with &apos;#&apos; will be ignored, and an empty message aborts the commit.</div><div class="line"># On branch shuai.lu_branch</div><div class="line"># Changes to be committed:</div><div class="line">#   (use &quot;git reset HEAD^1 &lt;file&gt;...&quot; to unstage)</div><div class="line">#</div><div class="line">#       modified:   operation/bin/alert</div><div class="line">#</div></pre></td></tr></table></figure></p>
 <p>修改commit描述，然后保存退出，这样注释就修改了，再重新push就可以了。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h2&gt;&lt;p&gt;对于已经修改提交过的注释，如果需要修改，可以使用&lt;code&gt;git commit --amend&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;e
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>git 基本操作</title>
-    <link href="http://niuzhiqiang90.github.io/2017/01/11/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>http://niuzhiqiang90.github.io/2017/01/11/git-基本操作/</id>
-    <published>2017-01-11T03:54:12.000Z</published>
-    <updated>2017-01-12T08:51:10.329Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><ul>
+    <entry>
+      <title><![CDATA[git 基本操作]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/11/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><ul>
 <li><p>ubuntu</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git gitk</div></pre></td></tr></table></figure>
 </li>
@@ -479,30 +386,12 @@
 <h3 id="5-3-删除本地分支"><a href="#5-3-删除本地分支" class="headerlink" title="5.3 删除本地分支"></a>5.3 删除本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout the/other/branch</div><div class="line">$ git branch -D the/delete/branch</div></pre></td></tr></table></figure>
 <p><strong> 补充 </strong><br><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjQ4MjYwMQ==&amp;mid=207476935&amp;idx=1&amp;sn=7e2df0fc83583b2970be033e295d595d&amp;scene=4&amp;srcid=0914UZRLJAd9vzLoflDXei0Y&amp;pass_ticket=HC7otQjvd7%2FlrKPIl%2FUdQOZ4wjnTDDOzJXOZps0L2JZRnBVO0WgCnxedN7YVcvQi#rd" target="_blank" rel="external">点击查看更详细的用法</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1 安装&quot;&gt;&lt;/a&gt;1 安装&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ubuntu&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr
-    
-    </summary>
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://niuzhiqiang90.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://niuzhiqiang90.github.io/2016/12/30/hello-world/"/>
-    <id>http://niuzhiqiang90.github.io/2016/12/30/hello-world/</id>
-    <published>2016-12-30T06:36:16.481Z</published>
-    <updated>2016-12-30T06:36:16.481Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://niuzhiqiang90.github.io/2016/12/30/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -512,14 +401,8 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
   
-</feed>
+  
+</search>
