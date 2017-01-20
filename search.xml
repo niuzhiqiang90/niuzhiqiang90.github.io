@@ -4,6 +4,123 @@
   
     
     <entry>
+      <title><![CDATA[ubuntu安装为知笔记]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/20/ubuntu%E5%AE%89%E8%A3%85%E4%B8%BA%E7%9F%A5%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>今天在ubunu上重新安装wiznote时，发现<a href="http://www.wiz.cn/wiznote-linux.html" target="_blank" rel="external">官方</a>提供的方法只能编译安装，无奈步骤繁琐。接着我尝试了之前的安装方法，发现会报错。</p>
+<h2 id="1-添加软件源来安装"><a href="#1-添加软件源来安装" class="headerlink" title="1.添加软件源来安装"></a>1.添加软件源来安装</h2><p>ubuntu下可以通过软件源来进行安装，命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:wiznote-team</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install wiznote</div></pre></td></tr></table></figure></p>
+<p>在更新时，会报<code>Hash Sum mismatch</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">W: Failed to fetch http://ppa.launchpad.net/wiznote-team/ppa/ubuntu/dists/trusty/main/binary-amd64/Packages  Hash Sum mismatch</div><div class="line">W: Failed to fetch http://ppa.launchpad.net/wiznote-team/ppa/ubuntu/dists/trusty/main/binary-i386/Packages  Hash Sum mismatch</div><div class="line">W: Failed to fetch http://ppa.launchpad.net/wiznote-team/ppa/ubuntu/dists/trusty/main/i18n/Translation-en  Hash Sum mismatch</div></pre></td></tr></table></figure></p>
+<p>所以再执行install命令也会失败！！</p>
+<h2 id="2-直接从软件源上下载安装包"><a href="#2-直接从软件源上下载安装包" class="headerlink" title="2.直接从软件源上下载安装包"></a>2.直接从软件源上下载安装包</h2><h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p>执行如下命令时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:wiznote-team</div></pre></td></tr></table></figure></p>
+<p>会输出如下日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> The code is hosted here: https://github.com/WizTeam/WizQTClient</div><div class="line">visit our homepage for detailed info: http://www.wiznote.cn/</div><div class="line">Any questions and bugs report to: &lt;email address hidden&gt;</div><div class="line">The binary name is WizNote. Please use WizNote to start program in cmd.</div><div class="line"> More info: https://launchpad.net/~wiznote-team/+archive/ubuntu/ppa</div><div class="line">Press [ENTER] to continue or ctrl-c to cancel adding it</div></pre></td></tr></table></figure></p>
+<p>打开<a href="https://launchpad.net/~wiznote-team/+archive/ubuntu/ppa" target="_blank" rel="external">最后一个链接</a>之后，点击 <a href="https://launchpad.net/~wiznote-team/+archive/ubuntu/ppa/+packages" target="_blank" rel="external">View package details</a> 就会跳转到如下页面<br><a href="https://launchpad.net/~wiznote-team/+archive/ubuntu/ppa/+packages" target="_blank" rel="external">https://launchpad.net/~wiznote-team/+archive/ubuntu/ppa/+packages</a>  点击其中的版本，下载相应的deb包。</p>
+<h3 id="2-2安装方法"><a href="#2-2安装方法" class="headerlink" title="2.2安装方法"></a>2.2安装方法</h3><ul>
+<li>方法1<br>双击下载文件，使用软件中心安装  </li>
+<li>方法2<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i xxx.deb</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tmux安装配置使用]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/01/19/tmux%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># ubuntu</div><div class="line">sudo apt-get install tmux</div></pre></td></tr></table></figure>
+<p>或者<br><a href="https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz" target="_blank" rel="external">点击下载tmux安装包</a></p>
+<h2 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h2><p>~/.tmux.conf<br>如果文件不存在直接<code>touch</code>就可以。<br><strong>下面是我的配置文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">unbind C-b</div><div class="line">set -g prefix C-a</div><div class="line">bind C-a send-prefix</div><div class="line"></div><div class="line">bind r source-file ~/.tmux.conf \; display &quot;tmux.conf reload!&quot;</div><div class="line"></div><div class="line">bind | split-window -h</div><div class="line">bind - split-window -v</div><div class="line"></div><div class="line">bind h select-pane -L</div><div class="line">bind j select-pane -D</div><div class="line">bind k select-pane -U</div><div class="line">bind l select-pane -R</div><div class="line"></div><div class="line"></div><div class="line">/*bind -n C-x setw synchronize-panes */</div><div class="line">bind C-e command-prompt -p &quot;session?,message?&quot; &quot;run-shell \&quot;tmux list-windows -t %1 \| cut -d: -f1\|xargs -I\&#123;\&#125; tmux send-keys -t %1:\&#123;\&#125; %2\&quot;&quot;</div><div class="line"></div><div class="line">set -g base-index 1</div><div class="line">set -g pane-base-index 1</div><div class="line"></div><div class="line">set -g status-fg white</div><div class="line">set -g status-bg black</div><div class="line"></div><div class="line">setw -g window-status-fg cyan</div><div class="line">setw -g window-status-bg default</div><div class="line">setw -g window-status-attr dim</div><div class="line"></div><div class="line">setw -g window-status-current-fg white</div><div class="line">setw -g window-status-current-bg red</div><div class="line">setw -g window-status-current-attr bright</div><div class="line"></div><div class="line">set -g message-fg green</div><div class="line">set -g message-bg black</div><div class="line">set -g message-attr bright</div><div class="line"></div><div class="line">set -g status-left &quot;#[fg=green]#S #[fg=yellow]#I #[fg=cyan]#P&quot;</div><div class="line">set -g status-left-length 40</div><div class="line">set -g status-left &quot;#[fg=green]Session: #S #[fg=yellow]#I #[fg=cyan]#P&quot;</div><div class="line">set -g status-right &quot;#[fg=cyan]%d %b %R&quot;</div><div class="line">set -g status-utf8 on</div><div class="line"></div><div class="line">set -g status-interval 60</div><div class="line">set -g status-justify centre</div><div class="line"></div><div class="line">setw -g monitor-activity on</div><div class="line">set -g visual-activity on</div><div class="line"></div><div class="line">setw -g mode-keys vi</div></pre></td></tr></table></figure></p>
+<h2 id="3-tmux部分快捷键"><a href="#3-tmux部分快捷键" class="headerlink" title="3.tmux部分快捷键"></a>3.tmux部分快捷键</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+a ?</td>
+<td>列出所有快捷键</td>
+</tr>
+<tr>
+<td>Ctrl+a c</td>
+<td>新建窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a 数字</td>
+<td>切换到对应的窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a n</td>
+<td>切换到下一个窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a p</td>
+<td>切换到上一个窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a w</td>
+<td>列出所有窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a f</td>
+<td>查找窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a ,</td>
+<td>修改该窗口的名字</td>
+</tr>
+<tr>
+<td>Ctrl+a %/竖线</td>
+<td>垂直分隔窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a “/-</td>
+<td>水平分隔窗口</td>
+</tr>
+<tr>
+<td>Ctrl+a o</td>
+<td>交换光标所在窗格</td>
+</tr>
+<tr>
+<td>Ctrl+a x</td>
+<td>关闭窗格</td>
+</tr>
+<tr>
+<td>Ctrl+a 空格</td>
+<td>切换布局</td>
+</tr>
+<tr>
+<td>Ctrl+a q</td>
+<td>显示每个窗格是第几个，当数字出现时按数字就选中第几个窗格</td>
+</tr>
+<tr>
+<td>Ctrl+a {</td>
+<td>与上一个窗格交换位置</td>
+</tr>
+<tr>
+<td>Ctrl+a }</td>
+<td>与下一个窗格交换位置</td>
+</tr>
+<tr>
+<td>Ctrl+a z</td>
+<td>切换当前窗格最大化/最小化</td>
+</tr>
+<tr>
+<td>Ctrl+a [</td>
+<td>进入复制模式</td>
+</tr>
+<tr>
+<td>Ctrl+a [ 空格</td>
+<td>开始选择内容 回车复制</td>
+</tr>
+<tr>
+<td>Ctrl+a ]</td>
+<td>粘贴</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[git cherry-pick]]></title>
       <url>http://niuzhiqiang90.github.io/2017/01/14/git-cherry-pick/</url>
       <content type="html"><![CDATA[<h2 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
