@@ -22,7 +22,7 @@ $ fc-cache -vf /usr/share/fonts/
 
 ## 4.添加字体配置文件
 ```
-$ sudo 10-powerline-symbols.conf /etc/fonts/conf.d/
+$ sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 ```
 
 这样vim中的powerline字体就能够正确显示了。
