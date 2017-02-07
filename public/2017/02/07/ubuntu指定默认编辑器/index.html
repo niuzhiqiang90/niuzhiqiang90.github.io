@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ubuntu," />
 
 
 
@@ -86,19 +86,22 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="ubuntu默认的编辑器为nano，例如执行如下命令时就会使用nano来打开sudo visudo或者git commit --amend
+如果想要设置成默认使用自己习惯的vi，可以执行如下命令进行选择
+12345678910$ sudo update-alternatives --config editor There are 4 choices for the alternative edit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://niuzhiqiang90.github.io/2016/12/30/hello-world/index.html">
+<meta property="og:title" content="ubuntu指定默认编辑器">
+<meta property="og:url" content="http://niuzhiqiang90.github.io/2017/02/07/ubuntu指定默认编辑器/index.html">
 <meta property="og:site_name" content="Niu Zhiqiang's blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-12-30T06:36:16.481Z">
+<meta property="og:description" content="ubuntu默认的编辑器为nano，例如执行如下命令时就会使用nano来打开sudo visudo或者git commit --amend
+如果想要设置成默认使用自己习惯的vi，可以执行如下命令进行选择
+12345678910$ sudo update-alternatives --config editor There are 4 choices for the alternative edit">
+<meta property="og:updated_time" content="2017-02-07T05:37:05.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="ubuntu指定默认编辑器">
+<meta name="twitter:description" content="ubuntu默认的编辑器为nano，例如执行如下命令时就会使用nano来打开sudo visudo或者git commit --amend
+如果想要设置成默认使用自己习惯的vi，可以执行如下命令进行选择
+12345678910$ sudo update-alternatives --config editor There are 4 choices for the alternative edit">
 
 
 
@@ -119,9 +122,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.github.io/2016/12/30/hello-world/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.github.io/2017/02/07/ubuntu指定默认编辑器/"/>
 
-  <title> Hello World | Niu Zhiqiang's blog </title>
+  <title> ubuntu指定默认编辑器 | Niu Zhiqiang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +287,7 @@ Quick">
             
             
               
-                Hello World
+                ubuntu指定默认编辑器
               
             
           </h1>
@@ -296,8 +299,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-30T14:36:16+08:00" content="2016-12-30">
-              2016-12-30
+            <time itemprop="dateCreated" datetime="2017-02-07T13:28:17+08:00" content="2017-02-07">
+              2017-02-07
             </time>
           </span>
 
@@ -329,15 +332,10 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>ubuntu默认的编辑器为nano，例如执行如下命令时就会使用nano来打开<br><code>sudo visudo</code>或者<code>git commit --amend</code></p>
+<p>如果想要设置成默认使用自己习惯的vi，可以执行如下命令进行选择</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ sudo update-alternatives --config editor </div><div class="line">There are 4 choices for the alternative editor (providing /usr/bin/editor).</div><div class="line">  Selection    Path                Priority   Status</div><div class="line">------------------------------------------------------------</div><div class="line">* 0            /bin/nano            40        auto mode</div><div class="line">  1            /bin/ed             -100       manual mode</div><div class="line">  2            /bin/nano            40        manual mode</div><div class="line">  3            /usr/bin/vim.basic   30        manual mode</div><div class="line">  4            /usr/bin/vim.tiny    10        manual mode</div><div class="line">Press enter to keep the current choice[*], or type selection number:</div></pre></td></tr></table></figure>
+<p>输入<code>3</code>就可以了。</p>
 
       
     </div>
@@ -358,18 +356,24 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/07/ubuntu修改网卡名称/" rel="next" title="ubuntu修改网卡名称">
+                <i class="fa fa-chevron-left"></i> ubuntu修改网卡名称
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/11/git-基本操作/" rel="prev" title="git 基本操作">
-                git 基本操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -501,7 +505,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
