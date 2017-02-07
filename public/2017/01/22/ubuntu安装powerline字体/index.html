@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Niu Zhiqiang's blog">
 <meta property="og:description" content="1.下载powerline字体和配置文件12$ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf$ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 2.将字体放">
-<meta property="og:updated_time" content="2017-01-22T06:30:48.094Z">
+<meta property="og:updated_time" content="2017-01-24T08:15:33.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu安装powerline字体">
 <meta name="twitter:description" content="1.下载powerline字体和配置文件12$ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf$ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
@@ -332,7 +332,7 @@
         <h2 id="1-下载powerline字体和配置文件"><a href="#1-下载powerline字体和配置文件" class="headerlink" title="1.下载powerline字体和配置文件"></a>1.下载powerline字体和配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf</div><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf</div></pre></td></tr></table></figure>
 <h2 id="2-将字体放到字体目录中"><a href="#2-将字体放到字体目录中" class="headerlink" title="2.将字体放到字体目录中"></a>2.将字体放到字体目录中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mv ./PowerlineSymbols.otf /usr/local/share/fonts</div></pre></td></tr></table></figure>
 <h2 id="3-更新字体缓存"><a href="#3-更新字体缓存" class="headerlink" title="3.更新字体缓存"></a>3.更新字体缓存</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ fc-cache -vf /usr/share/fonts/</div></pre></td></tr></table></figure>
-<h2 id="4-添加字体配置文件"><a href="#4-添加字体配置文件" class="headerlink" title="4.添加字体配置文件"></a>4.添加字体配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo 10-powerline-symbols.conf /etc/fonts/conf.d/</div></pre></td></tr></table></figure>
+<h2 id="4-添加字体配置文件"><a href="#4-添加字体配置文件" class="headerlink" title="4.添加字体配置文件"></a>4.添加字体配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/</div></pre></td></tr></table></figure>
 <p>这样vim中的powerline字体就能够正确显示了。</p>
 
       
@@ -372,6 +372,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/07/python指定字符编码/" rel="prev" title="python指定字符编码">
+                python指定字符编码 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -439,7 +443,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
