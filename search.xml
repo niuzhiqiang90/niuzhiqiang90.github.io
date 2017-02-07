@@ -4,6 +4,34 @@
   
     
     <entry>
+      <title><![CDATA[ubuntu修改网卡名称]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/02/07/ubuntu%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1%E5%90%8D%E7%A7%B0/</url>
+      <content type="html"><![CDATA[<p>今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0<br>按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。</p>
+<h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h2><p>Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.<br>Find the rule matching your MAC address.<br>Change the NAME value from eth1 to eth0 i.e. NAME=”eth0”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/udev/rules.d/70-persistent-net.rules</div></pre></td></tr></table></figure>
+<p>找到你要修改的网卡的MAC，修改对应的<code>NAME</code>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># PCI device 0x10ec:0x8168 (r8169)</div><div class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;50:7b:9d:55:47:2e&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;eth*&quot;, NAME=&quot;eth0&quot;</div><div class="line"> </div><div class="line"># PCI device 0x168c:0x0042 (ath10k_pci)</div><div class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;30:52:cb:68:81:17&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;wlan*&quot;, NAME=&quot;wlan0&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="2-使修改生效"><a href="#2-使修改生效" class="headerlink" title="2. 使修改生效"></a>2. 使修改生效</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo udevadm trigger</div></pre></td></tr></table></figure>
+<p>运行<code>ifconfig</code>查看网卡名称是否已经修改过来，如果没成功，就重启一下吧。</p>
+<p><a href="http://askubuntu.com/questions/637591/my-ethernet-interface-name-has-changed-from-eth0-to-eth1" target="_blank" rel="external">From askubuntu</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python指定字符编码]]></title>
+      <url>http://niuzhiqiang90.github.io/2017/02/07/python%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>python指定字符编码的方式有多种<br><strong>编码格式是要写在解释器的下面的</strong></p>
+<h2 id="1-指定方法"><a href="#1-指定方法" class="headerlink" title="1.指定方法"></a>1.指定方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># _*_ coding:utf-8 _*_</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding:utf-8 -*-</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># coding:utf-8</div></pre></td></tr></table></figure>
+<h2 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2.使用场景"></a>2.使用场景</h2><ul>
+<li>在python的程序中，如果有中文字符需要指定字符编码方式，无论是否是在注释中。</li>
+<li>在数据库操作中，读取或者写入的内容中有汉字时。具体的方法如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># _*_ coding:utf-8 _*_</div><div class="line"></div><div class="line">import sys</div><div class="line">reload(sys)                                                                      </div><div class="line">sys.setdefaultencoding(&apos;utf8&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ubuntu安装powerline字体]]></title>
       <url>http://niuzhiqiang90.github.io/2017/01/22/ubuntu%E5%AE%89%E8%A3%85powerline%E5%AD%97%E4%BD%93/</url>
       <content type="html"><![CDATA[<h2 id="1-下载powerline字体和配置文件"><a href="#1-下载powerline字体和配置文件" class="headerlink" title="1.下载powerline字体和配置文件"></a>1.下载powerline字体和配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf</div><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf</div></pre></td></tr></table></figure>
