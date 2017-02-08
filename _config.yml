@@ -73,7 +73,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/niuzhiqiang90/niuzhiqiang90.github.io.git
+  repo: 
+      github: https://github.com/niuzhiqiang90/niuzhiqiang90.github.io.git
+      coding: https://git.coding.net/niuzhiqiang90/niuzhiqiang90.git
   branch: master
 
       
