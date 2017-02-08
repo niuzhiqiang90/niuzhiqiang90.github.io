@@ -75,7 +75,7 @@ deploy:
   type: git
   repo: 
       github: https://github.com/niuzhiqiang90/niuzhiqiang90.github.io.git
-      coding: https://git.coding.net/niuzhiqiang90/niuzhiqiang90.git
+      coding: https://git.coding.net/niuzhiqiang90/niuzhiqiang90.coding.me.git
   branch: master
 
       
