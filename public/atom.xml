@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-02-07T05:37:05.228Z</updated>
+  <updated>2017-02-14T10:13:15.749Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux添加swap</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/02/14/linux%E6%B7%BB%E5%8A%A0swap/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/</id>
+    <published>2017-02-14T06:39:33.000Z</published>
+    <updated>2017-02-14T10:13:15.749Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-swap说明"><a href="#1-swap说明" class="headerlink" title="1. swap说明"></a>1. swap说明</h2><p>物理内存就是计算机的实际内存大小，由RAM芯片组成的。<br>虚拟内存则是虚拟出来的，使用磁盘代替内存。<br>虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap</p>
+<p>当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。</p>
+<h2 id="2-使用dd创建swap"><a href="#2-使用dd创建swap" class="headerlink" title="2. 使用dd创建swap"></a>2. 使用dd创建swap</h2><h3 id="2-1-查看当前内存"><a href="#2-1-查看当前内存" class="headerlink" title="2.1 查看当前内存"></a>2.1 查看当前内存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       6.0G       1.6G       875M       476M       3.2G</div><div class="line">-/+ buffers/cache:       2.4G       5.3G</div><div class="line">Swap:         0B         0B       0B</div></pre></td></tr></table></figure>
+<h3 id="2-2-创建swap文件"><a href="#2-2-创建swap文件" class="headerlink" title="2.2 创建swap文件"></a>2.2 创建swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo -s</div><div class="line">root@localhost:~# dd if=/dev/zero of=/mnt/swap_mount_point bs=1M count=2048</div><div class="line">2048+0 records in</div><div class="line">2048+0 records out</div><div class="line">2147483648 bytes (2.1 GB) copied, 16.7229 s, 128 MB/s</div><div class="line"></div><div class="line">root@localhost:~# ls -lh /mnt/swap_mount_point </div><div class="line">-rw-r--r-- 1 root root 2.0G Feb 14 18:08 /mnt/swap_mount_point</div><div class="line"></div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: data</div></pre></td></tr></table></figure>
+<h3 id="2-3-格式化swap文件"><a href="#2-3-格式化swap文件" class="headerlink" title="2.3 格式化swap文件"></a>2.3 格式化swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# mkswap /mnt/swap_mount_point </div><div class="line">Setting up swapspace version 1, size = 2097148 KiB</div><div class="line">no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div></pre></td></tr></table></figure>
+<h3 id="2-4-挂载"><a href="#2-4-挂载" class="headerlink" title="2.4 挂载"></a>2.4 挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# swapon /mnt/swap_mount_point </div><div class="line">root@localhost:~# free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       7.5G       197M       878M       476M       4.7G</div><div class="line">-/+ buffers/cache:       2.3G       5.3G</div><div class="line">Swap:         2G       264K       2G</div></pre></td></tr></table></figure>
+<h3 id="2-5-添加开机启动"><a href="#2-5-添加开机启动" class="headerlink" title="2.5 添加开机启动"></a>2.5 添加开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# echo &quot;/mnt/swap_mount_point swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-swap说明&quot;&gt;&lt;a href=&quot;#1-swap说明&quot; class=&quot;headerlink&quot; title=&quot;1. swap说明&quot;&gt;&lt;/a&gt;1. swap说明&lt;/h2&gt;&lt;p&gt;物理内存就是计算机的实际内存大小，由RAM芯片组成的。&lt;br&gt;虚拟内存则是虚拟出来的，使
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu指定默认编辑器</title>
