@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -86,12 +86,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Niu Zhiqiang's blog">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/tags/vim插件/index.html">
+<meta name="description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
+当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux添加swap">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/index.html">
 <meta property="og:site_name" content="Niu Zhiqiang's blog">
+<meta property="og:description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
+当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
+<meta property="og:updated_time" content="2017-02-14T10:13:15.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Niu Zhiqiang's blog">
+<meta name="twitter:title" content="linux添加swap">
+<meta name="twitter:description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
+当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
 
 
 
@@ -112,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/tags/vim插件/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/"/>
 
-  <title> 标签: vim插件 | Niu Zhiqiang's blog </title>
+  <title> linux添加swap | Niu Zhiqiang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -135,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,74 +263,133 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        vim插件
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/01/22/ubuntu安装powerline字体/" itemprop="url">
-              
-                <span itemprop="name">ubuntu安装powerline字体</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-22T14:25:10+08:00"
-              content="2017-01-22" >
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/01/12/vim-surround插件/" itemprop="url">
-              
-                <span itemprop="name">vim-surround插件</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-12T13:08:49+08:00"
-              content="2017-01-12" >
-          01-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux添加swap
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T14:39:33+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-swap说明"><a href="#1-swap说明" class="headerlink" title="1. swap说明"></a>1. swap说明</h2><p>物理内存就是计算机的实际内存大小，由RAM芯片组成的。<br>虚拟内存则是虚拟出来的，使用磁盘代替内存。<br>虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap</p>
+<p>当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。</p>
+<h2 id="2-使用dd创建swap"><a href="#2-使用dd创建swap" class="headerlink" title="2. 使用dd创建swap"></a>2. 使用dd创建swap</h2><h3 id="2-1-查看当前内存"><a href="#2-1-查看当前内存" class="headerlink" title="2.1 查看当前内存"></a>2.1 查看当前内存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       6.0G       1.6G       875M       476M       3.2G</div><div class="line">-/+ buffers/cache:       2.4G       5.3G</div><div class="line">Swap:         0B         0B       0B</div></pre></td></tr></table></figure>
+<h3 id="2-2-创建swap文件"><a href="#2-2-创建swap文件" class="headerlink" title="2.2 创建swap文件"></a>2.2 创建swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo -s</div><div class="line">root@localhost:~# dd if=/dev/zero of=/mnt/swap_mount_point bs=1M count=2048</div><div class="line">2048+0 records in</div><div class="line">2048+0 records out</div><div class="line">2147483648 bytes (2.1 GB) copied, 16.7229 s, 128 MB/s</div><div class="line"></div><div class="line">root@localhost:~# ls -lh /mnt/swap_mount_point </div><div class="line">-rw-r--r-- 1 root root 2.0G Feb 14 18:08 /mnt/swap_mount_point</div><div class="line"></div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: data</div></pre></td></tr></table></figure>
+<h3 id="2-3-格式化swap文件"><a href="#2-3-格式化swap文件" class="headerlink" title="2.3 格式化swap文件"></a>2.3 格式化swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# mkswap /mnt/swap_mount_point </div><div class="line">Setting up swapspace version 1, size = 2097148 KiB</div><div class="line">no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div></pre></td></tr></table></figure>
+<h3 id="2-4-挂载"><a href="#2-4-挂载" class="headerlink" title="2.4 挂载"></a>2.4 挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# swapon /mnt/swap_mount_point </div><div class="line">root@localhost:~# free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       7.5G       197M       878M       476M       4.7G</div><div class="line">-/+ buffers/cache:       2.3G       5.3G</div><div class="line">Swap:         2G       264K       2G</div></pre></td></tr></table></figure>
+<h3 id="2-5-添加开机启动"><a href="#2-5-添加开机启动" class="headerlink" title="2.5 添加开机启动"></a>2.5 添加开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# echo &quot;/mnt/swap_mount_point swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/07/ubuntu指定默认编辑器/" rel="next" title="ubuntu指定默认编辑器">
+                <i class="fa fa-chevron-left"></i> ubuntu指定默认编辑器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -331,6 +397,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -350,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -419,6 +498,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-swap说明"><span class="nav-text">1. swap说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用dd创建swap"><span class="nav-text">2. 使用dd创建swap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-查看当前内存"><span class="nav-text">2.1 查看当前内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建swap文件"><span class="nav-text">2.2 创建swap文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-格式化swap文件"><span class="nav-text">2.3 格式化swap文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-挂载"><span class="nav-text">2.4 挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-添加开机启动"><span class="nav-text">2.5 添加开机启动</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -554,6 +644,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
