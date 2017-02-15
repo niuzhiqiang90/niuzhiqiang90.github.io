@@ -128,8 +128,9 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
     GitHub: https://github.com/niuzhiqiang90
-  #  Weibo: http://weibo.com/u/nzqlove11
-  #QQ: http://user.qzone.qq.com/249718739
+    Coding: https://coding.net/u/niuzhiqiang90
+  #  Weibo: http://weibo.com/u/
+  #QQ: http://user.qzone.qq.com/
   #LinkLabel: Link
 
 
