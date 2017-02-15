@@ -21,7 +21,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapoff /mnt/swap_mount_point</div></pre></td></tr></table></figure>
 </li>
 <li><p>查看swap使用情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon -s </div><div class="line">或</div><div class="line">cat /proc/swaps</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon -s </div><div class="line">或</div><div class="line">×××@localhost: ~$ cat /proc/swaps</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-swap的优化"><a href="#4-swap的优化" class="headerlink" title="4. swap的优化"></a>4. swap的优化</h2><p>在ubuntu中swappiness参数值的大小对如何使用swap分区有很大的关系。<br>swappiness=0 表示最大限度使用物理内存。然后才是swap分区<br>swappiness=100 表示积极地使用swap分区，并把内存上的数据及时地搬运到swap空间上。</p>
+<p><strong>swappiness值的修改方法</strong></p>
+<ul>
+<li><p>方法1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo sysctl vm.swappiness=60</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo vi /etc/sysctl.conf</div><div class="line">在文件尾添加`vm.swappiness=60`，然后刷新内核参数</div><div class="line">×××@localhost: ~$ sudo sysctl -p</div></pre></td></tr></table></figure>
 </li>
 </ul>
 ]]></content>

@@ -77,7 +77,26 @@ root@localhost:~# echo "/mnt/swap_mount_point swap swap defaults 0 0" >> /etc/fs
 ```
 ×××@localhost: ~$ swapon -s 
 或
-cat /proc/swaps
+×××@localhost: ~$ cat /proc/swaps
 ```
+
+## 4. swap的优化
+在ubuntu中swappiness参数值的大小对如何使用swap分区有很大的关系。
+swappiness=0 表示最大限度使用物理内存。然后才是swap分区
+swappiness=100 表示积极地使用swap分区，并把内存上的数据及时地搬运到swap空间上。
+
+**swappiness值的修改方法**
+- 方法1
+```
+×××@localhost: ~$ sudo sysctl vm.swappiness=60
+```
+- 方法2
+```
+×××@localhost: ~$ sudo vi /etc/sysctl.conf
+在文件尾添加`vm.swappiness=60`，然后刷新内核参数
+×××@localhost: ~$ sudo sysctl -p
+```
+
+
 
 
