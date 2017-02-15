@@ -61,3 +61,23 @@ Swap:         2G       264K       2G
 ```
 root@localhost:~# echo "/mnt/swap_mount_point swap swap defaults 0 0" >> /etc/fstab  
 ```
+
+## 3. 相关命令
+- 挂载swap
+```
+×××@localhost: ~$ swapon /mnt/swap_mount_ponit
+```
+
+- 卸载swap
+```
+×××@localhost: ~$ swapoff /mnt/swap_mount_point
+```
+
+- 查看swap使用情况
+```
+×××@localhost: ~$ swapon -s 
+或
+cat /proc/swaps
+```
+
+
