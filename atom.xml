@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-02-14T10:13:15.749Z</updated>
+  <updated>2017-02-15T05:22:18.906Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/14/linux%E6%B7%BB%E5%8A%A0swap/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/</id>
     <published>2017-02-14T06:39:33.000Z</published>
-    <updated>2017-02-14T10:13:15.749Z</updated>
+    <updated>2017-02-15T05:22:18.906Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-swap说明"><a href="#1-swap说明" class="headerlink" title="1. swap说明"></a>1. swap说明</h2><p>物理内存就是计算机的实际内存大小，由RAM芯片组成的。<br>虚拟内存则是虚拟出来的，使用磁盘代替内存。<br>虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap</p>
 <p>当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。</p>
@@ -29,6 +29,27 @@
 <h3 id="2-3-格式化swap文件"><a href="#2-3-格式化swap文件" class="headerlink" title="2.3 格式化swap文件"></a>2.3 格式化swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# mkswap /mnt/swap_mount_point </div><div class="line">Setting up swapspace version 1, size = 2097148 KiB</div><div class="line">no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div></pre></td></tr></table></figure>
 <h3 id="2-4-挂载"><a href="#2-4-挂载" class="headerlink" title="2.4 挂载"></a>2.4 挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# swapon /mnt/swap_mount_point </div><div class="line">root@localhost:~# free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       7.5G       197M       878M       476M       4.7G</div><div class="line">-/+ buffers/cache:       2.3G       5.3G</div><div class="line">Swap:         2G       264K       2G</div></pre></td></tr></table></figure>
 <h3 id="2-5-添加开机启动"><a href="#2-5-添加开机启动" class="headerlink" title="2.5 添加开机启动"></a>2.5 添加开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# echo &quot;/mnt/swap_mount_point swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab</div></pre></td></tr></table></figure>
+<h2 id="3-相关命令"><a href="#3-相关命令" class="headerlink" title="3. 相关命令"></a>3. 相关命令</h2><ul>
+<li><p>挂载swap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon /mnt/swap_mount_ponit</div></pre></td></tr></table></figure>
+</li>
+<li><p>卸载swap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapoff /mnt/swap_mount_point</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看swap使用情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon -s </div><div class="line">或</div><div class="line">×××@localhost: ~$ cat /proc/swaps</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-swap的优化"><a href="#4-swap的优化" class="headerlink" title="4. swap的优化"></a>4. swap的优化</h2><p>在ubuntu中swappiness参数值的大小对如何使用swap分区有很大的关系。<br>swappiness=0 表示最大限度使用物理内存。然后才是swap分区<br>swappiness=100 表示积极地使用swap分区，并把内存上的数据及时地搬运到swap空间上。</p>
+<p><strong>swappiness值的修改方法</strong></p>
+<ul>
+<li><p>方法1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo sysctl vm.swappiness=60</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo vi /etc/sysctl.conf</div><div class="line">在文件尾添加`vm.swappiness=60`，然后刷新内核参数</div><div class="line">×××@localhost: ~$ sudo sysctl -p</div></pre></td></tr></table></figure>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
