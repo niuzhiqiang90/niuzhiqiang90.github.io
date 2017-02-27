@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-02-15T05:22:18.906Z</updated>
+  <updated>2017-02-27T09:11:39.681Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker安装</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%89%E8%A3%85/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/02/27/docker安装/</id>
+    <published>2017-02-27T09:03:14.000Z</published>
+    <updated>2017-02-27T09:11:39.681Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-ubuntu通过Docker源安装最新版本"><a href="#1-ubuntu通过Docker源安装最新版本" class="headerlink" title="1. ubuntu通过Docker源安装最新版本"></a>1. ubuntu通过Docker源安装最新版本</h2><h3 id="1-1-安装依赖"><a href="#1-1-安装依赖" class="headerlink" title="1.1 安装依赖"></a>1.1 安装依赖</h3><p>要安装最新的Docker版本，首先需要安装apt-transport-https支持，之后通过添加源来安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install apt-transport-https ca-certificates</div></pre></td></tr></table></figure></p>
+<h3 id="1-2-添加GPG-key"><a href="#1-2-添加GPG-key" class="headerlink" title="1.2 添加GPG key"></a>1.2 添加GPG key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv \</div><div class="line">               --keyserver hkp://ha.pool.sks-keyservers.net:80 \</div><div class="line">               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</div></pre></td></tr></table></figure>
+<h3 id="1-3-添加对应的源"><a href="#1-3-添加对应的源" class="headerlink" title="1.3 添加对应的源"></a>1.3 添加对应的源</h3><p>源列表<br>| Ubuntu version      | Repository                                                 |<br>| —                 |<br>| Precise 12.04 (LTS) | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main |<br>| Trusty 14.04 (LTS)  | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main  |<br>| Wily 15.10          | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-wily main    |<br>| Xenial 16.04 (LTS)  | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main  |</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;&lt;REPO&gt;&quot; | sudo tee /etc/apt/sources.list.d/docker.list</div></pre></td></tr></table></figure>
+<h3 id="1-4-更新apt包的index"><a href="#1-4-更新apt包的index" class="headerlink" title="1.4 更新apt包的index"></a>1.4 更新apt包的index</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<h3 id="1-5-安装docker"><a href="#1-5-安装docker" class="headerlink" title="1.5  安装docker"></a>1.5  安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install docker-engine</div><div class="line">sudo service docker start</div><div class="line">sudo docker run hello-world</div></pre></td></tr></table></figure>
+<h2 id="2-CentOS安装"><a href="#2-CentOS安装" class="headerlink" title="2. CentOS安装"></a>2. CentOS安装</h2><h3 id="2-1-更新包"><a href="#2-1-更新包" class="headerlink" title="2.1 更新包"></a>2.1 更新包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum update</div></pre></td></tr></table></figure>
+<h3 id="2-2-添加yum源"><a href="#2-2-添加yum源" class="headerlink" title="2.2 添加yum源"></a>2.2 添加yum源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo tee /etc/yum.repos.d/docker.repo &lt;&lt; EOF</div><div class="line">[DockerRepo]</div><div class="line">name=Docker Repository</div><div class="line">baseurl=https://yum.dockerproject.org/repo/main/centos/7/</div><div class="line">enabled=1</div><div class="line">gpgcheck=1</div><div class="line">gpgkey=https://yum.dockerproject.org/gpg</div><div class="line">EOF</div></pre></td></tr></table></figure>
+<h3 id="2-3-安装docker包"><a href="#2-3-安装docker包" class="headerlink" title="2.3 安装docker包"></a>2.3 安装docker包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum -y install docker-engine</div></pre></td></tr></table></figure>
+<h3 id="2-4-开启启动"><a href="#2-4-开启启动" class="headerlink" title="2.4 开启启动"></a>2.4 开启启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo systemctl enable docker.service</div></pre></td></tr></table></figure>
+<h3 id="2-5-启动服务"><a href="#2-5-启动服务" class="headerlink" title="2.5 启动服务"></a>2.5 启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo systemctl start docker</div></pre></td></tr></table></figure>
+<h2 id="3-验证docker是否安装成功"><a href="#3-验证docker是否安装成功" class="headerlink" title="3. 验证docker是否安装成功"></a>3. 验证docker是否安装成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">sudo docker run --rm hello-world</div><div class="line"></div><div class="line">Unable to find image &apos;hello-world:latest&apos; locally</div><div class="line"> latest: Pulling from library/hello-world</div><div class="line"> c04b14da8d14: Pull complete</div><div class="line"> Digest: sha256:0256e8a36e2070f7bf2d0b0763dbabdd67798512411de4cdcf9431a1feb60fd9</div><div class="line"> Status: Downloaded newer image for hello-world:latest</div><div class="line"></div><div class="line"> Hello from Docker!</div><div class="line"> This message shows that your installation appears to be working correctly.</div><div class="line"></div><div class="line"> To generate this message, Docker took the following steps:</div><div class="line">  1. The Docker client contacted the Docker daemon.</div><div class="line">  2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.</div><div class="line">  3. The Docker daemon created a new container from that image which runs the</div><div class="line">     executable that produces the output you are currently reading.</div><div class="line">  4. The Docker daemon streamed that output to the Docker client, which sent it</div><div class="line">     to your terminal.</div><div class="line"></div><div class="line"> To try something more ambitious, you can run an Ubuntu container with:</div><div class="line">  $ docker run -it ubuntu bash</div><div class="line"></div><div class="line"> Share images, automate workflows, and more with a free Docker Hub account:</div><div class="line">  https://hub.docker.com</div><div class="line"></div><div class="line"> For more examples and ideas, visit:</div><div class="line">  https://docs.docker.com/engine/userguide/</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/docker/docker" target="_blank" rel="external">docker on github</a><br><a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">docker install mothed</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-ubuntu通过Docker源安装最新版本&quot;&gt;&lt;a href=&quot;#1-ubuntu通过Docker源安装最新版本&quot; class=&quot;headerlink&quot; title=&quot;1. ubuntu通过Docker源安装最新版本&quot;&gt;&lt;/a&gt;1. ubuntu通过Docke
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://niuzhiqiang90.coding.me/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>linux添加swap</title>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vim插件," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,19 +86,12 @@
 
 
 
-<meta name="description" content="Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-1. 修改 cs原符号要修改的符号">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vim-surround插件">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/01/12/vim-surround插件/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Niu Zhiqiang's blog">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/tags/docker/index.html">
 <meta property="og:site_name" content="Niu Zhiqiang's blog">
-<meta property="og:description" content="Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-1. 修改 cs原符号要修改的符号">
-<meta property="og:updated_time" content="2017-01-12T05:25:25.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vim-surround插件">
-<meta name="twitter:description" content="Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-1. 修改 cs原符号要修改的符号">
+<meta name="twitter:title" content="Niu Zhiqiang's blog">
 
 
 
@@ -119,9 +112,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/01/12/vim-surround插件/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/tags/docker/"/>
 
-  <title> vim-surround插件 | Niu Zhiqiang's blog </title>
+  <title> 标签: docker | Niu Zhiqiang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,7 +135,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,171 +256,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                vim-surround插件
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-12T13:08:49+08:00" content="2017-01-12">
-              2017-01-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/vim/" itemprop="url" rel="index">
-                    <span itemprop="name">vim</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.</p>
-<h1 id="1-修改-cs原符号要修改的符号"><a href="#1-修改-cs原符号要修改的符号" class="headerlink" title="1. 修改 cs原符号要修改的符号"></a>1. 修改 cs原符号要修改的符号</h1><h2 id="1-1-修改双引号为单引号-cs-quot-39"><a href="#1-1-修改双引号为单引号-cs-quot-39" class="headerlink" title="1.1 修改双引号为单引号 cs&quot;&#39;"></a>1.1 修改双引号为单引号 <code>cs&quot;&#39;</code></h2><p>It’s easiest to explain with examples. Press <code>cs&quot;&#39;</code> inside</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;Hello world!&quot;</div></pre></td></tr></table></figure>
-<p>to change it to</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;Hello world!&apos;</div></pre></td></tr></table></figure>
-<h2 id="1-2-修改单引号为html配对标签-cs-39-lt-q-gt-或者-cs-39-lt-head-gt"><a href="#1-2-修改单引号为html配对标签-cs-39-lt-q-gt-或者-cs-39-lt-head-gt" class="headerlink" title="1.2 修改单引号为html配对标签 cs&#39;&lt;q&gt; 或者 cs&#39;&lt;head&gt;"></a>1.2 修改单引号为html配对标签 <code>cs&#39;&lt;q&gt;</code> 或者 <code>cs&#39;&lt;head&gt;</code></h2><p>Now press cs’<q> to change it to</q></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;q&gt;Hello world!&lt;/q&gt;</div></pre></td></tr></table></figure>
-<h2 id="1-3-修改配对标签为其他字符-cst要改成的字符"><a href="#1-3-修改配对标签为其他字符-cst要改成的字符" class="headerlink" title="1.3 修改配对标签为其他字符 cst要改成的字符"></a>1.3 修改配对标签为其他字符 <code>cst要改成的字符</code></h2><p>To go full circle, press cst” to get<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;hello world!&quot;</div></pre></td></tr></table></figure></p>
-<h1 id="2-删除符号-ds要删除的符号"><a href="#2-删除符号-ds要删除的符号" class="headerlink" title="2. 删除符号 ds要删除的符号"></a>2. 删除符号 <code>ds要删除的符号</code></h1><p>To remove the delimiters entirely, press ds”.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello world!</div></pre></td></tr></table></figure></p>
-<h1 id="3-在文字的两侧添加字符-ysiw要添加的字符"><a href="#3-在文字的两侧添加字符-ysiw要添加的字符" class="headerlink" title="3. 在文字的两侧添加字符 ysiw要添加的字符"></a>3. 在文字的两侧添加字符 <code>ysiw要添加的字符</code></h1><p>Now with the cursor on “Hello”, press ysiw] (iw is a text object).</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[Hello] world!</div></pre></td></tr></table></figure>
-<p>Let’s make that braces and add some space (use } instead of { for no space): cs]{</p>
-<p>ysiw{ 有空格    cs]{ 有空格<br>ysiw} 无空格    cs]} 无空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; Hello &#125; world!</div></pre></td></tr></table></figure></p>
-<h1 id="4-对整行操作-yss"><a href="#4-对整行操作-yss" class="headerlink" title="4. 对整行操作 yss"></a>4. 对整行操作 <code>yss</code></h1><p>Now wrap the entire line in parentheses with yssb or yss).</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&#123; Hello &#125; world!)</div></pre></td></tr></table></figure>
-<h1 id="5-删除符号-ds删除的符号"><a href="#5-删除符号-ds删除的符号" class="headerlink" title="5. 删除符号 ds删除的符号"></a>5. 删除符号 <code>ds删除的符号</code></h1><p>Revert to the original text: ds{ds)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello world!</div></pre></td></tr></table></figure></p>
-<p>Emphasize hello: ysiw<em></em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;em&gt;Hello&lt;/em&gt; world!</div></pre></td></tr></table></figure>
-<p>Finally, let’s try out visual mode. Press a capital V (for linewise visual mode) followed by <code>S&lt;p class=&quot;important&quot;&gt;</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;important&quot;&gt;</div><div class="line">  &lt;em&gt;Hello&lt;/em&gt; world!</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
-<p>This plugin is very powerful for HTML and XML editing, a niche which currently seems underfilled in Vim land. (As opposed to HTML/XML inserting, for which many plugins are available). Adding, changing, and removing pairs of tags simultaneously is a breeze.</p>
-<p>The . command will work with ds, cs, and yss if you install repeat.vim.</p>
-
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        docker
+        <small>标签</small>
+      </h2>
     </div>
 
-    <div>
+    
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-
-      
-    </div>
-
-    <div>
-      
+            <a class="post-title-link" href="/2017/02/27/docker安装/" itemprop="url">
+              
+                <span itemprop="name">docker安装</span>
+              
+            </a>
         
+      </h1>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-02-27T17:03:14+08:00"
+              content="2017-02-27" >
+          02-27
+        </time>
+      </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/vim插件/" rel="tag">#vim插件</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/01/11/修改最后一次commit/" rel="next" title="修改最后一次commit">
-                <i class="fa fa-chevron-left"></i> 修改最后一次commit
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/12/shell-style-guide/" rel="prev" title="shell style guide">
-                shell style guide <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -435,10 +303,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -458,17 +322,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -545,17 +400,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-修改-cs原符号要修改的符号"><span class="nav-text">1. 修改 cs原符号要修改的符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-修改双引号为单引号-cs-quot-39"><span class="nav-text">1.1 修改双引号为单引号 cs"'</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-修改单引号为html配对标签-cs-39-lt-q-gt-或者-cs-39-lt-head-gt"><span class="nav-text">1.2 修改单引号为html配对标签 cs'<q> 或者 cs'<head></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-修改配对标签为其他字符-cst要改成的字符"><span class="nav-text">1.3 修改配对标签为其他字符 cst要改成的字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-删除符号-ds要删除的符号"><span class="nav-text">2. 删除符号 ds要删除的符号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-在文字的两侧添加字符-ysiw要添加的字符"><span class="nav-text">3. 在文字的两侧添加字符 ysiw要添加的字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-对整行操作-yss"><span class="nav-text">4. 对整行操作 yss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-删除符号-ds删除的符号"><span class="nav-text">5. 删除符号 ds删除的符号</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -691,10 +535,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
