@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-03-13T13:22:44.597Z</updated>
+  <updated>2017-03-21T02:55:06.348Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python字符编码</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/03/20/python字符编码/</id>
+    <published>2017-03-20T13:20:21.000Z</published>
+    <updated>2017-03-21T02:55:06.348Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-ASSIC码"><a href="#1-ASSIC码" class="headerlink" title="1. ASSIC码"></a>1. ASSIC码</h2><p>一共规定了128个字符的编码</p>
+<h3 id="1-1-ord函数"><a href="#1-1-ord函数" class="headerlink" title="1.1 ord函数"></a>1.1 ord函数</h3><p><code>ord(&#39;single-char&#39;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ord(...)</div><div class="line">    ord(c) -&gt; integer</div><div class="line">    </div><div class="line">    Return the integer ordinal of a one-character string.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; ord(&apos;a&apos;)</div><div class="line">97</div><div class="line">&gt;&gt;&gt; type(ord(&apos;a&apos;))</div><div class="line">&lt;type &apos;int&apos;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">string = &apos;Hello World&apos;</div><div class="line">for i in string:</div><div class="line">    print ord(i)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">string = &apos;Hello World&apos;</div><div class="line">list_ascii = [ord(i) for i in string]</div><div class="line">print list_ascii</div></pre></td></tr></table></figure>
+<h3 id="1-2-chr函数"><a href="#1-2-chr函数" class="headerlink" title="1.2 chr函数"></a>1.2 chr函数</h3><p><code>chr(number)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">chr(...)</div><div class="line">    chr(i) -&gt; character</div><div class="line">        </div><div class="line">            Return a string of one character with ordinal i; 0 &lt;= i &lt; 256.</div></pre></td></tr></table></figure>
+<h2 id="2-Unicode编码"><a href="#2-Unicode编码" class="headerlink" title="2. Unicode编码"></a>2. Unicode编码</h2><p>16位 可以存下汉字</p>
+<h3 id="2-1-默认编码是ASCII"><a href="#2-1-默认编码是ASCII" class="headerlink" title="2.1 默认编码是ASCII"></a>2.1 默认编码是ASCII</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = &apos;hello&apos;</div><div class="line">&gt;&gt;&gt; type(a)</div><div class="line">&lt;type &apos;str&apos;&gt;</div><div class="line">&gt;&gt;&gt; a</div><div class="line">&apos;hello&apos;</div></pre></td></tr></table></figure>
+<h3 id="2-2-加u则指定为Unicode"><a href="#2-2-加u则指定为Unicode" class="headerlink" title="2.2 加u则指定为Unicode"></a>2.2 加<code>u</code>则指定为Unicode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = u&apos;hello&apos;</div><div class="line">&gt;&gt;&gt; type(a)</div><div class="line">&lt;type &apos;unicode&apos;&gt;</div><div class="line">&gt;&gt;&gt; a</div><div class="line">u&apos;hello&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; b=u&apos;你好&apos;</div><div class="line">&gt;&gt;&gt; b</div><div class="line">u&apos;\u4f60\u597d&apos;</div><div class="line">&gt;&gt;&gt; len(b)</div><div class="line">2</div></pre></td></tr></table></figure>
+<h2 id="3-UTF-8编码"><a href="#3-UTF-8编码" class="headerlink" title="3. UTF-8编码"></a>3. UTF-8编码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 转换成utf-8</div><div class="line">&gt;&gt;&gt; b.encode(&apos;utf-8&apos;)</div><div class="line">&apos;\xe4\xbd\xa0\xe5\xa5\xbd&apos;</div><div class="line"></div><div class="line"></div><div class="line">&gt;&gt;&gt; b_utf8 = b.encode(&apos;utf-8&apos;)</div><div class="line">&gt;&gt;&gt; len(b_utf8)</div><div class="line">6</div></pre></td></tr></table></figure>
+<h2 id="4-Unicode和UTF-8的转换"><a href="#4-Unicode和UTF-8的转换" class="headerlink" title="4. Unicode和UTF-8的转换"></a>4. Unicode和UTF-8的转换</h2><h3 id="4-1-Unicode-gt-gt-UTF-8"><a href="#4-1-Unicode-gt-gt-UTF-8" class="headerlink" title="4.1 Unicode &gt;&gt; UTF-8"></a>4.1 Unicode &gt;&gt; UTF-8</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name.encode(&apos;utf-8&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; b=u&apos;你好&apos;</div><div class="line"># Unicode转换成UTF-8 </div><div class="line">&gt;&gt;&gt; b_utf8=b.encode(&apos;utf-8&apos;)</div></pre></td></tr></table></figure>
+<h3 id="4-2-UTF-8-gt-gt-Unicode"><a href="#4-2-UTF-8-gt-gt-Unicode" class="headerlink" title="4.2 UTF-8  &gt;&gt; Unicode"></a>4.2 UTF-8  &gt;&gt; Unicode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name_utf8.decode(&apos;utf-8&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; b_utf8</div><div class="line">&apos;\xe4\xbd\xa0\xe5\xa5\xbd&apos;</div><div class="line">&gt;&gt;&gt; b_utf8.decode(&apos;utf-8&apos;)</div><div class="line">u&apos;\u4f60\u597d&apos;</div></pre></td></tr></table></figure>
+<h2 id="5-指定程序的编码方式"><a href="#5-指定程序的编码方式" class="headerlink" title="5. 指定程序的编码方式"></a>5. 指定程序的编码方式</h2><p>程序如果有中文,需要指定编码方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#_*_ coding:utf-8 _*_</div><div class="line"></div><div class="line">name = u&apos;中文&apos;</div><div class="line">print name</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-ASSIC码&quot;&gt;&lt;a href=&quot;#1-ASSIC码&quot; class=&quot;headerlink&quot; title=&quot;1. ASSIC码&quot;&gt;&lt;/a&gt;1. ASSIC码&lt;/h2&gt;&lt;p&gt;一共规定了128个字符的编码&lt;/p&gt;
+&lt;h3 id=&quot;1-1-ord函数&quot;&gt;&lt;a hre
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>ceph</title>
