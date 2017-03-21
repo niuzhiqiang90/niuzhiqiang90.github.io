@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-03-21T03:01:52.696Z</updated>
+  <updated>2017-03-21T03:21:14.840Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python用户交互</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/03/20/python用户交互/</id>
+    <published>2017-03-20T14:05:30.000Z</published>
+    <updated>2017-03-21T03:21:14.840Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-raw-input"><a href="#1-raw-input" class="headerlink" title="1. raw_input()"></a>1. raw_input()</h2><p>raw_input() 从标准输入中读取一个字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">raw_input(...)</div><div class="line">    raw_input([prompt]) -&gt; string</div><div class="line">    </div><div class="line">    Read a string from standard input.  The trailing newline is stripped.</div><div class="line">    If the user hits EOF (Unix: Ctl-D, Windows: Ctl-Z+Return), raise EOFError.</div><div class="line">    On Unix, GNU readline is used if enabled.  The prompt string, if given,</div><div class="line">    is printed without a trailing newline before reading.</div></pre></td></tr></table></figure></p>
+<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">name = raw_input(&apos;Please input your name:&apos;)</div><div class="line">age = raw_input(&apos;age:&apos;)</div><div class="line">print &quot;name: &quot; % name</div><div class="line">print &quot;age:&quot; % age</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">name = raw_input(&apos;Please input your name:&apos;)</div><div class="line">age = raw_input(&apos;age:&apos;)</div><div class="line">job = raw_input(&apos;Job:&apos;)</div><div class="line">salary = raw_input(&apos;Salary:&apos;)</div><div class="line"></div><div class="line">print &apos;&apos;&apos;</div><div class="line">Personal information of %s:</div><div class="line">   Name : %s</div><div class="line">   Age  : %s     d只能输入数字 f只能输入浮点型</div><div class="line">    Job : %s</div><div class="line">  Salary: %s</div><div class="line">&apos;&apos;&apos; %(name, name, age, job, salary)</div></pre></td></tr></table></figure>
+<h2 id="2-input"><a href="#2-input" class="headerlink" title="2. input()"></a>2. input()</h2><p>input()    输入的是什么就是什么格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input(...)</div><div class="line">    input([prompt]) -&gt; value</div><div class="line">    </div><div class="line">    Equivalent to eval(raw_input(prompt)).</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; info = &quot;This var will be printed out ...&quot;</div><div class="line">&gt;&gt;&gt; age = input(&apos;age:&apos;)</div><div class="line">age:info</div><div class="line">&gt;&gt;&gt; print age</div><div class="line">This var will be printed out ...</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-raw-input&quot;&gt;&lt;a href=&quot;#1-raw-input&quot; class=&quot;headerlink&quot; title=&quot;1. raw_input()&quot;&gt;&lt;/a&gt;1. raw_input()&lt;/h2&gt;&lt;p&gt;raw_input() 从标准输入中读取一个字符串&lt;br
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python使用和导入模块</title>
@@ -1066,33 +1092,6 @@
     
     
       <category term="git" scheme="http://niuzhiqiang90.coding.me/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://niuzhiqiang90.coding.me/2017/01/11/hello-world/"/>
-    <id>http://niuzhiqiang90.coding.me/2017/01/11/hello-world/</id>
-    <published>2017-01-10T16:00:00.000Z</published>
-    <updated>2017-03-13T13:42:40.157Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
