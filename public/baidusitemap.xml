@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/22/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2017-03-22T14:33:11.494Z</lastmod>
+    <data>
+        <display>
+        <title>python文件处理</title>
+        <pubTime>2017-03-22T12:51:07.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
     <lastmod>2017-03-21T03:21:14.840Z</lastmod>
     <data>
@@ -87,12 +104,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E9%95%9C%E5%83%8F/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-03-13T13:34:57.009Z</lastmod>
     <data>
         <display>
-        <title>docker镜像</title>
-        <pubTime>2017-02-27T09:15:33.000Z</pubTime>
+        <title>docker安装</title>
+        <pubTime>2017-02-27T09:03:14.000Z</pubTime>
         
         <tag>docker</tag>
          
@@ -104,12 +121,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E9%95%9C%E5%83%8F/</loc>
     <lastmod>2017-03-13T13:34:57.009Z</lastmod>
     <data>
         <display>
-        <title>docker安装</title>
-        <pubTime>2017-02-27T09:03:14.000Z</pubTime>
+        <title>docker镜像</title>
+        <pubTime>2017-02-27T09:15:33.000Z</pubTime>
         
         <tag>docker</tag>
          

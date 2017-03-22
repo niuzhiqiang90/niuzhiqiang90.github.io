@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -86,19 +86,121 @@
 
 
 
-<meta name="description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
-当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
+<meta name="description" content="1. 文件操作file(‘文件名’,’操作符’)省略操作符 默认为读
+
+
+
+模式
+操作符
+
+
+
+
+只读
+r
+
+
+只写
+w
+
+
+追加
+a
+
+
+读写
+r+b
+
+
+写读
+w+b
+
+
+追加
+a+b
+
+
+
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux添加swap">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/index.html">
+<meta property="og:title" content="python文件处理">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/03/22/python文件处理/index.html">
 <meta property="og:site_name" content="Niu Zhiqiang's blog">
-<meta property="og:description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
-当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
-<meta property="og:updated_time" content="2017-02-15T05:22:18.000Z">
+<meta property="og:description" content="1. 文件操作file(‘文件名’,’操作符’)省略操作符 默认为读
+
+
+
+模式
+操作符
+
+
+
+
+只读
+r
+
+
+只写
+w
+
+
+追加
+a
+
+
+读写
+r+b
+
+
+写读
+w+b
+
+
+追加
+a+b
+
+
+
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
+<meta property="og:updated_time" content="2017-03-22T14:33:11.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux添加swap">
-<meta name="twitter:description" content="1. swap说明物理内存就是计算机的实际内存大小，由RAM芯片组成的。虚拟内存则是虚拟出来的，使用磁盘代替内存。虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap
-当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。">
+<meta name="twitter:title" content="python文件处理">
+<meta name="twitter:description" content="1. 文件操作file(‘文件名’,’操作符’)省略操作符 默认为读
+
+
+
+模式
+操作符
+
+
+
+
+只读
+r
+
+
+只写
+w
+
+
+追加
+a
+
+
+读写
+r+b
+
+
+写读
+w+b
+
+
+追加
+a+b
+
+
+
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
 
 
 
@@ -119,9 +221,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/03/22/python文件处理/"/>
 
-  <title> linux添加swap | Niu Zhiqiang's blog </title>
+  <title> python文件处理 | Niu Zhiqiang's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +386,7 @@
             
             
               
-                linux添加swap
+                python文件处理
               
             
           </h1>
@@ -296,8 +398,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-14T14:39:33+08:00" content="2017-02-14">
-              2017-02-14
+            <time itemprop="dateCreated" datetime="2017-03-22T20:51:07+08:00" content="2017-03-22">
+              2017-03-22
             </time>
           </span>
 
@@ -329,34 +431,102 @@
       
 
       
-        <h2 id="1-swap说明"><a href="#1-swap说明" class="headerlink" title="1. swap说明"></a>1. swap说明</h2><p>物理内存就是计算机的实际内存大小，由RAM芯片组成的。<br>虚拟内存则是虚拟出来的，使用磁盘代替内存。<br>虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap</p>
-<p>当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。</p>
-<h2 id="2-使用dd创建swap"><a href="#2-使用dd创建swap" class="headerlink" title="2. 使用dd创建swap"></a>2. 使用dd创建swap</h2><h3 id="2-1-查看当前内存"><a href="#2-1-查看当前内存" class="headerlink" title="2.1 查看当前内存"></a>2.1 查看当前内存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       6.0G       1.6G       875M       476M       3.2G</div><div class="line">-/+ buffers/cache:       2.4G       5.3G</div><div class="line">Swap:         0B         0B       0B</div></pre></td></tr></table></figure>
-<h3 id="2-2-创建swap文件"><a href="#2-2-创建swap文件" class="headerlink" title="2.2 创建swap文件"></a>2.2 创建swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo -s</div><div class="line">root@localhost:~# dd if=/dev/zero of=/mnt/swap_mount_point bs=1M count=2048</div><div class="line">2048+0 records in</div><div class="line">2048+0 records out</div><div class="line">2147483648 bytes (2.1 GB) copied, 16.7229 s, 128 MB/s</div><div class="line"></div><div class="line">root@localhost:~# ls -lh /mnt/swap_mount_point </div><div class="line">-rw-r--r-- 1 root root 2.0G Feb 14 18:08 /mnt/swap_mount_point</div><div class="line"></div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: data</div></pre></td></tr></table></figure>
-<h3 id="2-3-格式化swap文件"><a href="#2-3-格式化swap文件" class="headerlink" title="2.3 格式化swap文件"></a>2.3 格式化swap文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# mkswap /mnt/swap_mount_point </div><div class="line">Setting up swapspace version 1, size = 2097148 KiB</div><div class="line">no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div><div class="line">root@localhost:~# file /mnt/swap_mount_point </div><div class="line">/mnt/swap_mount_point: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label, UUID=2ed6629c-4b31-499b-b21d-2235971f8678</div></pre></td></tr></table></figure>
-<h3 id="2-4-挂载"><a href="#2-4-挂载" class="headerlink" title="2.4 挂载"></a>2.4 挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# swapon /mnt/swap_mount_point </div><div class="line">root@localhost:~# free -h</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:          7.7G       7.5G       197M       878M       476M       4.7G</div><div class="line">-/+ buffers/cache:       2.3G       5.3G</div><div class="line">Swap:         2G       264K       2G</div></pre></td></tr></table></figure>
-<h3 id="2-5-添加开机启动"><a href="#2-5-添加开机启动" class="headerlink" title="2.5 添加开机启动"></a>2.5 添加开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@localhost:~# echo &quot;/mnt/swap_mount_point swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab</div></pre></td></tr></table></figure>
-<h2 id="3-相关命令"><a href="#3-相关命令" class="headerlink" title="3. 相关命令"></a>3. 相关命令</h2><ul>
-<li><p>挂载swap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon /mnt/swap_mount_ponit</div></pre></td></tr></table></figure>
+        <h2 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h2><p>file(‘文件名’,’操作符’)<br><strong>省略操作符 默认为读</strong></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>操作符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只读</td>
+<td><code>r</code></td>
+</tr>
+<tr>
+<td>只写</td>
+<td><code>w</code></td>
+</tr>
+<tr>
+<td>追加</td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td>读写</td>
+<td><code>r+b</code></td>
+</tr>
+<tr>
+<td>写读</td>
+<td><code>w+b</code></td>
+</tr>
+<tr>
+<td>追加</td>
+<td><code>a+b</code></td>
+</tr>
+</tbody>
+</table>
+<p>在python中，以什么样的方式出来文件是比较重要的，如果你<br><strong>以只读的方式打开文件，那你就不能写操作</strong><br><strong>以只写的方式打开文件，那你就不能读操作</strong><br><strong>以追加的方式打开文件，也应该是不能进行读操作的</strong><br><strong><font color="red">操作完毕，不要忘记关闭文件</font></strong></p>
+<h3 id="1-1-以只读方式打开文件"><a href="#1-1-以只读方式打开文件" class="headerlink" title="1.1 以只读方式打开文件"></a>1.1 以只读方式打开文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = file(&apos;test&apos;,&apos;r&apos;)  #f为该文件对象</div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">&apos;hello world\n&apos;</div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">&apos;\n&apos;</div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">&apos;this is the second line\n&apos;</div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">&gt;&gt;&gt; f.close()</div></pre></td></tr></table></figure>
+<h3 id="1-2-以只写方式打开文件"><a href="#1-2-以只写方式打开文件" class="headerlink" title="1.2 以只写方式打开文件"></a>1.2 以只写方式打开文件</h3><p><strong>如果文件存在并且有内容，则会把文件之前的内容清除；如果文件不存在。则会创建文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = file(&apos;test&apos;,&apos;w&apos;)</div><div class="line">&gt;&gt;&gt; f.read()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">IOError: File not open for reading</div><div class="line"></div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">IOError: File not open for reading</div><div class="line"></div><div class="line">&gt;&gt;&gt; f.write(&apos;this is the newest line&apos;)</div><div class="line">&gt;&gt;&gt; f.close()</div><div class="line">&gt;&gt;&gt; f_read = file(&apos;test&apos;,&apos;r&apos;)</div><div class="line">&gt;&gt;&gt; f_read.read()</div><div class="line">&apos;this is the newest line&apos;</div><div class="line">&gt;&gt;&gt; f_read.read()</div><div class="line">&apos;&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="1-3-以追加的方式打开文件"><a href="#1-3-以追加的方式打开文件" class="headerlink" title="1.3 以追加的方式打开文件"></a>1.3 以追加的方式打开文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = file(&apos;test&apos;,&apos;a&apos;) </div><div class="line">&gt;&gt;&gt; f.write(&apos;second line&apos;) </div><div class="line">&gt;&gt;&gt; f.write(&apos;\nthird line&apos;)</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>这个时候，打开文件，刚才写入的内容并没有写入到文件里。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f_read = file(&apos;test&apos;,&apos;r&apos;)</div><div class="line">&gt;&gt;&gt; f_read.readline()</div><div class="line">&apos;this is the newest line&apos;</div></pre></td></tr></table></figure></p>
+<p><strong>文件在关闭的时候才会写入到文件里</strong>或者<strong>强制写入</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f.flush()</div></pre></td></tr></table></figure></p>
+<p>追加模式也不可以读<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f.read()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">IOError: File not open for reading</div></pre></td></tr></table></figure></p>
+<p><strong>拓展</strong></p>
+<ol>
+<li><p>去掉换行符<br><code>line.strip(&#39;换行符&#39;)</code><br>省略换行符默认为空格</p>
 </li>
-<li><p>卸载swap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapoff /mnt/swap_mount_point</div></pre></td></tr></table></figure>
+<li><p>把行分割<br><code>line.split(&#39;分隔符&#39;)</code></p>
 </li>
-<li><p>查看swap使用情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ swapon -s </div><div class="line">或</div><div class="line">×××@localhost: ~$ cat /proc/swaps</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="4-swap的优化"><a href="#4-swap的优化" class="headerlink" title="4. swap的优化"></a>4. swap的优化</h2><p>在ubuntu中swappiness参数值的大小对如何使用swap分区有很大的关系。<br>swappiness=0 表示最大限度使用物理内存。然后才是swap分区<br>swappiness=100 表示积极地使用swap分区，并把内存上的数据及时地搬运到swap空间上。</p>
-<p><strong>swappiness值的修改方法</strong></p>
-<ul>
-<li><p>方法1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo sysctl vm.swappiness=60</div></pre></td></tr></table></figure>
-</li>
-<li><p>方法2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">×××@localhost: ~$ sudo vi /etc/sysctl.conf</div><div class="line">在文件尾添加`vm.swappiness=60`，然后刷新内核参数</div><div class="line">×××@localhost: ~$ sudo sysctl -p</div></pre></td></tr></table></figure>
-</li>
-</ul>
+</ol>
+<h2 id="2-实例"><a href="#2-实例" class="headerlink" title="2. 实例"></a>2. 实例</h2><h3 id="2-1-读取-etc-passwd的内容"><a href="#2-1-读取-etc-passwd的内容" class="headerlink" title="2.1 读取/etc/passwd的内容"></a>2.1 读取<code>/etc/passwd</code>的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f = file(&apos;/etc/passwd&apos;)</div><div class="line">for line in f.readlines(): #循环文件的每一行 </div><div class="line">    line = line.strip(&apos;\n&apos;).split(&apos;:&apos;) </div><div class="line">    print line</div></pre></td></tr></table></figure>
+<p>得到的结果如下<strong>一个列表</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[&apos;root&apos;, &apos;x&apos;, &apos;0&apos;, &apos;0&apos;, &apos;root&apos;, &apos;/root&apos;, &apos;/bin/bash&apos;]</div><div class="line">[&apos;daemon&apos;, &apos;x&apos;, &apos;1&apos;, &apos;1&apos;, &apos;daemon&apos;, &apos;/usr/sbin&apos;, &apos;/usr/sbin/nologin&apos;]</div><div class="line">[&apos;bin&apos;, &apos;x&apos;, &apos;2&apos;, &apos;2&apos;, &apos;bin&apos;, &apos;/bin&apos;, &apos;/usr/sbin/nologin&apos;]</div><div class="line">[&apos;sys&apos;, &apos;x&apos;, &apos;3&apos;, &apos;3&apos;, &apos;sys&apos;, &apos;/dev&apos;, &apos;/usr/sbin/nologin&apos;]</div><div class="line">[&apos;sync&apos;, &apos;x&apos;, &apos;4&apos;, &apos;65534&apos;, &apos;sync&apos;, &apos;/bin&apos;, &apos;/bin/sync&apos;]</div><div class="line">[&apos;games&apos;, &apos;x&apos;, &apos;5&apos;, &apos;60&apos;, &apos;games&apos;, &apos;/usr/games&apos;, &apos;/usr/sbin/nologin&apos;]</div><div class="line">[&apos;man&apos;, &apos;x&apos;, &apos;6&apos;, &apos;12&apos;, &apos;man&apos;, &apos;/var/cache/man&apos;, &apos;/usr/sbin/nologin&apos;]</div></pre></td></tr></table></figure></p>
+<p>打印第1列，第2列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print line[0],line[1]</div></pre></td></tr></table></figure></p>
+<h3 id="2-2-写文件"><a href="#2-2-写文件" class="headerlink" title="2.2 写文件"></a>2.2 写文件</h3><p>语言本身不存在文件保护的设置，避免多个程序对同一个文件进行操作，需要自己来完成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f.closed</div><div class="line">False</div></pre></td></tr></table></figure></p>
+<p><strong>如果<code>f.closed</code>值为False,说明文件已经被打开</strong></p>
+<p>显示文件的字符集，默认为ASCII<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f.encoding</div><div class="line">&gt;&gt;&gt; print f.encoding</div><div class="line">None</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = file(&apos;test_coding&apos;,&apos;w&apos;) </div><div class="line">&gt;&gt;&gt; f.write(u&apos;测试文件编码&apos;) </div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-5: ordinal not in range(128)</div><div class="line">&gt;&gt;&gt; f.write(u&apos;测试文件编码&apos;.encode(&apos;utf-8&apos;))</div><div class="line">&gt;&gt;&gt; f.flush()</div></pre></td></tr></table></figure>
+<p>读到末尾，<code>next()</code>会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f = file(&apos;test_coding&apos;,&apos;r&apos;) </div><div class="line">&gt;&gt;&gt; f.readline()</div><div class="line">&apos;&apos;</div><div class="line">&gt;&gt;&gt; f.next()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">StopIteration</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="3-文件操作相关方法"><a href="#3-文件操作相关方法" class="headerlink" title="3. 文件操作相关方法"></a>3. 文件操作相关方法</h2><p>readline是通过next实现的</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f.readlines()</td>
+<td>以列表的形式读出文件</td>
+</tr>
+<tr>
+<td>f.read()</td>
+<td>以字符串的形式，一次性读出文件</td>
+</tr>
+<tr>
+<td>f.seek()</td>
+<td>跳到文件的指定位置</td>
+</tr>
+<tr>
+<td>f.tell()</td>
+<td>当前位置</td>
+</tr>
+<tr>
+<td>f.truncate(100)</td>
+<td>从头开始截断文件</td>
+</tr>
+<tr>
+<td>f.writelines()</td>
+<td>多行写</td>
+</tr>
+<tr>
+<td>f.xreadlines()</td>
+<td>逐行读</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -379,7 +549,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -388,17 +558,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/07/ubuntu指定默认编辑器/" rel="next" title="ubuntu指定默认编辑器">
-                <i class="fa fa-chevron-left"></i> ubuntu指定默认编辑器
+              <a href="/2017/03/20/python用户交互/" rel="next" title="python用户交互">
+                <i class="fa fa-chevron-left"></i> python用户交互
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/27/docker安装/" rel="prev" title="docker安装">
-                docker安装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,7 +705,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-swap说明"><span class="nav-text">1. swap说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用dd创建swap"><span class="nav-text">2. 使用dd创建swap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-查看当前内存"><span class="nav-text">2.1 查看当前内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建swap文件"><span class="nav-text">2.2 创建swap文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-格式化swap文件"><span class="nav-text">2.3 格式化swap文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-挂载"><span class="nav-text">2.4 挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-添加开机启动"><span class="nav-text">2.5 添加开机启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-相关命令"><span class="nav-text">3. 相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-swap的优化"><span class="nav-text">4. swap的优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文件操作"><span class="nav-text">1. 文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-以只读方式打开文件"><span class="nav-text">1.1 以只读方式打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-以只写方式打开文件"><span class="nav-text">1.2 以只写方式打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-以追加的方式打开文件"><span class="nav-text">1.3 以追加的方式打开文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实例"><span class="nav-text">2. 实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-读取-etc-passwd的内容"><span class="nav-text">2.1 读取/etc/passwd的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-写文件"><span class="nav-text">2.2 写文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-文件操作相关方法"><span class="nav-text">3. 文件操作相关方法</span></a></li></ol></div>
             
           </div>
         </section>
