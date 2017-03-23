@@ -92,36 +92,42 @@
 
 模式
 操作符
+说明
 
 
 
 
 只读
 r
+文件必须存在
 
 
 只写
 w
+文件不存在则创建，文件存在则清空文件内容
 
 
 追加
 a
+文件不存在则创建，文件存在则在文件末尾添加内容
 
 
 读写
-r+b
+r+
+
 
 
 写读
-w+b
+w+
+
 
 
 追加
-a+b
+a+
 
 
 
-在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python文件处理">
 <meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/03/22/python文件处理/index.html">
@@ -132,37 +138,43 @@ a+b
 
 模式
 操作符
+说明
 
 
 
 
 只读
 r
+文件必须存在
 
 
 只写
 w
+文件不存在则创建，文件存在则清空文件内容
 
 
 追加
 a
+文件不存在则创建，文件存在则在文件末尾添加内容
 
 
 读写
-r+b
+r+
+
 
 
 写读
-w+b
+w+
+
 
 
 追加
-a+b
+a+
 
 
 
-在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
-<meta property="og:updated_time" content="2017-03-22T14:33:11.494Z">
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操">
+<meta property="og:updated_time" content="2017-03-23T05:39:30.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python文件处理">
 <meta name="twitter:description" content="1. 文件操作file(‘文件名’,’操作符’)省略操作符 默认为读
@@ -171,36 +183,42 @@ a+b
 
 模式
 操作符
+说明
 
 
 
 
 只读
 r
+文件必须存在
 
 
 只写
 w
+文件不存在则创建，文件存在则清空文件内容
 
 
 追加
 a
+文件不存在则创建，文件存在则在文件末尾添加内容
 
 
 读写
-r+b
+r+
+
 
 
 写读
-w+b
+w+
+
 
 
 追加
-a+b
+a+
 
 
 
-在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操作以只写的方式打开文件，那你就不能读操作以追加的方式打开文件，也应该是不能进行读操作的操作完毕，不要忘记关闭">
+在python中，以什么样的方式出来文件是比较重要的，如果你以只读的方式打开文件，那你就不能写操">
 
 
 
@@ -437,32 +455,38 @@ a+b
 <tr>
 <th>模式</th>
 <th>操作符</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>只读</td>
 <td><code>r</code></td>
+<td>文件必须存在</td>
 </tr>
 <tr>
 <td>只写</td>
 <td><code>w</code></td>
+<td>文件不存在则创建，文件存在则清空文件内容</td>
 </tr>
 <tr>
 <td>追加</td>
 <td><code>a</code></td>
+<td>文件不存在则创建，文件存在则在文件末尾添加内容</td>
 </tr>
 <tr>
 <td>读写</td>
-<td><code>r+b</code></td>
+<td><code>r+</code></td>
+<td></td>
 </tr>
 <tr>
 <td>写读</td>
-<td><code>w+b</code></td>
+<td><code>w+</code></td>
+<td></td>
 </tr>
 <tr>
 <td>追加</td>
-<td><code>a+b</code></td>
+<td><code>a+</code></td>
 </tr>
 </tbody>
 </table>
