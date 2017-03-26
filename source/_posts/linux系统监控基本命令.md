@@ -182,5 +182,5 @@ todo
 todo
 
 
-## 6. linxu系统性能分析
+## 6. linux系统性能分析
 分析次序为cpu mem disk network
