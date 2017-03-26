@@ -4,6 +4,96 @@
   
     
     <entry>
+      <title><![CDATA[linux系统监控基本命令]]></title>
+      <url>http://niuzhiqiang90.coding.me/2017/03/25/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h2 id="1-nmon软件"><a href="#1-nmon软件" class="headerlink" title="1. nmon软件"></a>1. nmon软件</h2><h3 id="1-1-运行nmon软件"><a href="#1-1-运行nmon软件" class="headerlink" title="1.1 运行nmon软件"></a>1.1 运行nmon软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:~$ nmon</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">┌nmon─14g──────[H for help]───Hostname=localhost────Refresh= 2secs ───16:48.29────────────────────────┐</div><div class="line">------------------------------       For help type H or ...                                           │</div><div class="line">│  #    #  #    #   ####   #    #        nmon -?  - hint                                              │</div><div class="line">│  ##   #  ##  ##  #    #  ##   #        nmon -h  - full                                              │</div><div class="line">│  # #  #  # ## #  #    #  # #  #                                                                     │</div><div class="line">│  #  # #  #    #  #    #  #  # #       To start the same way every time                              │</div><div class="line">│  #   ##  #    #  #    #  #   ##        set the NMON ksh variable                                    │</div><div class="line">│  #    #  #    #   ####   #    #                                                                     │</div><div class="line">│  ------------------------------                                                                     │</div><div class="line">│                                                                                                     │</div><div class="line">│  Use these keys to toggle statistics on/off:                                                        │</div><div class="line">│     c = CPU        l = CPU Long-term   - = Faster screen updates                                    │</div><div class="line">│     m = Memory     j = Filesystems     + = Slower screen updates                                    │</div><div class="line">│     d = Disks      n = Network         V = Virtual Memory                                           │</div><div class="line">│     r = Resource   N = NFS             v = Verbose hints                                            │</div><div class="line">│     k = kernel     t = Top-processes   . = only busy disks/procs                                    │</div><div class="line">│     h = more options                 q = Quit                                                       │</div><div class="line">│─────────────────────────────────────────────────────────────────────────────────────────────────────│</div></pre></td></tr></table></figure>
+<h3 id="1-2-显示CPU信息"><a href="#1-2-显示CPU信息" class="headerlink" title="1.2 显示CPU信息"></a>1.2 显示CPU信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">│ CPU Utilisation ──────────────────────────────────────────────────────────────</div><div class="line">│---------------------------+-------------------------------------------------+</div><div class="line">│CPU  User%  Sys% Wait% Idle|0          |25         |50          |75       100|</div><div class="line">│  1  15.2   1.5   0.0  83.2|UUUUUUU           &gt;                              |</div><div class="line">│  2   7.1   2.6   0.0  90.3|UUUs             &gt;                               |</div><div class="line">│  3  17.5   1.0   0.5  81.0|UUUUUUUU        &gt;                                |</div><div class="line">│  4  13.6   3.0   0.0  83.3|UUUUUUs            &gt;                             |</div><div class="line">│---------------------------+-------------------------------------------------+</div><div class="line">│Avg  13.4   2.1   0.3  84.3|UUUUUUs        &gt;                                 |</div><div class="line">│---------------------------+-------------------------------------------------+</div></pre></td></tr></table></figure>
+<h3 id="1-3-显示内存信息"><a href="#1-3-显示内存信息" class="headerlink" title="1.3 显示内存信息"></a>1.3 显示内存信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">│ Memory Stats ──────────────────────────────────────────────────────────────────</div><div class="line">                RAM     High      Low     Swap    Page Size=4 KB</div><div class="line">│ Total MB      7843.5     -0.0     -0.0   3916.0</div><div class="line">│ Free  MB      1259.8     -0.0     -0.0   3915.6</div><div class="line">│ Free Percent    16.1%   100.0%   100.0%   100.0%</div><div class="line">│             MB                  MB                  MB</div><div class="line">│                      Cached=  2912.7     Active=  3842.7</div><div class="line">│ Buffers=   929.4 Swapcached=     0.0  Inactive =  1789.8</div><div class="line">│ Dirty  =     0.1 Writeback =     0.0  Mapped   =   946.5</div><div class="line">│ Slab   =   799.7 Commit_AS =  6624.9 PageTables=    40.2</div></pre></td></tr></table></figure>
+<h3 id="1-4-显示磁盘信息"><a href="#1-4-显示磁盘信息" class="headerlink" title="1.4 显示磁盘信息"></a>1.4 显示磁盘信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> Disk I/O ──/proc/diskstats────mostly in KB/s─────Warning:contains duplicates────</div><div class="line">│DiskName Busy  Read WriteKB|0          |25         |50          |75       100|</div><div class="line">│sda        5%    0.0   42.0|WW&gt;                                              |</div><div class="line">│sda1       0%    0.0    0.0|&gt;                                                |</div><div class="line">│sda2       0%    0.0    0.0|&gt;                                                |</div><div class="line">│sda5       5%    0.0   42.0|WW&gt;                                              |</div><div class="line">│sda6       0%    0.0    0.0|&gt;                                                |</div><div class="line">│Totals Read-MB/s=0.0      Writes-MB/s=0.1      Transfers/sec=12.0</div></pre></td></tr></table></figure>
+<h3 id="1-5-显示网络信息"><a href="#1-5-显示网络信息" class="headerlink" title="1.5 显示网络信息"></a>1.5 显示网络信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> Network I/O ────────────────────────────────────────────────────────────────────</div><div class="line">│I/F Name Recv=KB/s Trans=KB/s packin packout insize outsize Peak-&gt;Recv Trans </div><div class="line">│      lo     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0 </div><div class="line">│   wlan0     0.1     0.0       0.5      0.0   215.0    0.0        0.1     0.0 </div><div class="line">│ docker0     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0 </div><div class="line">│    eth0     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0</div><div class="line">│ Network Error Counters ─────────────────────────────────────────────────────────</div><div class="line">│I/F Name iErrors iDrop iOverrun iFrame oErrors   oDrop oOverrun oCarrier oColls</div><div class="line">│      lo       0       0       0       0       0       0       0       0       0</div><div class="line">│   wlan0       0       0       0       0       0       0       0       0       0</div><div class="line">│ docker0       0       0       0       0       0       0       0       0       0</div><div class="line">│    eth0       0       0       0       0       0       0       0       0       0</div></pre></td></tr></table></figure>
+<h3 id="1-6-显示内核信息"><a href="#1-6-显示内核信息" class="headerlink" title="1.6 显示内核信息"></a>1.6 显示内核信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Kernel Stats ────────────────────────────────────────────────────────────────────</div><div class="line">│ RunQueue              3   Load Average    CPU use since boot time</div><div class="line">│ ContextSwitch    2735.0    1 mins  0.54    Uptime Days=  0 Hours= 7 Mins=58</div><div class="line">│ Forks               0.5    5 mins  0.86    Idle   Days=  1 Hours= 1 Mins=36</div><div class="line">│ Interrupts        836.9   15 mins  0.92    Average CPU use=-221.51%</div></pre></td></tr></table></figure>
+<h2 id="2-ethstatus"><a href="#2-ethstatus" class="headerlink" title="2. ethstatus"></a>2. ethstatus</h2><p><code>ethstatus</code>可以实时监控网卡的带宽占用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">───────────────────.EthStatus v0.4a.──────────────────────────────[0/910]──────────────────────│</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div><div class="line">│                      ######                                                                  │</div><div class="line">│                                                                                              │</div><div class="line">│         ###                                                                                  │</div><div class="line">│        ON/OFF                      RX  TX                                                    │</div><div class="line">│                            0.00 B/s   0 Packets/s                                            │</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div><div class="line">│     IP Address:          192.168.1.116                                                       │</div><div class="line">│     Interface name:      wlan0         Graphic Using Speed:    9.77 MB/s                     │</div><div class="line">│     Top Speed:           732.00 B/s    Top Packets/s:          5                             │</div><div class="line">│     Received Packets:    593428        Transmited Packets:     437965                        │</div><div class="line">│     Received:            399.68 MB     Transmitted:            54.73 MB                      │</div><div class="line">│     Errors on Receiving: 0             Errors on Transmission: 0                             │</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div></pre></td></tr></table></figure>
+<h2 id="3-iftop监控网卡实时流量"><a href="#3-iftop监控网卡实时流量" class="headerlink" title="3. iftop监控网卡实时流量"></a>3. iftop监控网卡实时流量</h2><p>常用参数列表</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>指定需要监测的网卡</td>
+<td>sudo iftop -i wlan0</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>将输出的主机信息都通过ip显示，不进行DNS方向解析</td>
+<td>sudo iftop -n -i wlan0</td>
+</tr>
+<tr>
+<td>-B</td>
+<td>将输出以byte为单位显示网卡流量，默认是bit</td>
+<td>sudo iftop -B -i wlan0</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>以混杂模式运行iftop,此时iftop可以作为网络嗅探器</td>
+<td>sudo iftop -p -i wlan0</td>
+</tr>
+<tr>
+<td>-N</td>
+<td>只显示链接端口号，不显示对应的服务名称</td>
+<td>sudo iftop -N -i wlan0</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>显示主机及端口信息</td>
+<td>sudo iftop -P -i wlan0</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>显示特定网段的网卡进出流量</td>
+<td>sudo iftop -F 192.168.1.10/24</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="4-mtr"><a href="#4-mtr" class="headerlink" title="4. mtr"></a>4. mtr</h2><p>mtr是Linux中有一个非常棒的网络连通性判断工具,它结合了<code>ping</code>，<code>traceroute</code>，<code>nslookup</code>的相关特性。<br>常用参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s</td>
+<td>用来指定ping数据包的大小</td>
+</tr>
+<tr>
+<td>-nno-dns</td>
+<td>不对IP地址做域名解析</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>使用这个参数来设置ICMP返回之间的要求默认是1秒</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">                    My traceroute  [v0.85]                                     [0/102]</div><div class="line">localhost (0.0.0.0)                            Sun Mar 26 20:25:43 2017</div><div class="line">Keys:  Help   Display mode   Restart statistics   Order of fields   quit                                                                                                                          Packets               Pings</div><div class="line"> Host                                    Loss%   Snt   Last   Avg  Best  Wrst StDev</div><div class="line"> 1. 192.168.0.1                           0.0%     8    1.5   2.3   1.3   4.3   0.8</div><div class="line"> 2. 192.168.1.1                           0.0%     8    1.7   4.6   1.7  13.7   5.2</div><div class="line"> 3. 114.245.248.1                         0.0%     8   78.3 108.3   3.7 363.8 149.8</div><div class="line"> 4. 123.126.26.45                         0.0%     8    7.9  19.6   3.8  76.7  26.3</div><div class="line"> 5. 61.148.158.53                         0.0%     8    7.2  12.2   5.1  31.6   9.2</div><div class="line"> 6. 61.51.115.106                         0.0%     8   78.8  15.4   4.6  78.8  25.7</div><div class="line"> 7. 61.49.168.110                         0.0%     8    4.9   7.1   4.8  12.8   2.7</div><div class="line"> 8. ???</div><div class="line"> 9. ???</div><div class="line">10. 61.135.169.121                        0.0%     7    4.3   5.9   4.2  10.9   2.2</div></pre></td></tr></table></figure>
+<p><strong>说明</strong><br>todo</p>
+<h2 id="5-htop"><a href="#5-htop" class="headerlink" title="5. htop"></a>5. htop</h2><p>todo</p>
+<h2 id="6-linxu系统性能分析"><a href="#6-linxu系统性能分析" class="headerlink" title="6. linxu系统性能分析"></a>6. linxu系统性能分析</h2><p>分析次序为cpu mem disk network</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python字符串处理]]></title>
       <url>http://niuzhiqiang90.coding.me/2017/03/23/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</url>
       <content type="html"><![CDATA[<h2 id="1-字符串处理函数"><a href="#1-字符串处理函数" class="headerlink" title="1. 字符串处理函数"></a>1. 字符串处理函数</h2><table>
