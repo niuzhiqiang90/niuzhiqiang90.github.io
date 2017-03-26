@@ -1,0 +1,893 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Niu Zhiqiang's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1. nmon软件1.1 运行nmon软件1:~$ nmon
+123456789101112131415161718┌nmon─14g──────[H for help]───Hostname=localhost────Refresh= 2secs ───16:48.29────────────────────────┐------------------------------       Fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux系统监控基本命令">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/03/25/linux系统监控基本命令/index.html">
+<meta property="og:site_name" content="Niu Zhiqiang's blog">
+<meta property="og:description" content="1. nmon软件1.1 运行nmon软件1:~$ nmon
+123456789101112131415161718┌nmon─14g──────[H for help]───Hostname=localhost────Refresh= 2secs ───16:48.29────────────────────────┐------------------------------       Fo">
+<meta property="og:updated_time" content="2017-03-26T12:42:38.897Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux系统监控基本命令">
+<meta name="twitter:description" content="1. nmon软件1.1 运行nmon软件1:~$ nmon
+123456789101112131415161718┌nmon─14g──────[H for help]───Hostname=localhost────Refresh= 2secs ───16:48.29────────────────────────┐------------------------------       Fo">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/03/25/linux系统监控基本命令/"/>
+
+  <title> linux系统监控基本命令 | Niu Zhiqiang's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Niu Zhiqiang's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux系统监控基本命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-25T17:09:57+08:00" content="2017-03-25">
+              2017-03-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-nmon软件"><a href="#1-nmon软件" class="headerlink" title="1. nmon软件"></a>1. nmon软件</h2><h3 id="1-1-运行nmon软件"><a href="#1-1-运行nmon软件" class="headerlink" title="1.1 运行nmon软件"></a>1.1 运行nmon软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:~$ nmon</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">┌nmon─14g──────[H for help]───Hostname=localhost────Refresh= 2secs ───16:48.29────────────────────────┐</div><div class="line">------------------------------       For help type H or ...                                           │</div><div class="line">│  #    #  #    #   ####   #    #        nmon -?  - hint                                              │</div><div class="line">│  ##   #  ##  ##  #    #  ##   #        nmon -h  - full                                              │</div><div class="line">│  # #  #  # ## #  #    #  # #  #                                                                     │</div><div class="line">│  #  # #  #    #  #    #  #  # #       To start the same way every time                              │</div><div class="line">│  #   ##  #    #  #    #  #   ##        set the NMON ksh variable                                    │</div><div class="line">│  #    #  #    #   ####   #    #                                                                     │</div><div class="line">│  ------------------------------                                                                     │</div><div class="line">│                                                                                                     │</div><div class="line">│  Use these keys to toggle statistics on/off:                                                        │</div><div class="line">│     c = CPU        l = CPU Long-term   - = Faster screen updates                                    │</div><div class="line">│     m = Memory     j = Filesystems     + = Slower screen updates                                    │</div><div class="line">│     d = Disks      n = Network         V = Virtual Memory                                           │</div><div class="line">│     r = Resource   N = NFS             v = Verbose hints                                            │</div><div class="line">│     k = kernel     t = Top-processes   . = only busy disks/procs                                    │</div><div class="line">│     h = more options                 q = Quit                                                       │</div><div class="line">│─────────────────────────────────────────────────────────────────────────────────────────────────────│</div></pre></td></tr></table></figure>
+<h3 id="1-2-显示CPU信息"><a href="#1-2-显示CPU信息" class="headerlink" title="1.2 显示CPU信息"></a>1.2 显示CPU信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">│ CPU Utilisation ──────────────────────────────────────────────────────────────</div><div class="line">│---------------------------+-------------------------------------------------+</div><div class="line">│CPU  User%  Sys% Wait% Idle|0          |25         |50          |75       100|</div><div class="line">│  1  15.2   1.5   0.0  83.2|UUUUUUU           &gt;                              |</div><div class="line">│  2   7.1   2.6   0.0  90.3|UUUs             &gt;                               |</div><div class="line">│  3  17.5   1.0   0.5  81.0|UUUUUUUU        &gt;                                |</div><div class="line">│  4  13.6   3.0   0.0  83.3|UUUUUUs            &gt;                             |</div><div class="line">│---------------------------+-------------------------------------------------+</div><div class="line">│Avg  13.4   2.1   0.3  84.3|UUUUUUs        &gt;                                 |</div><div class="line">│---------------------------+-------------------------------------------------+</div></pre></td></tr></table></figure>
+<h3 id="1-3-显示内存信息"><a href="#1-3-显示内存信息" class="headerlink" title="1.3 显示内存信息"></a>1.3 显示内存信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">│ Memory Stats ──────────────────────────────────────────────────────────────────</div><div class="line">                RAM     High      Low     Swap    Page Size=4 KB</div><div class="line">│ Total MB      7843.5     -0.0     -0.0   3916.0</div><div class="line">│ Free  MB      1259.8     -0.0     -0.0   3915.6</div><div class="line">│ Free Percent    16.1%   100.0%   100.0%   100.0%</div><div class="line">│             MB                  MB                  MB</div><div class="line">│                      Cached=  2912.7     Active=  3842.7</div><div class="line">│ Buffers=   929.4 Swapcached=     0.0  Inactive =  1789.8</div><div class="line">│ Dirty  =     0.1 Writeback =     0.0  Mapped   =   946.5</div><div class="line">│ Slab   =   799.7 Commit_AS =  6624.9 PageTables=    40.2</div></pre></td></tr></table></figure>
+<h3 id="1-4-显示磁盘信息"><a href="#1-4-显示磁盘信息" class="headerlink" title="1.4 显示磁盘信息"></a>1.4 显示磁盘信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> Disk I/O ──/proc/diskstats────mostly in KB/s─────Warning:contains duplicates────</div><div class="line">│DiskName Busy  Read WriteKB|0          |25         |50          |75       100|</div><div class="line">│sda        5%    0.0   42.0|WW&gt;                                              |</div><div class="line">│sda1       0%    0.0    0.0|&gt;                                                |</div><div class="line">│sda2       0%    0.0    0.0|&gt;                                                |</div><div class="line">│sda5       5%    0.0   42.0|WW&gt;                                              |</div><div class="line">│sda6       0%    0.0    0.0|&gt;                                                |</div><div class="line">│Totals Read-MB/s=0.0      Writes-MB/s=0.1      Transfers/sec=12.0</div></pre></td></tr></table></figure>
+<h3 id="1-5-显示网络信息"><a href="#1-5-显示网络信息" class="headerlink" title="1.5 显示网络信息"></a>1.5 显示网络信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> Network I/O ────────────────────────────────────────────────────────────────────</div><div class="line">│I/F Name Recv=KB/s Trans=KB/s packin packout insize outsize Peak-&gt;Recv Trans </div><div class="line">│      lo     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0 </div><div class="line">│   wlan0     0.1     0.0       0.5      0.0   215.0    0.0        0.1     0.0 </div><div class="line">│ docker0     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0 </div><div class="line">│    eth0     0.0     0.0       0.0      0.0     0.0    0.0        0.0     0.0</div><div class="line">│ Network Error Counters ─────────────────────────────────────────────────────────</div><div class="line">│I/F Name iErrors iDrop iOverrun iFrame oErrors   oDrop oOverrun oCarrier oColls</div><div class="line">│      lo       0       0       0       0       0       0       0       0       0</div><div class="line">│   wlan0       0       0       0       0       0       0       0       0       0</div><div class="line">│ docker0       0       0       0       0       0       0       0       0       0</div><div class="line">│    eth0       0       0       0       0       0       0       0       0       0</div></pre></td></tr></table></figure>
+<h3 id="1-6-显示内核信息"><a href="#1-6-显示内核信息" class="headerlink" title="1.6 显示内核信息"></a>1.6 显示内核信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Kernel Stats ────────────────────────────────────────────────────────────────────</div><div class="line">│ RunQueue              3   Load Average    CPU use since boot time</div><div class="line">│ ContextSwitch    2735.0    1 mins  0.54    Uptime Days=  0 Hours= 7 Mins=58</div><div class="line">│ Forks               0.5    5 mins  0.86    Idle   Days=  1 Hours= 1 Mins=36</div><div class="line">│ Interrupts        836.9   15 mins  0.92    Average CPU use=-221.51%</div></pre></td></tr></table></figure>
+<h2 id="2-ethstatus"><a href="#2-ethstatus" class="headerlink" title="2. ethstatus"></a>2. ethstatus</h2><p><code>ethstatus</code>可以实时监控网卡的带宽占用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">───────────────────.EthStatus v0.4a.──────────────────────────────[0/910]──────────────────────│</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div><div class="line">│                      ######                                                                  │</div><div class="line">│                                                                                              │</div><div class="line">│         ###                                                                                  │</div><div class="line">│        ON/OFF                      RX  TX                                                    │</div><div class="line">│                            0.00 B/s   0 Packets/s                                            │</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div><div class="line">│     IP Address:          192.168.1.116                                                       │</div><div class="line">│     Interface name:      wlan0         Graphic Using Speed:    9.77 MB/s                     │</div><div class="line">│     Top Speed:           732.00 B/s    Top Packets/s:          5                             │</div><div class="line">│     Received Packets:    593428        Transmited Packets:     437965                        │</div><div class="line">│     Received:            399.68 MB     Transmitted:            54.73 MB                      │</div><div class="line">│     Errors on Receiving: 0             Errors on Transmission: 0                             │</div><div class="line">│                                                                                              │</div><div class="line">│                                                                                              │</div></pre></td></tr></table></figure>
+<h2 id="3-iftop监控网卡实时流量"><a href="#3-iftop监控网卡实时流量" class="headerlink" title="3. iftop监控网卡实时流量"></a>3. iftop监控网卡实时流量</h2><p>常用参数列表</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>指定需要监测的网卡</td>
+<td>sudo iftop -i wlan0</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>将输出的主机信息都通过ip显示，不进行DNS方向解析</td>
+<td>sudo iftop -n -i wlan0</td>
+</tr>
+<tr>
+<td>-B</td>
+<td>将输出以byte为单位显示网卡流量，默认是bit</td>
+<td>sudo iftop -B -i wlan0</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>以混杂模式运行iftop,此时iftop可以作为网络嗅探器</td>
+<td>sudo iftop -p -i wlan0</td>
+</tr>
+<tr>
+<td>-N</td>
+<td>只显示链接端口号，不显示对应的服务名称</td>
+<td>sudo iftop -N -i wlan0</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>显示主机及端口信息</td>
+<td>sudo iftop -P -i wlan0</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>显示特定网段的网卡进出流量</td>
+<td>sudo iftop -F 192.168.1.10/24</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="4-mtr"><a href="#4-mtr" class="headerlink" title="4. mtr"></a>4. mtr</h2><p>mtr是Linux中有一个非常棒的网络连通性判断工具,它结合了<code>ping</code>，<code>traceroute</code>，<code>nslookup</code>的相关特性。<br>常用参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s</td>
+<td>用来指定ping数据包的大小</td>
+</tr>
+<tr>
+<td>-nno-dns</td>
+<td>不对IP地址做域名解析</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>使用这个参数来设置ICMP返回之间的要求默认是1秒</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">                    My traceroute  [v0.85]                                     [0/102]</div><div class="line">localhost (0.0.0.0)                            Sun Mar 26 20:25:43 2017</div><div class="line">Keys:  Help   Display mode   Restart statistics   Order of fields   quit                                                                                                                          Packets               Pings</div><div class="line"> Host                                    Loss%   Snt   Last   Avg  Best  Wrst StDev</div><div class="line"> 1. 192.168.0.1                           0.0%     8    1.5   2.3   1.3   4.3   0.8</div><div class="line"> 2. 192.168.1.1                           0.0%     8    1.7   4.6   1.7  13.7   5.2</div><div class="line"> 3. 114.245.248.1                         0.0%     8   78.3 108.3   3.7 363.8 149.8</div><div class="line"> 4. 123.126.26.45                         0.0%     8    7.9  19.6   3.8  76.7  26.3</div><div class="line"> 5. 61.148.158.53                         0.0%     8    7.2  12.2   5.1  31.6   9.2</div><div class="line"> 6. 61.51.115.106                         0.0%     8   78.8  15.4   4.6  78.8  25.7</div><div class="line"> 7. 61.49.168.110                         0.0%     8    4.9   7.1   4.8  12.8   2.7</div><div class="line"> 8. ???</div><div class="line"> 9. ???</div><div class="line">10. 61.135.169.121                        0.0%     7    4.3   5.9   4.2  10.9   2.2</div></pre></td></tr></table></figure>
+<p><strong>说明</strong><br>todo</p>
+<h2 id="5-htop"><a href="#5-htop" class="headerlink" title="5. htop"></a>5. htop</h2><p>todo</p>
+<h2 id="6-linxu系统性能分析"><a href="#6-linxu系统性能分析" class="headerlink" title="6. linxu系统性能分析"></a>6. linxu系统性能分析</h2><p>分析次序为cpu mem disk network</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/23/python字符串处理/" rel="next" title="python字符串处理">
+                <i class="fa fa-chevron-left"></i> python字符串处理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Niu Zhiqiang" />
+          <p class="site-author-name" itemprop="name">Niu Zhiqiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niuzhiqiang90" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/niuzhiqiang90" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-nmon软件"><span class="nav-text">1. nmon软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-运行nmon软件"><span class="nav-text">1.1 运行nmon软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-显示CPU信息"><span class="nav-text">1.2 显示CPU信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-显示内存信息"><span class="nav-text">1.3 显示内存信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-显示磁盘信息"><span class="nav-text">1.4 显示磁盘信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-显示网络信息"><span class="nav-text">1.5 显示网络信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-显示内核信息"><span class="nav-text">1.6 显示内核信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ethstatus"><span class="nav-text">2. ethstatus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-iftop监控网卡实时流量"><span class="nav-text">3. iftop监控网卡实时流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-mtr"><span class="nav-text">4. mtr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-htop"><span class="nav-text">5. htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-linxu系统性能分析"><span class="nav-text">6. linxu系统性能分析</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niu Zhiqiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<br>
+
+本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/sitemap.xml">Google网站地图</a></span>
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/baidusitemap.xml">百度网站地图</a></span>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+ })();
+</script>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
