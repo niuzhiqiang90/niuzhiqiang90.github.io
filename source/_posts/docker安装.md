@@ -20,8 +20,9 @@ sudo apt-key adv \
 ```
 ### 1.3 添加对应的源
 源列表
+
 | Ubuntu version      | Repository                                                 |
-| ---                 |
+| ---                 | --                                                         |
 | Precise 12.04 (LTS) | deb https://apt.dockerproject.org/repo ubuntu-precise main |
 | Trusty 14.04 (LTS)  | deb https://apt.dockerproject.org/repo ubuntu-trusty main  |
 | Wily 15.10          | deb https://apt.dockerproject.org/repo ubuntu-wily main    |

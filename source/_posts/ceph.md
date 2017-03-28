@@ -29,7 +29,7 @@ sudo vi /etc/hosts
 </font>**
 
 
-## 1.2 免密码登录
+### 1.2 免密码登录
 ```
 # 生成密钥对
 ssh-keygen -t rsa
@@ -45,7 +45,7 @@ echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph
 sudo chmod 0440 /etc/sudoers.d/ceph
 ```
 
-## 1.3 安装ceph-deploy软件
+### 1.3 安装ceph-deploy软件
 
 ```
 wget -q -O- 'https://download.ceph.com/keys/release.asc' | sudo apt-key add -
@@ -287,3 +287,24 @@ ceph@node1:~/opt/ceph$ sudo mkdir /mnt/cephfs
 ceph@node1:~/opt/ceph$ sudo ceph-fuse -m {ip-address-of-monitor}:6789 /mnt/cephfs
 ceph@node1:~/opt/ceph$ df -h
 ```
+
+## 11. 注意事项
+<font color=red>用户ceph不能够锁定，为了安全问题，只能将用户ceph改为nologin</font>
+ 
+## 12. 服务器重启
+服务器重启后，对于mon节点来说`osd`和`mon`会自动启动
+osd节点的osd服务也会自动启动
+ 
+ mon节点的`mds`服务需要手动启动，启动方法为
+ ```
+ sudo ceph-mds --cluster {cluster-name} -i {id} -m {mon-hostname}:{mon-port} [-f]
+ ```
+ **另**
+ 启动完mds后还需要执行挂载命令
+ ```
+ sudo ceph-fuse -m {ip-address-of-monitor}:6789 /mnt/cephfs
+ ```
+ 可以将以上命令**放入到开机启动项中**，但是服务器重启完成后要进行检查ceph的运行状态
+ `ceph -s`或者`ps -ef | grep ceph` 或者 通过`df -h`查看ceph-fuse是否成功挂载目录
+ 如果长时间没成功，并且`ceph -s`报错，可以尝试将另一节点node2也重启，node1可以成功挂载。
+

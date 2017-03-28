@@ -228,7 +228,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/23/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/23/python字符串处理/</id>
     <published>2017-03-23T13:49:45.000Z</published>
-    <updated>2017-03-23T14:29:58.262Z</updated>
+    <updated>2017-03-24T09:09:31.021Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-字符串处理函数"><a href="#1-字符串处理函数" class="headerlink" title="1. 字符串处理函数"></a>1. 字符串处理函数</h2><table>
 <thead>
@@ -351,7 +351,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/22/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/22/python文件处理/</id>
     <published>2017-03-22T12:51:07.000Z</published>
-    <updated>2017-03-23T13:49:22.090Z</updated>
+    <updated>2017-03-23T05:39:30.986Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h2><p>file(‘文件名’,’操作符’)<br><strong>省略操作符 默认为读</strong></p>
 <table>
@@ -473,7 +473,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/20/python用户交互/</id>
     <published>2017-03-20T14:05:30.000Z</published>
-    <updated>2017-03-21T13:16:24.320Z</updated>
+    <updated>2017-03-21T03:21:14.840Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-raw-input"><a href="#1-raw-input" class="headerlink" title="1. raw_input()"></a>1. raw_input()</h2><p>raw_input() 从标准输入中读取一个字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">raw_input(...)</div><div class="line">    raw_input([prompt]) -&gt; string</div><div class="line">    </div><div class="line">    Read a string from standard input.  The trailing newline is stripped.</div><div class="line">    If the user hits EOF (Unix: Ctl-D, Windows: Ctl-Z+Return), raise EOFError.</div><div class="line">    On Unix, GNU readline is used if enabled.  The prompt string, if given,</div><div class="line">    is printed without a trailing newline before reading.</div></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">name = raw_input(&apos;Please input your name:&apos;)</div><div class="line">age = raw_input(&apos;age:&apos;)</div><div class="line">print &quot;name: &quot; % name</div><div class="line">print &quot;age:&quot; % age</div></pre></td></tr></table></figure></p>
@@ -499,7 +499,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/20/python%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/20/python使用和导入模块/</id>
     <published>2017-03-20T13:47:06.000Z</published>
-    <updated>2017-03-21T13:16:24.320Z</updated>
+    <updated>2017-03-21T03:01:52.696Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-导入模块的方法"><a href="#1-导入模块的方法" class="headerlink" title="1. 导入模块的方法"></a>1. 导入模块的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import moduleName 导入模块</div><div class="line">From module import sayHi  从模块导入某个具体的方法</div><div class="line">import moduleName as newName  给模块起别名</div><div class="line">from sys import *   导入模块下的所有方法</div></pre></td></tr></table></figure>
 <ul>
@@ -538,7 +538,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/20/python字符编码/</id>
     <published>2017-03-20T13:20:21.000Z</published>
-    <updated>2017-03-21T13:16:24.320Z</updated>
+    <updated>2017-03-21T02:55:06.348Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-ASSIC码"><a href="#1-ASSIC码" class="headerlink" title="1. ASSIC码"></a>1. ASSIC码</h2><p>一共规定了128个字符的编码</p>
 <h3 id="1-1-ord函数"><a href="#1-1-ord函数" class="headerlink" title="1.1 ord函数"></a>1.1 ord函数</h3><p><code>ord(&#39;single-char&#39;)</code></p>
@@ -577,14 +577,14 @@
     <link href="http://niuzhiqiang90.coding.me/2017/03/13/ceph/"/>
     <id>http://niuzhiqiang90.coding.me/2017/03/13/ceph/</id>
     <published>2017-03-13T13:13:03.000Z</published>
-    <updated>2017-03-13T13:22:44.597Z</updated>
+    <updated>2017-03-28T03:30:39.789Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ceph的搭建"><a href="#ceph的搭建" class="headerlink" title="ceph的搭建"></a>ceph的搭建</h1><p><strong>注</strong> 如果在安装过程中，想要重新安装，需要执行如下命令清除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo stop ceph-all  #停止所有CEPH进程</div><div class="line">ceph-deploy uninstall  [&#123;ceph-node&#125;]   #卸载所有ceph程序</div><div class="line">ceph-deploy purge   [[ceph-node&#125; [&#123;ceph-node&#125;] #删除ceph相关的包</div><div class="line">ceph-deploy purgedata &#123;ceph-node&#125; [&#123;ceph-node&#125;]   #删除ceph相关的包</div><div class="line">ceph-deploy forgetkeys #删除key</div></pre></td></tr></table></figure></p>
 <h2 id="1-安装前准备"><a href="#1-安装前准备" class="headerlink" title="1. 安装前准备"></a>1. 安装前准备</h2><h3 id="1-1-添加hosts解析"><a href="#1-1-添加hosts解析" class="headerlink" title="1.1 添加hosts解析"></a>1.1 添加hosts解析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/hosts</div><div class="line"></div><div class="line"># 添加如下内容</div><div class="line">192.168.1.174	node1</div><div class="line">192.168.1.175	node2</div></pre></td></tr></table></figure>
 <p><strong>注:  <font color="red">node1 node2必须为hostname，因为在安装过程中会验证hostname是否为node{1,2}<br>遇到这个错误，需要完全清理ceph软件和配置数据，从头再来<br></font></strong></p>
-<h2 id="1-2-免密码登录"><a href="#1-2-免密码登录" class="headerlink" title="1.2 免密码登录"></a>1.2 免密码登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 生成密钥对</div><div class="line">ssh-keygen -t rsa</div><div class="line"></div><div class="line"># admin节点需要通过密钥对登录到其他节点</div><div class="line">ssh-copy-id ceph@node1</div><div class="line">ssh-copy-id ceph@node2</div></pre></td></tr></table></figure>
+<h3 id="1-2-免密码登录"><a href="#1-2-免密码登录" class="headerlink" title="1.2 免密码登录"></a>1.2 免密码登录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 生成密钥对</div><div class="line">ssh-keygen -t rsa</div><div class="line"></div><div class="line"># admin节点需要通过密钥对登录到其他节点</div><div class="line">ssh-copy-id ceph@node1</div><div class="line">ssh-copy-id ceph@node2</div></pre></td></tr></table></figure>
 <p>在<strong>每个Ceph节点</strong>中为用户增加 root 权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &quot;ceph ALL = (root) NOPASSWD:ALL&quot; | sudo tee /etc/sudoers.d/ceph</div><div class="line">sudo chmod 0440 /etc/sudoers.d/ceph</div></pre></td></tr></table></figure></p>
-<h2 id="1-3-安装ceph-deploy软件"><a href="#1-3-安装ceph-deploy软件" class="headerlink" title="1.3 安装ceph-deploy软件"></a>1.3 安装ceph-deploy软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">wget -q -O- &apos;https://download.ceph.com/keys/release.asc&apos; | sudo apt-key add -</div><div class="line"></div><div class="line"># 添加Ceph软件包源，用Ceph稳定版（如cuttlefish 、 dumpling 、 emperor 、 firefly 等等）替换掉 &#123;ceph-stable-release&#125;</div><div class="line"># echo deb http://download.ceph.com/debian-&#123;ceph-stable-release&#125;/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list</div><div class="line"># 例如：</div><div class="line">echo deb http://download.ceph.com/debian-dumpling/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install ceph-deploy</div></pre></td></tr></table></figure>
+<h3 id="1-3-安装ceph-deploy软件"><a href="#1-3-安装ceph-deploy软件" class="headerlink" title="1.3 安装ceph-deploy软件"></a>1.3 安装ceph-deploy软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">wget -q -O- &apos;https://download.ceph.com/keys/release.asc&apos; | sudo apt-key add -</div><div class="line"></div><div class="line"># 添加Ceph软件包源，用Ceph稳定版（如cuttlefish 、 dumpling 、 emperor 、 firefly 等等）替换掉 &#123;ceph-stable-release&#125;</div><div class="line"># echo deb http://download.ceph.com/debian-&#123;ceph-stable-release&#125;/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list</div><div class="line"># 例如：</div><div class="line">echo deb http://download.ceph.com/debian-dumpling/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install ceph-deploy</div></pre></td></tr></table></figure>
 <h2 id="2-创建ceph目录"><a href="#2-创建ceph目录" class="headerlink" title="2. 创建ceph目录"></a>2. 创建ceph目录</h2><p>我们使用ceph-deploy部署，<strong>后续操作均在admin节点操作</strong>。<br>首先需要创建工作环境，该环境会保存所有的配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir opt/ceph</div><div class="line">cd opt/ceph</div></pre></td></tr></table></figure></p>
 <h2 id="3-创建集群"><a href="#3-创建集群" class="headerlink" title="3. 创建集群"></a>3. 创建集群</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ceph@node1:~/opt/ceph$ ceph-deploy new node1</div></pre></td></tr></table></figure>
 <p>其中node1是mon节点，执行该命令会生成ceph配置文件、monitor密钥文件以及日志文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ceph@node1:~/opt/ceph$ ls</div><div class="line">ceph.conf  ceph.log  ceph.mon.keyring</div></pre></td></tr></table></figure></p>
@@ -636,6 +636,12 @@
 <p>Now you are ready to create a Ceph filesystem.</p>
 <h2 id="10-挂载"><a href="#10-挂载" class="headerlink" title="10. 挂载"></a>10. 挂载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ceph@node1:~/opt/ceph$ sudo mkdir /mnt/cephfs</div><div class="line">ceph@node1:~/opt/ceph$ sudo ceph-fuse -m &#123;ip-address-of-monitor&#125;:6789 /mnt/cephfs</div><div class="line">ceph@node1:~/opt/ceph$ df -h</div></pre></td></tr></table></figure>
 <p>在node2上执行 安装ceph-fuse<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ceph@node1:~/opt/ceph$ sudo apt-get install ceph-fuse</div><div class="line">ceph@node1:~/opt/ceph$ sudo mkdir /mnt/cephfs</div><div class="line">ceph@node1:~/opt/ceph$ sudo ceph-fuse -m &#123;ip-address-of-monitor&#125;:6789 /mnt/cephfs</div><div class="line">ceph@node1:~/opt/ceph$ df -h</div></pre></td></tr></table></figure></p>
+<h2 id="11-注意事项"><a href="#11-注意事项" class="headerlink" title="11. 注意事项"></a>11. 注意事项</h2><font color="red">用户ceph不能够锁定，为了安全问题，只能将用户ceph改为nologin</font>
+
+<h2 id="12-服务器重启"><a href="#12-服务器重启" class="headerlink" title="12. 服务器重启"></a>12. 服务器重启</h2><p>服务器重启后，对于mon节点来说<code>osd</code>和<code>mon</code>会自动启动<br>osd节点的osd服务也会自动启动</p>
+<p> mon节点的<code>mds</code>服务需要手动启动，启动方法为<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ceph-mds --cluster &#123;cluster-name&#125; -i &#123;id&#125; -m &#123;mon-hostname&#125;:&#123;mon-port&#125; [-f]</div></pre></td></tr></table></figure></p>
+<p> <strong>另</strong><br> 启动完mds后还需要执行挂载命令<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ceph-fuse -m &#123;ip-address-of-monitor&#125;:6789 /mnt/cephfs</div></pre></td></tr></table></figure></p>
+<p> 可以将以上命令<strong>放入到开机启动项中</strong>，但是服务器重启完成后要进行检查ceph的运行状态<br> <code>ceph -s</code>或者<code>ps -ef | grep ceph</code> 或者 通过<code>df -h</code>查看ceph-fuse是否成功挂载目录<br> 如果长时间没成功，并且<code>ceph -s</code>报错，可以尝试将另一节点node2也重启，node1可以成功挂载。</p>
 ]]></content>
     
     <summary type="html">
@@ -656,7 +662,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%B9%E5%99%A8/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/27/docker容器/</id>
     <published>2017-02-27T09:26:49.000Z</published>
-    <updated>2017-03-13T13:34:57.009Z</updated>
+    <updated>2017-02-27T09:28:21.709Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-新建并启动容器"><a href="#1-新建并启动容器" class="headerlink" title="1. 新建并启动容器"></a>1. 新建并启动容器</h2><p><code>docker run</code><br>例：下面的命令输出一个“Hello World”并终止容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run ubuntu:14.04 /bin/echo &apos;Hello World&apos;</div><div class="line">Hello World</div></pre></td></tr></table></figure></p>
 <p>启动一个bash终端并允许交互<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">root@3060c837bd2d:/#</div></pre></td></tr></table></figure></p>
@@ -694,7 +700,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/27/docker%E9%95%9C%E5%83%8F/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/27/docker镜像/</id>
     <published>2017-02-27T09:15:33.000Z</published>
-    <updated>2017-03-13T13:34:57.009Z</updated>
+    <updated>2017-02-27T09:24:30.813Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-获取镜像"><a href="#1-获取镜像" class="headerlink" title="1. 获取镜像"></a>1. 获取镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker pull 镜像名</div></pre></td></tr></table></figure>
 <p>例：从Docker Hub仓库下载一个Ubuntu 12.04的操作系统的镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ubuntu@ubuntu:~$ sudo docker pull ubuntu:12.04</div><div class="line">12.04: Pulling from ubuntu</div><div class="line"></div><div class="line">8941035ae797: Pull complete </div><div class="line">191c4e1e4400: Pull complete </div><div class="line">fd04a9dc157f: Pull complete </div><div class="line">be08d59fa177: Pull complete </div><div class="line">ecf8c2069900: Pull complete </div><div class="line">8ea067ad7a27: Pull complete </div><div class="line">Digest: sha256:57a83f4b4f43f2d008c8ceaa9663a6f7ecd061fefa80da8f32e0f22c7b923390</div><div class="line">Status: Downloaded newer image for ubuntu:12.04</div></pre></td></tr></table></figure></p>
@@ -739,11 +745,37 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%89%E8%A3%85/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/27/docker安装/</id>
     <published>2017-02-27T09:03:14.000Z</published>
-    <updated>2017-03-13T13:34:57.009Z</updated>
+    <updated>2017-03-28T03:25:50.477Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-ubuntu通过Docker源安装最新版本"><a href="#1-ubuntu通过Docker源安装最新版本" class="headerlink" title="1. ubuntu通过Docker源安装最新版本"></a>1. ubuntu通过Docker源安装最新版本</h2><h3 id="1-1-安装依赖"><a href="#1-1-安装依赖" class="headerlink" title="1.1 安装依赖"></a>1.1 安装依赖</h3><p>要安装最新的Docker版本，首先需要安装apt-transport-https支持，之后通过添加源来安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install apt-transport-https ca-certificates</div></pre></td></tr></table></figure></p>
 <h3 id="1-2-添加GPG-key"><a href="#1-2-添加GPG-key" class="headerlink" title="1.2 添加GPG key"></a>1.2 添加GPG key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv \</div><div class="line">               --keyserver hkp://ha.pool.sks-keyservers.net:80 \</div><div class="line">               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</div></pre></td></tr></table></figure>
-<h3 id="1-3-添加对应的源"><a href="#1-3-添加对应的源" class="headerlink" title="1.3 添加对应的源"></a>1.3 添加对应的源</h3><p>源列表<br>| Ubuntu version      | Repository                                                 |<br>| —                 |<br>| Precise 12.04 (LTS) | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main |<br>| Trusty 14.04 (LTS)  | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main  |<br>| Wily 15.10          | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-wily main    |<br>| Xenial 16.04 (LTS)  | deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main  |</p>
+<h3 id="1-3-添加对应的源"><a href="#1-3-添加对应的源" class="headerlink" title="1.3 添加对应的源"></a>1.3 添加对应的源</h3><p>源列表</p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu version</th>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precise 12.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main</td>
+</tr>
+<tr>
+<td>Trusty 14.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main</td>
+</tr>
+<tr>
+<td>Wily 15.10</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-wily main</td>
+</tr>
+<tr>
+<td>Xenial 16.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main</td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;&lt;REPO&gt;&quot; | sudo tee /etc/apt/sources.list.d/docker.list</div></pre></td></tr></table></figure>
 <h3 id="1-4-更新apt包的index"><a href="#1-4-更新apt包的index" class="headerlink" title="1.4 更新apt包的index"></a>1.4 更新apt包的index</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
 <h3 id="1-5-安装docker"><a href="#1-5-安装docker" class="headerlink" title="1.5  安装docker"></a>1.5  安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install docker-engine</div><div class="line">sudo service docker start</div><div class="line">sudo docker run hello-world</div></pre></td></tr></table></figure>
@@ -772,7 +804,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/14/linux%E6%B7%BB%E5%8A%A0swap/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/14/linux添加swap/</id>
     <published>2017-02-14T06:39:33.000Z</published>
-    <updated>2017-02-15T05:22:18.000Z</updated>
+    <updated>2017-02-15T05:22:18.906Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-swap说明"><a href="#1-swap说明" class="headerlink" title="1. swap说明"></a>1. swap说明</h2><p>物理内存就是计算机的实际内存大小，由RAM芯片组成的。<br>虚拟内存则是虚拟出来的，使用磁盘代替内存。<br>虚拟内存的出现，让机器内存不够的情况得到部分解决。当程序运行起来由操作系统做具体虚拟内存到物理内存的替换和载。这里的虚拟内存就是swap</p>
 <p>当物理内存使用完或者达到一定比例之后，我们可以使用swap做临时的内存使用。当物理内存和swap都被使用完那么就会出错，out of memory。</p>
@@ -820,7 +852,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu%E6%8C%87%E5%AE%9A%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/07/ubuntu指定默认编辑器/</id>
     <published>2017-02-07T05:28:17.000Z</published>
-    <updated>2017-02-07T05:37:05.000Z</updated>
+    <updated>2017-02-07T05:37:05.228Z</updated>
     
     <content type="html"><![CDATA[<p>ubuntu默认的编辑器为nano，例如执行如下命令时就会使用nano来打开<br><code>sudo visudo</code>或者<code>git commit --amend</code></p>
 <p>如果想要设置成默认使用自己习惯的vi，可以执行如下命令进行选择</p>
@@ -845,7 +877,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1%E5%90%8D%E7%A7%B0/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/07/ubuntu修改网卡名称/</id>
     <published>2017-02-07T03:21:00.000Z</published>
-    <updated>2017-02-07T05:11:50.000Z</updated>
+    <updated>2017-02-07T05:11:50.768Z</updated>
     
     <content type="html"><![CDATA[<p>今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0<br>按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。</p>
 <h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h2><p>Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.<br>Find the rule matching your MAC address.<br>Change the NAME value from eth1 to eth0 i.e. NAME=”eth0”</p>
@@ -873,7 +905,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/02/07/python%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
     <id>http://niuzhiqiang90.coding.me/2017/02/07/python指定字符编码/</id>
     <published>2017-02-07T01:37:14.000Z</published>
-    <updated>2017-02-07T05:08:31.000Z</updated>
+    <updated>2017-02-07T05:08:31.088Z</updated>
     
     <content type="html"><![CDATA[<p>python指定字符编码的方式有多种<br><strong>编码格式是要写在解释器的下面的</strong></p>
 <h2 id="1-指定方法"><a href="#1-指定方法" class="headerlink" title="1.指定方法"></a>1.指定方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># _*_ coding:utf-8 _*_</div></pre></td></tr></table></figure>
@@ -903,7 +935,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/22/ubuntu%E5%AE%89%E8%A3%85powerline%E5%AD%97%E4%BD%93/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/22/ubuntu安装powerline字体/</id>
     <published>2017-01-22T06:25:10.000Z</published>
-    <updated>2017-01-24T08:15:33.000Z</updated>
+    <updated>2017-01-24T08:15:33.036Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-下载powerline字体和配置文件"><a href="#1-下载powerline字体和配置文件" class="headerlink" title="1.下载powerline字体和配置文件"></a>1.下载powerline字体和配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf</div><div class="line">$ wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf</div></pre></td></tr></table></figure>
 <h2 id="2-将字体放到字体目录中"><a href="#2-将字体放到字体目录中" class="headerlink" title="2.将字体放到字体目录中"></a>2.将字体放到字体目录中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mv ./PowerlineSymbols.otf /usr/local/share/fonts</div></pre></td></tr></table></figure>
@@ -928,7 +960,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/20/ubuntu%E5%AE%89%E8%A3%85%E4%B8%BA%E7%9F%A5%E7%AC%94%E8%AE%B0/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/20/ubuntu安装为知笔记/</id>
     <published>2017-01-20T07:38:17.000Z</published>
-    <updated>2017-01-20T08:00:27.000Z</updated>
+    <updated>2017-01-20T08:00:27.787Z</updated>
     
     <content type="html"><![CDATA[<p>今天在ubunu上重新安装wiznote时，发现<a href="http://www.wiz.cn/wiznote-linux.html" target="_blank" rel="external">官方</a>提供的方法只能编译安装，无奈步骤繁琐。接着我尝试了之前的安装方法，发现会报错。</p>
 <h2 id="1-添加软件源来安装"><a href="#1-添加软件源来安装" class="headerlink" title="1.添加软件源来安装"></a>1.添加软件源来安装</h2><p>ubuntu下可以通过软件源来进行安装，命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:wiznote-team</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install wiznote</div></pre></td></tr></table></figure></p>
@@ -960,7 +992,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/19/tmux%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/19/tmux安装配置使用/</id>
     <published>2017-01-19T08:35:05.000Z</published>
-    <updated>2017-01-19T08:46:16.000Z</updated>
+    <updated>2017-01-19T08:46:16.237Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># ubuntu</div><div class="line">sudo apt-get install tmux</div></pre></td></tr></table></figure>
 <p>或者<br><a href="https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz" target="_blank" rel="external">点击下载tmux安装包</a></p>
@@ -1073,7 +1105,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/14/git-cherry-pick/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/14/git-cherry-pick/</id>
     <published>2017-01-14T05:06:14.000Z</published>
-    <updated>2017-01-14T05:27:32.000Z</updated>
+    <updated>2017-01-14T05:27:32.553Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
 <p>cherry-pick的作用是在当前分支上应用某一个提交，在合并的时候特别有用。<br>当前在 fixbug 分支上，做了3次修改并提交到本地</p>
@@ -1115,7 +1147,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/12/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/12/git-分支操作/</id>
     <published>2017-01-12T08:42:22.000Z</published>
-    <updated>2017-01-12T08:51:44.000Z</updated>
+    <updated>2017-01-12T08:51:44.701Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-新建分支"><a href="#1-新建分支" class="headerlink" title="1 新建分支"></a>1 新建分支</h2><h3 id="1-1-新建本地分支"><a href="#1-1-新建本地分支" class="headerlink" title="1.1 新建本地分支"></a>1.1 新建本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b &lt;branchName&gt;</div></pre></td></tr></table></figure>
 <h3 id="1-2-推送本地分支到远程"><a href="#1-2-推送本地分支到远程" class="headerlink" title="1.2 推送本地分支到远程"></a>1.2 推送本地分支到远程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin &lt;localBranch&gt;:&lt;remoteBranch&gt;</div></pre></td></tr></table></figure>
@@ -1141,7 +1173,7 @@
     <link href="http://niuzhiqiang90.coding.me/2017/01/12/shell-style-guide/"/>
     <id>http://niuzhiqiang90.coding.me/2017/01/12/shell-style-guide/</id>
     <published>2017-01-12T06:06:39.000Z</published>
-    <updated>2017-01-12T06:09:56.000Z</updated>
+    <updated>2017-01-12T06:09:56.811Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Shell-Style-Guide"><a href="#Shell-Style-Guide" class="headerlink" title="Shell Style Guide"></a>Shell Style Guide</h1><h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a><span id="contents">Contents</span></h2><p>1.<a href="#a">Shell Files and Interpreter Invocation</a></p>
 <ul>
