@@ -541,6 +541,54 @@
     </entry>
     
     <entry>
+      <title><![CDATA[docker-registry]]></title>
+      <url>http://niuzhiqiang90.coding.me/2017/02/27/docker-registry/</url>
+      <content type="html"><![CDATA[<h2 id="1-启动registry"><a href="#1-启动registry" class="headerlink" title="1. 启动registry"></a>1. 启动registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d -p 5000:5000 --name registry registry</div></pre></td></tr></table></figure>
+<p><strong>说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p 5000:5000</code></td>
+<td>第一个是host的端口，第二个是container的端口</td>
+</tr>
+<tr>
+<td><code>--name registry registry1</code></td>
+<td>registry是镜像名字，registry1是自定义的私有registry名字</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-测试私有仓库"><a href="#2-测试私有仓库" class="headerlink" title="2. 测试私有仓库"></a>2. 测试私有仓库</h2><h3 id="2-1-新pull一个镜像"><a href="#2-1-新pull一个镜像" class="headerlink" title="2.1 新pull一个镜像"></a>2.1 新pull一个镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker pull busybox</div></pre></td></tr></table></figure>
+<h3 id="2-2-给镜像打个tag"><a href="#2-2-给镜像打个tag" class="headerlink" title="2.2 给镜像打个tag"></a>2.2 给镜像打个tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker tag busybox xxx.xxx.xxx.xxx:5000/myfirstimage</div></pre></td></tr></table></figure>
+<h3 id="2-3-push到私有仓库"><a href="#2-3-push到私有仓库" class="headerlink" title="2.3 push到私有仓库"></a>2.3 push到私有仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</div></pre></td></tr></table></figure>
+<h3 id="2-4-查看私有镜像仓库中的镜像"><a href="#2-4-查看私有镜像仓库中的镜像" class="headerlink" title="2.4 查看私有镜像仓库中的镜像"></a>2.4 查看私有镜像仓库中的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl http://xxx.xxx.xxx.xxx:5000/v2/_catalog</div></pre></td></tr></table></figure>
+<h3 id="2-5-删除本地的镜像"><a href="#2-5-删除本地的镜像" class="headerlink" title="2.5 删除本地的镜像"></a>2.5 删除本地的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker rmi xxx.xxx.xxx.xxx:5000/myfirstimage</div></pre></td></tr></table></figure>
+<h3 id="2-6-将刚才的删除的镜像，从私有镜像仓库pull回来"><a href="#2-6-将刚才的删除的镜像，从私有镜像仓库pull回来" class="headerlink" title="2.6 将刚才的删除的镜像，从私有镜像仓库pull回来"></a>2.6 将刚才的删除的镜像，从私有镜像仓库pull回来</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker pull xxx.xxx.xxx.xxx:5000/myfirstimage</div></pre></td></tr></table></figure>
+<h2 id="3-报错及处理"><a href="#3-报错及处理" class="headerlink" title="3. 报错及处理"></a>3. 报错及处理</h2><h3 id="3-1-在本地push时，出现如下错误"><a href="#3-1-在本地push时，出现如下错误" class="headerlink" title="3.1 在本地push时，出现如下错误"></a>3.1 在本地push时，出现如下错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</div><div class="line">The push refers to a repository [xxx.xxx.xxx.xxx:5000/myfirstimage]</div><div class="line">Get https://xxx.xxx.xxx.xxx:5000/v1/_ping: http: server gave HTTP response to HTTPS client</div></pre></td></tr></table></figure>
+<p><strong>解决方案</strong></p>
+<ol>
+<li><p>修改配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/default/docker</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DOCKER_OPTS=&quot;--insecure-registry xxx.xxx.xxx.xxx:5000&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启docker服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>重新执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</div></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[docker容器]]></title>
       <url>http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%B9%E5%99%A8/</url>
       <content type="html"><![CDATA[<h2 id="1-新建并启动容器"><a href="#1-新建并启动容器" class="headerlink" title="1. 新建并启动容器"></a>1. 新建并启动容器</h2><p><code>docker run</code><br>例：下面的命令输出一个“Hello World”并终止容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker run ubuntu:14.04 /bin/echo &apos;Hello World&apos;</div><div class="line">Hello World</div></pre></td></tr></table></figure></p>
