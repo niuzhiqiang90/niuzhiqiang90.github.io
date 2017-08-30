@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niuzhiqiang90.coding.me/"/>
-  <updated>2017-03-27T13:25:05.932Z</updated>
+  <updated>2017-08-30T14:10:53.994Z</updated>
   <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git bisect</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/30/git-bisect/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/30/git-bisect/</id>
+    <published>2017-08-30T14:06:12.000Z</published>
+    <updated>2017-08-30T14:10:53.994Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git-bisect"><a href="#git-bisect" class="headerlink" title="git bisect"></a>git bisect</h1><p>在提交了多次代码后，发现代码不能正确运行了，但是很确定的是某一个commit是好使的，比如昨天晚上或者上午的某次提交是可以正确运行的，这个时候可以通过<code>git bisect</code>来通过二分查找出问题的那次提交</p>
+<h2 id="1-开始"><a href="#1-开始" class="headerlink" title="1. 开始"></a>1. 开始</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect start</div></pre></td></tr></table></figure>
+<h2 id="2-标记当前的HEAD为bad"><a href="#2-标记当前的HEAD为bad" class="headerlink" title="2.标记当前的HEAD为bad"></a>2.标记当前的HEAD为bad</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect bad</div></pre></td></tr></table></figure>
+<h2 id="3-标记最近一次可以正确运行的commit为good"><a href="#3-标记最近一次可以正确运行的commit为good" class="headerlink" title="3.标记最近一次可以正确运行的commit为good"></a>3.标记最近一次可以正确运行的commit为good</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect good &lt;commit-id&gt;</div></pre></td></tr></table></figure>
+<h2 id="4-检查中间的那次提交状态是正确还是错误"><a href="#4-检查中间的那次提交状态是正确还是错误" class="headerlink" title="4.检查中间的那次提交状态是正确还是错误"></a>4.检查中间的那次提交状态是正确还是错误</h2><ul>
+<li>如果是正确，标记为good<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect good</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这时候，git会从这个good到最初标记的bad进行二分查找</p>
+<ul>
+<li>如果是出错的，标记为bad<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect bad</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这时候，git会从这个bad到最初标记的good位置进行二分查找</p>
+<h2 id="5-重复步骤4"><a href="#5-重复步骤4" class="headerlink" title="5.重复步骤4"></a>5.重复步骤4</h2><p>即可找到最初的bad是在哪次commit不小心引入的。</p>
+<h2 id="6-结束"><a href="#6-结束" class="headerlink" title="6.结束"></a>6.结束</h2><p>查找到引入bug的commit之后，回到最初的HEAD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect reset</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git-bisect&quot;&gt;&lt;a href=&quot;#git-bisect&quot; class=&quot;headerlink&quot; title=&quot;git bisect&quot;&gt;&lt;/a&gt;git bisect&lt;/h1&gt;&lt;p&gt;在提交了多次代码后，发现代码不能正确运行了，但是很确定的是某一个commit
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://niuzhiqiang90.coding.me/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>website enable ssl</title>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/09/website-enable-ssl/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/09/website-enable-ssl/</id>
+    <published>2017-08-09T12:33:10.000Z</published>
+    <updated>2017-08-30T13:49:17.625Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="website-enable-ssl"><a href="#website-enable-ssl" class="headerlink" title="website enable ssl"></a>website enable ssl</h1><h2 id="1-nginx-enable-ssl"><a href="#1-nginx-enable-ssl" class="headerlink" title="1. nginx enable ssl"></a>1. nginx enable ssl</h2><p>网站启用ssl需要nginx ssl 模块的支持</p>
+<h3 id="1-1-查看nginx是否编译了ssl模块"><a href="#1-1-查看nginx是否编译了ssl模块" class="headerlink" title="1.1 查看nginx是否编译了ssl模块"></a>1.1 查看nginx是否编译了ssl模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -V</div></pre></td></tr></table></figure>
+<h3 id="1-2-编译ssl模块"><a href="#1-2-编译ssl模块" class="headerlink" title="1.2 编译ssl模块"></a>1.2 编译ssl模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd nginx/src/dir</div><div class="line">./configure --with-http_ssl_module</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h2 id="2-启用ssl"><a href="#2-启用ssl" class="headerlink" title="2. 启用ssl"></a>2. 启用ssl</h2><h3 id="2-1-生成证书"><a href="#2-1-生成证书" class="headerlink" title="2.1 生成证书"></a>2.1 生成证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo openssl genrsa -des3 -out server.key 2048</div><div class="line">sudo openssl req -new -key server.key -out server.csr</div><div class="line">sudo cp server.key server.key.org</div><div class="line">sudo openssl rsa -in server.key.org -out server.key</div><div class="line">sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</div></pre></td></tr></table></figure>
+<h2 id="2-2-在server区域，指定证书位置"><a href="#2-2-在server区域，指定证书位置" class="headerlink" title="2.2 在server区域，指定证书位置"></a>2.2 在server区域，指定证书位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssl_certificate /dir/server.crt;</div><div class="line">ssl_certificate_key /dir/server.key;</div></pre></td></tr></table></figure>
+<h2 id="2-3-修改监听的端口号"><a href="#2-3-修改监听的端口号" class="headerlink" title="2.3 修改监听的端口号"></a>2.3 修改监听的端口号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">listen       443 ssl; </div><div class="line">server_name  ssl.test.cn;</div></pre></td></tr></table></figure>
+<h2 id="2-4-将http的访问redirect到https"><a href="#2-4-将http的访问redirect到https" class="headerlink" title="2.4 将http的访问redirect到https"></a>2.4 将http的访问redirect到https</h2><p>在http区域添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">       listen       80;</div><div class="line">       server_name  ssl.test.cn;;</div><div class="line">       return 301 https://ssl.test.cn:443$request_uri;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-5-重启或者reloadnginx"><a href="#2-5-重启或者reloadnginx" class="headerlink" title="2.5 重启或者reloadnginx"></a>2.5 重启或者reloadnginx</h2><h2 id="2-6-测试"><a href="#2-6-测试" class="headerlink" title="2.6 测试"></a>2.6 测试</h2><p>访问<a href="http://ssl.test.cn" target="_blank" rel="external">http://ssl.test.cn</a><br>已经会自动跳转到<a href="https://ssl.test.cn" target="_blank" rel="external">https://ssl.test.cn</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;website-enable-ssl&quot;&gt;&lt;a href=&quot;#website-enable-ssl&quot; class=&quot;headerlink&quot; title=&quot;website enable ssl&quot;&gt;&lt;/a&gt;website enable ssl&lt;/h1&gt;&lt;h2 id=&quot;1
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="http://niuzhiqiang90.coding.me/tags/nginx/"/>
+    
+      <category term="ssl" scheme="http://niuzhiqiang90.coding.me/tags/ssl/"/>
+    
+  </entry>
   
   <entry>
     <title>linux系统监控基本命令</title>
@@ -1159,74 +1225,6 @@
     
     
       <category term="tmux" scheme="http://niuzhiqiang90.coding.me/tags/tmux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git cherry-pick</title>
-    <link href="http://niuzhiqiang90.coding.me/2017/01/14/git-cherry-pick/"/>
-    <id>http://niuzhiqiang90.coding.me/2017/01/14/git-cherry-pick/</id>
-    <published>2017-01-14T05:06:14.000Z</published>
-    <updated>2017-01-14T05:27:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-用法"><a href="#1-用法" class="headerlink" title="1. 用法"></a>1. 用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
-<p>cherry-pick的作用是在当前分支上应用某一个提交，在合并的时候特别有用。<br>当前在 fixbug 分支上，做了3次修改并提交到本地</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* fixbug</div><div class="line">  master</div><div class="line"></div><div class="line">$ git log --oneline </div><div class="line">43f50dd fix bug3</div><div class="line">b24931f fix bug2</div><div class="line">9ab09b7 fix bug1</div></pre></td></tr></table></figure>
-<p>这时候我发现 fix bug1 这个提交是不需要的，之需要将后2次合并进主分支即可。 可以这么操作:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ git checkout master  #切换到master分支</div><div class="line">Switched to branch &apos;master&apos;</div><div class="line">Your branch is up-to-date with &apos;origin/master&apos;.</div><div class="line"></div><div class="line">$ git cherry-pick 9ab09b7..43f50dd</div><div class="line">[master 9cc5bca] fix bug2</div><div class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</div><div class="line"> create mode 100644 b</div><div class="line">[master 5a0704b] fix bug3</div><div class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</div><div class="line"> create mode 100644 c</div><div class="line"></div><div class="line">$ git log --oneline </div><div class="line">5a0704b fix bug3</div><div class="line">9cc5bca fix bug2</div><div class="line">c9e81c7 rename</div></pre></td></tr></table></figure>
-<p>可以看到，执行<code>check-pick</code>后， git 将指定的 commit <font color="red">(不含第一个，包含 最后一个)</font> 应用到了当前的 master 分支。执行完之后，可以删除掉 fixbug 分支。这样就可以很方便的从一个分支里面选取一部分提交合并到主分支里面去 了。当然同样也会遇到需要merge的情况。和merege一样操作即可。</p>
-<h2 id="2-实例"><a href="#2-实例" class="headerlink" title="2. 实例"></a>2. 实例</h2><p>在本地 fixbug 分支上做了一个commit (09e827c96960780ebdee18040a4324de7fecba9b)， 如何把它放到 master 分支上？ </p>
-<p>办法之一： 使用 cherry-pick.  根据git 文档：</p>
-<blockquote>
-<p>Apply the changes introduced by some existing commits</p>
-</blockquote>
-<p>就是对已经存在的commit 进行apply (可以理解为再次提交）<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout master</div><div class="line">$ git cherry-pick 09e827c     # 这个09e827c号码，位于：</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git log</div><div class="line">commit 09e827c96960780ebdee18040a4324de7fecba9b</div><div class="line">Author: niuzhiqiang &lt;niuzhiqiang90@foxmail.com&gt;</div><div class="line">Date:   Fri Aug 12 10:52:32 2016 +0800</div><div class="line"></div><div class="line">    add other</div></pre></td></tr></table></figure>
-<h3 id="2-1-如果顺利，就会正常提交。结果："><a href="#2-1-如果顺利，就会正常提交。结果：" class="headerlink" title="2.1 如果顺利，就会正常提交。结果："></a>2.1 如果顺利，就会正常提交。结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick 9ab09b7..43f50dd</div><div class="line">[master 9cc5bca] fix bug2</div><div class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</div><div class="line"> create mode 100644 b</div><div class="line">[master 5a0704b] fix 3</div><div class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</div><div class="line"> create mode 100644 c</div></pre></td></tr></table></figure>
-<h3 id="2-2-如果在cherry-pick的过程中出现了冲突"><a href="#2-2-如果在cherry-pick的过程中出现了冲突" class="headerlink" title="2.2 如果在cherry-pick的过程中出现了冲突"></a>2.2 如果在cherry-pick的过程中出现了冲突</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git cherry-pick 09e827c</div><div class="line">error: could not apply 09e827c... add other</div><div class="line">hint: after resolving the conflicts, mark the corrected paths</div><div class="line">hint: with &apos;git add &lt;paths&gt;&apos; or &apos;git rm &lt;paths&gt;&apos;</div><div class="line">hint: and commit the result with &apos;git commit&apos;</div></pre></td></tr></table></figure>
-<h4 id="2-2-1-看哪些文件出现冲突"><a href="#2-2-1-看哪些文件出现冲突" class="headerlink" title="2.2.1 看哪些文件出现冲突"></a>2.2.1 看哪些文件出现冲突</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Your branch is ahead of &apos;origin/master&apos; by 3 commits.</div><div class="line">  (use &quot;git push&quot; to publish your local commits)</div><div class="line"></div><div class="line">You are currently cherry-picking commit 09e827c.</div><div class="line">  (fix conflicts and run &quot;git cherry-pick --continue&quot;)</div><div class="line">  (use &quot;git cherry-pick --abort&quot; to cancel the cherry-pick operation)</div><div class="line"></div><div class="line">Unmerged paths:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</div><div class="line"></div><div class="line">        both modified:      b</div><div class="line"></div><div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ git diff </div><div class="line">diff --cc b</div><div class="line">index 7898192,6178079..0000000</div><div class="line">--- a/b</div><div class="line">+++ b/b</div><div class="line">@@@ -1,1 -1,1 +1,5 @@@</div><div class="line">++&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div><div class="line"> +a</div><div class="line">++=======</div><div class="line"> +b</div><div class="line">++&gt;&gt;&gt;&gt;&gt;&gt;&gt; 09e827c... add other</div></pre></td></tr></table></figure>
-<h4 id="2-2-2-手动解决它"><a href="#2-2-2-手动解决它" class="headerlink" title="2.2.2 手动解决它"></a>2.2.2 手动解决它</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ vi b </div><div class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div><div class="line">a</div><div class="line">=======</div><div class="line">b</div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 09e827c... add other</div></pre></td></tr></table></figure>
-<p>保存退出，手动提交</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git add b</div><div class="line">$ git commit -m &quot;merge by handler&quot;</div><div class="line">$ git push</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-用法&quot;&gt;&lt;a href=&quot;#1-用法&quot; class=&quot;headerlink&quot; title=&quot;1. 用法&quot;&gt;&lt;/a&gt;1. 用法&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://niuzhiqiang90.coding.me/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://niuzhiqiang90.coding.me/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git分支操作</title>
-    <link href="http://niuzhiqiang90.coding.me/2017/01/12/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C/"/>
-    <id>http://niuzhiqiang90.coding.me/2017/01/12/git-分支操作/</id>
-    <published>2017-01-12T08:42:22.000Z</published>
-    <updated>2017-01-12T08:51:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-新建分支"><a href="#1-新建分支" class="headerlink" title="1 新建分支"></a>1 新建分支</h2><h3 id="1-1-新建本地分支"><a href="#1-1-新建本地分支" class="headerlink" title="1.1 新建本地分支"></a>1.1 新建本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b &lt;branchName&gt;</div></pre></td></tr></table></figure>
-<h3 id="1-2-推送本地分支到远程"><a href="#1-2-推送本地分支到远程" class="headerlink" title="1.2 推送本地分支到远程"></a>1.2 推送本地分支到远程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin &lt;localBranch&gt;:&lt;remoteBranch&gt;</div></pre></td></tr></table></figure>
-<h2 id="2-删除分支"><a href="#2-删除分支" class="headerlink" title="2 删除分支"></a>2 删除分支</h2><h3 id="2-1-删除本地分支"><a href="#2-1-删除本地分支" class="headerlink" title="2.1 删除本地分支"></a>2.1 删除本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -D &lt;branchName&gt;</div></pre></td></tr></table></figure>
-<h3 id="2-2-删除远程分支"><a href="#2-2-删除远程分支" class="headerlink" title="2.2 删除远程分支"></a>2.2 删除远程分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete &lt;branchName&gt;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-新建分支&quot;&gt;&lt;a href=&quot;#1-新建分支&quot; class=&quot;headerlink&quot; title=&quot;1 新建分支&quot;&gt;&lt;/a&gt;1 新建分支&lt;/h2&gt;&lt;h3 id=&quot;1-1-新建本地分支&quot;&gt;&lt;a href=&quot;#1-1-新建本地分支&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="git" scheme="http://niuzhiqiang90.coding.me/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://niuzhiqiang90.coding.me/tags/git/"/>
     
   </entry>
   
