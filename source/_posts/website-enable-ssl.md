@@ -6,13 +6,13 @@ tags: [nginx,ssl]
 
 # website enable ssl
 
-## 1.nginx enable ssl
+## 1. nginx enable ssl
 网站启用ssl需要nginx ssl 模块的支持
-### 1.1查看nginx是否编译了ssl模块
+### 1.1 查看nginx是否编译了ssl模块
 ```
 nginx -V
 ```
-### 1.2编译ssl模块
+### 1.2 编译ssl模块
 ```
 cd nginx/src/dir
 ./configure --with-http_ssl_module
@@ -54,4 +54,4 @@ server {
 
 ## 2.6 测试
 访问http://ssl.test.cn
-查看是否自动转到了https
+已经会自动跳转到https://ssl.test.cn
