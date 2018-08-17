@@ -23,6 +23,14 @@
 <h2 id="5-重复步骤4"><a href="#5-重复步骤4" class="headerlink" title="5.重复步骤4"></a>5.重复步骤4</h2><p>即可找到最初的bad是在哪次commit不小心引入的。</p>
 <h2 id="6-结束"><a href="#6-结束" class="headerlink" title="6.结束"></a>6.结束</h2><p>查找到引入bug的commit之后，回到最初的HEAD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git bisect reset</div></pre></td></tr></table></figure></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -37,6 +45,16 @@
 <h2 id="2-4-将http的访问redirect到https"><a href="#2-4-将http的访问redirect到https" class="headerlink" title="2.4 将http的访问redirect到https"></a>2.4 将http的访问redirect到https</h2><p>在http区域添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">       listen       80;</div><div class="line">       server_name  ssl.test.cn;;</div><div class="line">       return 301 https://ssl.test.cn:443$request_uri;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="2-5-重启或者reloadnginx"><a href="#2-5-重启或者reloadnginx" class="headerlink" title="2.5 重启或者reloadnginx"></a>2.5 重启或者reloadnginx</h2><h2 id="2-6-测试"><a href="#2-6-测试" class="headerlink" title="2.6 测试"></a>2.6 测试</h2><p>访问<a href="http://ssl.test.cn" target="_blank" rel="external">http://ssl.test.cn</a><br>已经会自动跳转到<a href="https://ssl.test.cn" target="_blank" rel="external">https://ssl.test.cn</a></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> ssl </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -231,6 +249,14 @@
 <p>htop的左上角显示CPU、内存、交换区的使用情况，右边显示任务、负载、开机时间，下面是进程实时状态。<br>最后一行是F1～F10的功能菜单和对应的字符快捷键。</p>
 <h2 id="6-linux系统性能分析"><a href="#6-linux系统性能分析" class="headerlink" title="6. linux系统性能分析"></a>6. linux系统性能分析</h2><p>分析次序为cpu mem disk network</p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -336,6 +362,14 @@
 <h3 id="2-8-将list转换为string"><a href="#2-8-将list转换为string" class="headerlink" title="2.8 将list转换为string"></a>2.8 将list转换为string</h3><p><code>s.join()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;|&apos;.join(string.split())</div><div class="line">&apos;this|is|the|test|stringTHIS|IS|CAP&apos;</div></pre></td></tr></table></figure></p>
 <p><strong>拓展</strong><br><code>+=</code>和<code>.join</code>实现的效果是一样的，但是<code>+=</code>每次都会新开辟空间，但是<code>.join</code>不用<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = &apos;the&apos;</div><div class="line">&gt;&gt;&gt; a += &apos; test&apos;</div><div class="line">&gt;&gt;&gt; a += &apos; is&apos;</div><div class="line">&gt;&gt;&gt; a += &apos; end&apos;</div><div class="line">&gt;&gt;&gt; a</div><div class="line">&apos;the test is end&apos;</div><div class="line"></div><div class="line">&gt;&gt;&gt; &apos;&apos;.join(a)</div><div class="line">&apos;the test is end&apos;</div></pre></td></tr></table></figure></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -444,6 +478,14 @@
 </tbody>
 </table>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -461,6 +503,14 @@
 <h1 id="4-提交tag"><a href="#4-提交tag" class="headerlink" title="4. 提交tag"></a>4. 提交tag</h1><p>提交单个tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git push origin &lt;tagname&gt;</div><div class="line">或</div><div class="line">git push tag &lt;tagname&gt;</div></pre></td></tr></table></figure></p>
 <p>提交所有tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git push --tags</div><div class="line">或</div><div class="line">git push origin --tags</div></pre></td></tr></table></figure></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -473,6 +523,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input(...)</div><div class="line">    input([prompt]) -&gt; value</div><div class="line">    </div><div class="line">    Equivalent to eval(raw_input(prompt)).</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; info = &quot;This var will be printed out ...&quot;</div><div class="line">&gt;&gt;&gt; age = input(&apos;age:&apos;)</div><div class="line">age:info</div><div class="line">&gt;&gt;&gt; print age</div><div class="line">This var will be printed out ...</div></pre></td></tr></table></figure>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -498,6 +556,14 @@
 <h3 id="2-4-sys模块"><a href="#2-4-sys模块" class="headerlink" title="2.4 sys模块"></a>2.4 sys模块</h3><p>取程序的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import sys</div><div class="line">print sys.argv</div><div class="line">print sys.argv[2]</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from sys import argv</div><div class="line"># 不需要使用`sys.`</div><div class="line">print argv</div></pre></td></tr></table></figure>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -522,6 +588,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; b_utf8</div><div class="line">&apos;\xe4\xbd\xa0\xe5\xa5\xbd&apos;</div><div class="line">&gt;&gt;&gt; b_utf8.decode(&apos;utf-8&apos;)</div><div class="line">u&apos;\u4f60\u597d&apos;</div></pre></td></tr></table></figure>
 <h2 id="5-指定程序的编码方式"><a href="#5-指定程序的编码方式" class="headerlink" title="5. 指定程序的编码方式"></a>5. 指定程序的编码方式</h2><p>程序如果有中文,需要指定编码方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#_*_ coding:utf-8 _*_</div><div class="line"></div><div class="line">name = u&apos;中文&apos;</div><div class="line">print name</div></pre></td></tr></table></figure></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -591,6 +665,20 @@
 <p> <strong>另</strong><br> 启动完mds后还需要执行挂载命令<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ceph-fuse -m &#123;ip-address-of-monitor&#125;:6789 /mnt/cephfs</div></pre></td></tr></table></figure></p>
 <p> 可以将以上命令<strong>放入到开机启动项中</strong>，但是服务器重启完成后要进行检查ceph的运行状态<br> <code>ceph -s</code>或者<code>ps -ef | grep ceph</code> 或者 通过<code>df -h</code>查看ceph-fuse是否成功挂载目录<br> 如果长时间没成功，并且<code>ceph -s</code>报错，可以尝试将另一节点node2也重启，node1可以成功挂载。</p>
 ]]></content>
+      
+        <categories>
+            
+            <category> ceph </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ceph </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -639,6 +727,14 @@
 </li>
 </ol>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -663,6 +759,14 @@
 <h2 id="8-删除容器"><a href="#8-删除容器" class="headerlink" title="8. 删除容器"></a>8. 删除容器</h2><p>处于终止状态的容器可以通过如下命令来删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker rm CONTAINER_ID</div></pre></td></tr></table></figure></p>
 <p>如果要删除一个运行中的容器，可以添加<code>-f</code>参数。docker会发送SIGKILL信号给容器。</p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -694,6 +798,14 @@
 <p>这将导入镜像以及相关的元数据信息（包括标签等）</p>
 <h2 id="6-删除本地镜像"><a href="#6-删除本地镜像" class="headerlink" title="6. 删除本地镜像"></a>6. 删除本地镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker rmi IMAGE_ID</div></pre></td></tr></table></figure>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -739,6 +851,14 @@
 <h2 id="3-验证docker是否安装成功"><a href="#3-验证docker是否安装成功" class="headerlink" title="3. 验证docker是否安装成功"></a>3. 验证docker是否安装成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">sudo docker run --rm hello-world</div><div class="line"></div><div class="line">Unable to find image &apos;hello-world:latest&apos; locally</div><div class="line"> latest: Pulling from library/hello-world</div><div class="line"> c04b14da8d14: Pull complete</div><div class="line"> Digest: sha256:0256e8a36e2070f7bf2d0b0763dbabdd67798512411de4cdcf9431a1feb60fd9</div><div class="line"> Status: Downloaded newer image for hello-world:latest</div><div class="line"></div><div class="line"> Hello from Docker!</div><div class="line"> This message shows that your installation appears to be working correctly.</div><div class="line"></div><div class="line"> To generate this message, Docker took the following steps:</div><div class="line">  1. The Docker client contacted the Docker daemon.</div><div class="line">  2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.</div><div class="line">  3. The Docker daemon created a new container from that image which runs the</div><div class="line">     executable that produces the output you are currently reading.</div><div class="line">  4. The Docker daemon streamed that output to the Docker client, which sent it</div><div class="line">     to your terminal.</div><div class="line"></div><div class="line"> To try something more ambitious, you can run an Ubuntu container with:</div><div class="line">  $ docker run -it ubuntu bash</div><div class="line"></div><div class="line"> Share images, automate workflows, and more with a free Docker Hub account:</div><div class="line">  https://hub.docker.com</div><div class="line"></div><div class="line"> For more examples and ideas, visit:</div><div class="line">  https://docs.docker.com/engine/userguide/</div></pre></td></tr></table></figure>
 <p><a href="https://github.com/docker/docker" target="_blank" rel="external">docker on github</a><br><a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">docker install mothed</a></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -773,6 +893,14 @@
 </li>
 </ul>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -783,6 +911,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ sudo update-alternatives --config editor </div><div class="line">There are 4 choices for the alternative editor (providing /usr/bin/editor).</div><div class="line">  Selection    Path                Priority   Status</div><div class="line">------------------------------------------------------------</div><div class="line">* 0            /bin/nano            40        auto mode</div><div class="line">  1            /bin/ed             -100       manual mode</div><div class="line">  2            /bin/nano            40        manual mode</div><div class="line">  3            /usr/bin/vim.basic   30        manual mode</div><div class="line">  4            /usr/bin/vim.tiny    10        manual mode</div><div class="line">Press enter to keep the current choice[*], or type selection number:</div></pre></td></tr></table></figure>
 <p>输入<code>3</code>就可以了。</p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -796,6 +932,14 @@
 <p>运行<code>ifconfig</code>查看网卡名称是否已经修改过来，如果没成功，就重启一下吧。</p>
 <p><a href="http://askubuntu.com/questions/637591/my-ethernet-interface-name-has-changed-from-eth0-to-eth1" target="_blank" rel="external">From askubuntu</a></p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -811,6 +955,14 @@
 </li>
 </ul>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -822,6 +974,14 @@
 <h2 id="4-添加字体配置文件"><a href="#4-添加字体配置文件" class="headerlink" title="4.添加字体配置文件"></a>4.添加字体配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/</div></pre></td></tr></table></figure>
 <p>这样vim中的powerline字体就能够正确显示了。</p>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> vim插件 </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -840,6 +1000,14 @@
 </li>
 </ul>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -939,6 +1107,14 @@
 </tbody>
 </table>
 ]]></content>
+      
+        
+        <tags>
+            
+            <tag> tmux </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -965,6 +1141,20 @@
 <p>保存退出，手动提交</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git add b</div><div class="line">$ git commit -m &quot;merge by handler&quot;</div><div class="line">$ git push</div></pre></td></tr></table></figure>
 ]]></content>
+      
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -975,6 +1165,20 @@
 <h2 id="2-删除分支"><a href="#2-删除分支" class="headerlink" title="2 删除分支"></a>2 删除分支</h2><h3 id="2-1-删除本地分支"><a href="#2-1-删除本地分支" class="headerlink" title="2.1 删除本地分支"></a>2.1 删除本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -D &lt;branchName&gt;</div></pre></td></tr></table></figure>
 <h3 id="2-2-删除远程分支"><a href="#2-2-删除远程分支" class="headerlink" title="2.2 删除远程分支"></a>2.2 删除远程分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete &lt;branchName&gt;</div></pre></td></tr></table></figure>
 ]]></content>
+      
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -1243,6 +1447,20 @@
 <p>Please take a few minutes to read the Parting Words section at the bottom of the <strong>C++ Guide</strong>.</p>
 <p><strong><a href="#contents">Go Contents</a></strong></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> shell </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -1271,6 +1489,20 @@
 <p>This plugin is very powerful for HTML and XML editing, a niche which currently seems underfilled in Vim land. (As opposed to HTML/XML inserting, for which many plugins are available). Adding, changing, and removing pairs of tags simultaneously is a breeze.</p>
 <p>The . command will work with ds, cs, and yss if you install repeat.vim.</p>
 ]]></content>
+      
+        <categories>
+            
+            <category> vim </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vim插件 </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -1281,6 +1513,8 @@
 <p>在framework/base下输入git commit –amend,就会进入一个文本编辑界面（如下）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">     resolving the problem</div><div class="line">     Change-Id: I7e7daffd2e8a5e65130629dc1c56dee5f5c4b5f7</div><div class="line"># Please enter the commit message for your changes. Lines starting</div><div class="line"># with &apos;#&apos; will be ignored, and an empty message aborts the commit.</div><div class="line"># On branch shuai.lu_branch</div><div class="line"># Changes to be committed:</div><div class="line">#   (use &quot;git reset HEAD^1 &lt;file&gt;...&quot; to unstage)</div><div class="line">#</div><div class="line">#       modified:   operation/bin/alert</div><div class="line">#</div></pre></td></tr></table></figure></p>
 <p>修改commit描述，然后保存退出，这样注释就修改了，再重新push就可以了。</p>
 ]]></content>
+      
+        
     </entry>
     
     <entry>
@@ -1324,6 +1558,20 @@
 <h3 id="5-3-删除本地分支"><a href="#5-3-删除本地分支" class="headerlink" title="5.3 删除本地分支"></a>5.3 删除本地分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout the/other/branch</div><div class="line">$ git branch -D the/delete/branch</div></pre></td></tr></table></figure>
 <p><strong> 补充 </strong><br><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjQ4MjYwMQ==&amp;mid=207476935&amp;idx=1&amp;sn=7e2df0fc83583b2970be033e295d595d&amp;scene=4&amp;srcid=0914UZRLJAd9vzLoflDXei0Y&amp;pass_ticket=HC7otQjvd7%2FlrKPIl%2FUdQOZ4wjnTDDOzJXOZps0L2JZRnBVO0WgCnxedN7YVcvQi#rd" target="_blank" rel="external">点击查看更详细的用法</a></p>
 ]]></content>
+      
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -1339,6 +1587,8 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
+      
+        
     </entry>
     
   
