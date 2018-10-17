@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ubuntu," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
-<meta name="keywords" content="ubuntu">
+<meta name="description" content="python字符串对齐1title = &amp;quot;九九乘法口诀表&amp;quot; 1. 使用ljust,rjust,center方法1234567891011121314151617181920ljust(s, width, *args)        ljust(s, width[, fillchar]) -&amp;gt; string                Return a left-just">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu修改网卡名称">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu修改网卡名称/index.html">
+<meta property="og:title" content="python字符串对齐">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2018/10/13/python字符串对齐/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
+<meta property="og:description" content="python字符串对齐1title = &amp;quot;九九乘法口诀表&amp;quot; 1. 使用ljust,rjust,center方法1234567891011121314151617181920ljust(s, width, *args)        ljust(s, width[, fillchar]) -&amp;gt; string                Return a left-just">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-07T05:11:50.000Z">
+<meta property="og:updated_time" content="2018-10-15T05:51:40.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu修改网卡名称">
-<meta name="twitter:description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
+<meta name="twitter:title" content="python字符串对齐">
+<meta name="twitter:description" content="python字符串对齐1title = &amp;quot;九九乘法口诀表&amp;quot; 1. 使用ljust,rjust,center方法1234567891011121314151617181920ljust(s, width, *args)        ljust(s, width[, fillchar]) -&amp;gt; string                Return a left-just">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu修改网卡名称/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2018/10/13/python字符串对齐/"/>
 
-  <title> ubuntu修改网卡名称 | Just do IT </title>
+  <title> python字符串对齐 | Just do IT </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                ubuntu修改网卡名称
+                python字符串对齐
               
             
           </h1>
@@ -295,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-07T11:21:00+08:00" content="2017-02-07">
-              2017-02-07
+            <time itemprop="dateCreated" datetime="2018-10-13T11:15:18+08:00" content="2018-10-13">
+              2018-10-13
             </time>
           </span>
 
@@ -328,13 +328,15 @@
       
 
       
-        <p>今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0<br>按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。</p>
-<h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h2><p>Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.<br>Find the rule matching your MAC address.<br>Change the NAME value from eth1 to eth0 i.e. NAME=”eth0”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/udev/rules.d/70-persistent-net.rules</span><br></pre></td></tr></table></figure>
-<p>找到你要修改的网卡的MAC，修改对应的<code>NAME</code>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PCI device 0x10ec:0x8168 (r8169)</span><br><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;50:7b:9d:55:47:2e&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;eth*&quot;, NAME=&quot;eth0&quot;</span><br><span class="line"> </span><br><span class="line"># PCI device 0x168c:0x0042 (ath10k_pci)</span><br><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;30:52:cb:68:81:17&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;wlan*&quot;, NAME=&quot;wlan0&quot;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-使修改生效"><a href="#2-使修改生效" class="headerlink" title="2. 使修改生效"></a>2. 使修改生效</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo udevadm trigger</span><br></pre></td></tr></table></figure>
-<p>运行<code>ifconfig</code>查看网卡名称是否已经修改过来，如果没成功，就重启一下吧。</p>
-<p><a href="http://askubuntu.com/questions/637591/my-ethernet-interface-name-has-changed-from-eth0-to-eth1" target="_blank" rel="noopener">From askubuntu</a></p>
+        <h1 id="python字符串对齐"><a href="#python字符串对齐" class="headerlink" title="python字符串对齐"></a>python字符串对齐</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title = &quot;九九乘法口诀表&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="1-使用ljust-rjust-center方法"><a href="#1-使用ljust-rjust-center方法" class="headerlink" title="1. 使用ljust,rjust,center方法"></a>1. 使用<code>ljust</code>,<code>rjust</code>,<code>center</code>方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ljust(s, width, *args)</span><br><span class="line">        ljust(s, width[, fillchar]) -&gt; string</span><br><span class="line">        </span><br><span class="line">        Return a left-justified version of s, in a field of the</span><br><span class="line">        specified width, padded with spaces as needed.  The string is</span><br><span class="line">        never truncated.  If specified the fillchar is used instead of spaces.</span><br><span class="line"></span><br><span class="line">rjust(s, width, *args)</span><br><span class="line">        rjust(s, width[, fillchar]) -&gt; string</span><br><span class="line">        </span><br><span class="line">        Return a right-justified version of s, in a field of the</span><br><span class="line">        specified width, padded with spaces as needed.  The string is</span><br><span class="line">        never truncated.  If specified the fillchar is used instead of spaces.</span><br><span class="line"></span><br><span class="line">center(s, width, *args)</span><br><span class="line">        center(s, width[, fillchar]) -&gt; string</span><br><span class="line">        </span><br><span class="line">        Return a center version of s, in a field of the specified</span><br><span class="line">        width. padded with spaces as needed.  The string is never</span><br><span class="line">        truncated.  If specified the fillchar is used instead of spaces.</span><br></pre></td></tr></table></figure>
+<p>不指定填充字符默认空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 左对齐</span><br><span class="line">print(title.ljust(100))</span><br><span class="line"># 右对齐</span><br><span class="line">print(title.rjust(100))</span><br><span class="line"># 居中 </span><br><span class="line">print(title.center(100))</span><br></pre></td></tr></table></figure></p>
+<p>指定填充字符为星号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(title.ljust(100,&apos;*&apos;))</span><br><span class="line">print(title.rjust(100,&apos;*&apos;))</span><br><span class="line">print(title.center(100,&apos;*&apos;))</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-使用format方法"><a href="#2-使用format方法" class="headerlink" title="2. 使用format方法"></a>2. 使用<code>format</code>方法</h2><p><code>&lt;</code> 左对齐<br><code>&gt;</code> 右对齐<br><code>^</code> 居中对齐<br>不指定填充字符默认空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(format(title,&quot;&lt;100&quot;));</span><br><span class="line">print(format(title,&quot;&gt;100&quot;));</span><br><span class="line">print(format(title,&quot;^100&quot;));</span><br><span class="line"></span><br><span class="line">print(&apos;&#123;:&lt;100&#125;&apos;.format(title))</span><br><span class="line">print(&apos;&#123;:&gt;100&#125;&apos;.format(title))</span><br><span class="line">print(&apos;&#123;:^100&#125;&apos;.format(title))</span><br></pre></td></tr></table></figure></p>
+<p>指定填充字符为星号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(format(title,&quot;*&lt;100&quot;));</span><br><span class="line">print(format(title,&quot;*&gt;100&quot;));</span><br><span class="line">print(format(title,&quot;*^100&quot;));</span><br><span class="line"></span><br><span class="line">print(&apos;&#123;:*&lt;100&#125;&apos;.format(title))</span><br><span class="line">print(&apos;&#123;:&gt;*100&#125;&apos;.format(title))</span><br><span class="line">print(&apos;&#123;:^*100&#125;&apos;.format(title))</span><br></pre></td></tr></table></figure></p>
+<p>精度与类型f<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;&#123;:.2f&#125;&apos;.format(3.1415926))</span><br></pre></td></tr></table></figure></p>
+<p>进制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;&#123;:b&#125;&apos;.format(13))</span><br><span class="line">print(&apos;&#123;:o&#125;&apos;.format(13))</span><br><span class="line">print(&apos;&#123;:d&#125;&apos;.format(13))</span><br><span class="line">print(&apos;&#123;:x&#125;&apos;.format(13))</span><br></pre></td></tr></table></figure></p>
+<p>用逗号作金额的分隔符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;&#123;:,&#125;&apos;.format(123456789))</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -357,7 +359,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -366,16 +368,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/07/python指定字符编码/" rel="next" title="python指定字符编码">
-                <i class="fa fa-chevron-left"></i> python指定字符编码
+              <a href="/2017/08/30/git-bisect/" rel="next" title="git bisect">
+                <i class="fa fa-chevron-left"></i> git bisect
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/07/ubuntu指定默认编辑器/" rel="prev" title="ubuntu指定默认编辑器">
-                ubuntu指定默认编辑器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/17/Redis主从/" rel="prev" title="Redis主从">
+                Redis主从 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +519,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-修改配置文件"><span class="nav-text">1. 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使修改生效"><span class="nav-text">2. 使修改生效</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python字符串对齐"><span class="nav-text">python字符串对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用ljust-rjust-center方法"><span class="nav-text">1. 使用ljust,rjust,center方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用format方法"><span class="nav-text">2. 使用format方法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

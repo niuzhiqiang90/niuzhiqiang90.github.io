@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ubuntu," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,18 +86,13 @@
 
 
 
-<meta name="description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
-<meta name="keywords" content="ubuntu">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu修改网卡名称">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu修改网卡名称/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Just do IT">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/archives/2018/10/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-07T05:11:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu修改网卡名称">
-<meta name="twitter:description" content="今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。 1. 修改配置文件Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.Find the rule matching your MAC address.Change">
+<meta name="twitter:title" content="Just do IT">
 
 
 
@@ -118,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/07/ubuntu修改网卡名称/"/>
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/archives/2018/10/"/>
 
-  <title> ubuntu修改网卡名称 | Just do IT </title>
+  <title> 归档 | Just do IT </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,137 +257,103 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 30 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2018/10/17/Redis主从/" itemprop="url">
               
-                ubuntu修改网卡名称
+                <span itemprop="name">Redis主从</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-07T11:21:00+08:00" content="2017-02-07">
-              2017-02-07
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-17T15:58:19+08:00"
+              content="2018-10-17" >
+          10-17
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>今天强迫症又犯了，想要把网卡的名称改为eth0和wlan0<br>按照网上的方法试了几种，都没有成功，下面记录下我修改成功的方法。</p>
-<h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h2><p>Open the file /etc/udev/rules.d/70-persistent-net.rules with your favorite editor.<br>Find the rule matching your MAC address.<br>Change the NAME value from eth1 to eth0 i.e. NAME=”eth0”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/udev/rules.d/70-persistent-net.rules</span><br></pre></td></tr></table></figure>
-<p>找到你要修改的网卡的MAC，修改对应的<code>NAME</code>值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PCI device 0x10ec:0x8168 (r8169)</span><br><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;50:7b:9d:55:47:2e&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;eth*&quot;, NAME=&quot;eth0&quot;</span><br><span class="line"> </span><br><span class="line"># PCI device 0x168c:0x0042 (ath10k_pci)</span><br><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;30:52:cb:68:81:17&quot;, ATTR&#123;dev_id&#125;==&quot;0x0&quot;, ATTR&#123;type&#125;==&quot;1&quot;, KERNEL==&quot;wlan*&quot;, NAME=&quot;wlan0&quot;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-使修改生效"><a href="#2-使修改生效" class="headerlink" title="2. 使修改生效"></a>2. 使修改生效</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo udevadm trigger</span><br></pre></td></tr></table></figure>
-<p>运行<code>ifconfig</code>查看网卡名称是否已经修改过来，如果没成功，就重启一下吧。</p>
-<p><a href="http://askubuntu.com/questions/637591/my-ethernet-interface-name-has-changed-from-eth0-to-eth1" target="_blank" rel="noopener">From askubuntu</a></p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/07/python指定字符编码/" rel="next" title="python指定字符编码">
-                <i class="fa fa-chevron-left"></i> python指定字符编码
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/07/ubuntu指定默认编辑器/" rel="prev" title="ubuntu指定默认编辑器">
-                ubuntu指定默认编辑器 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
+    
+
       
-    </div>
-  </div>
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2018/10/13/python字符串对齐/" itemprop="url">
+              
+                <span itemprop="name">python字符串对齐</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-13T11:15:18+08:00"
+              content="2018-10-13" >
+          10-13
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -400,10 +361,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -423,17 +380,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -510,17 +458,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-修改配置文件"><span class="nav-text">1. 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使修改生效"><span class="nav-text">2. 使修改生效</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -656,9 +593,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
