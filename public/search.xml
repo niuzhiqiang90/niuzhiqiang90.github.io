@@ -4,6 +4,72 @@
   
     
     <entry>
+      <title><![CDATA[Redis主从]]></title>
+      <url>http://niuzhiqiang90.coding.me/2018/10/17/Redis%E4%B8%BB%E4%BB%8E/</url>
+      <content type="html"><![CDATA[<p>Redis支持简单且易用的主从复制功能</p>
+<h2 id="1-Redis复制功能的几个重要方面"><a href="#1-Redis复制功能的几个重要方面" class="headerlink" title="1. Redis复制功能的几个重要方面"></a>1. Redis复制功能的几个重要方面</h2><ul>
+<li>Redis使用异步复制。从服务器会以每秒一次的频率向主服务器报告复制流的处理进度。</li>
+<li>一个主服务器可以有多个从服务器。</li>
+<li>从服务器也可以有多个从服务器，多个从服务器之间可以构成一个图状结构。</li>
+<li>复制功能不会阻塞主服务器。即使一个或多个从服务器正在进行初次同步，主服务器也可以继续处理命令请求。</li>
+<li>复制功能也不会阻塞从服务器，只要在配置文件中进行了相应的配置，即使从服务器正在进行初次同步，服务器也可以使用旧版本的数据集来处理命令查询。<br>不过，在服务器删除旧版本数据集并载入新版本数据集的时间间隔内，连接请求会被阻塞。<br>还可以配置从服务器，让它在与主服务器的连接断开时，向客户端发送一个错误。</li>
+<li>复制功能可以单纯地用于数据冗余，也可以通过让多个从服务器处理只读命令来提升扩展性：比如繁重的<code>SORT</code>命令可以交给附属节点去运行。</li>
+<li>可以通过复制功能来让主服务器免于执行持久化操作：只要关闭主服务器的持久化功能，然后由从服务器去执行持久化操作即可。</li>
+</ul>
+<h2 id="2-复制功能的原理"><a href="#2-复制功能的原理" class="headerlink" title="2.复制功能的原理"></a>2.复制功能的原理</h2><ol>
+<li>无论是初次连接还是重新连接，当建立一个从服务器时，从服务器都将向主服务器发送一个<code>SYNC</code>命令。</li>
+<li>接到<code>SYNC</code>命令的主服务器将开始执行<code>BGSAVE</code>，并在保存操作执行期间，将所有新执行的写入命令都保存到一个缓冲区里。</li>
+<li>当<code>BGSAVE</code>执行完毕后，主服务器将执行保存操作所得的<code>.rdb</code>文件发送给从服务器，从服务器接收到<code>.rdb</code>文件后，将文件中的数据载入到内存中。</li>
+<li>之后，主服务器会以Redis命令协议的格式，将写命令缓冲区中积累的所有内容都发送给从服务器。</li>
+</ol>
+<p>即使有多个从服务器同时向主服务器发送<code>SYNC</code>，主服务器也只需要执行一次<code>BGSAVE</code>命令就可以处理所有这些从服务器的同步请求。</p>
+<p>从服务器可以在主从服务器之间的连接断开时进行自动重连<br>在Redis 2.8之前，断线重连的从服务器总要执行一次完整重同步操作。<br>在Redis 2.8之后，从服务器可以根据主服务器的情况来选择执行完整重同步还是部分重同步。</p>
+<h2 id="3-部分重同步"><a href="#3-部分重同步" class="headerlink" title="3. 部分重同步"></a>3. 部分重同步</h2><p>从Redis 2.8开始，在网络连接短暂断开后，主从服务器可以尝试继续执行原有的复制进程，而不一定要执行完整重同步操作。</p>
+<p>这个特性需要主服务器为被发送的复制流创建一个内存缓冲区，并且主服务器和所有从服务器之间都记录一个复制偏移量和一个主服务器ID，当出现网络断开时，从服务器将重新连接，并且向主服务器请求继续执行原来的复制进程。</p>
+<ul>
+<li>如果从服务器记录的主服务器ID和当前要连接的主服务器的ID相同，并且从服务器记录的偏移量所指定的数据仍然保存在主服务器的复制流缓冲区里，那么主服务器会向从服务器发送断线时缺失的那部分数据，然后复制工作可以继续进行。</li>
+<li>否则。从服务器要执行完整重同步操作。</li>
+</ul>
+<p>Redis的部分重同步特性会用到一个新增的<code>PSYNC</code>内部命令，而Redis 2.8之前的旧版本只有<code>SYNC</code>命令，不过只要从服务器是Redis 2.8或者以上的版本，它会根据主服务器的版本来决定到底是使用<code>PSYNC</code>还是<code>SYNC</code></p>
+<ul>
+<li>主服务器 &gt;= 2.8 从服务器使用<code>PSYNC</code>命令来进行同步。 </li>
+<li>主服务器 &lt; 2.8 从服务器使用<code>SYNC</code>命令来进行同步。 </li>
+</ul>
+<h2 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a>4. 配置</h2><p>配置一个从服务器非常简单，只要在配置文件中增加以下一行就可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof 192.168.1.100 6379</span><br></pre></td></tr></table></figure></p>
+<p>当然，你需要将代码中的<code>192.168.1.100</code> 和<code>6379</code>替换成你的主服务器的IP和端口号。<br>另外一种方法是调用<code>SLAVEOF</code>命令，输入主服务器的IP和端口号，然后同步就会开始：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SLAVEOF 192.168.1.100 6379</span><br><span class="line">OK</span><br></pre></td></tr></table></figure></p>
+<p>在从服务器上登录Redis客户端查询，可以看到数据已经从主服务器同步过来。</p>
+<h2 id="5-只读从服务器"><a href="#5-只读从服务器" class="headerlink" title="5. 只读从服务器"></a>5. 只读从服务器</h2><p>从Redis 2.6开始，从服务器支持只读模式，并且该模式为从服务器的默认模式。</p>
+<p>只读模式由配置文件中的 <code>slave-read-only</code>选项控制，也可以通过<code>CONFIG SET</code>命令来开启或者关闭这个模式。</p>
+<p>只读从服务器会拒绝执行任何写命令，所以不会出现因为操作失误而将数据不小心写到了从服务器的情况。</p>
+<p>即使从服务器是只读的，<code>DEBUG</code>和<code>CONFIG</code> 等管理命令仍然是可以使用的，所以我们还是不应该将服务器暴露给互联网或者任何不可信的网络。不过，使用配置中的命令改名选项，我们可以通过禁止执行某些命令来提升只读从服务器的安全性。</p>
+<p>既然从服务器上的写数据会被重同步数据覆盖，也可能在服务器重启时丢失，为什么要让一个从服务器变得可写呢？<br>原因是，一些不重要的临时数据，仍然是可以保存在从服务器上的。</p>
+<h2 id="6-从服务器的相关配置"><a href="#6-从服务器的相关配置" class="headerlink" title="6. 从服务器的相关配置"></a>6. 从服务器的相关配置</h2><p>如果主服务器通过<code>requirepass</code>选项设置了密码，那么为了让从服务器的同步操作可以顺利进行，我们也必须为从服务器进行相应的身份验证设置。</p>
+<p>对于一个正在运行的服务器，可以使用客户端输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config set masterauth &lt;password&gt;</span><br></pre></td></tr></table></figure></p>
+<p>要永久地设置这个密码，那么可以将它加入到配置文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">masterauth &lt;password&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-主服务器只在有至少N个从服务器的情况下，才执行写操作"><a href="#7-主服务器只在有至少N个从服务器的情况下，才执行写操作" class="headerlink" title="7. 主服务器只在有至少N个从服务器的情况下，才执行写操作"></a>7. 主服务器只在有至少N个从服务器的情况下，才执行写操作</h2><p>从Redis 2.8开始，为了保证数据的安全性，可以通过配置，让主服务器只在有至少N个当前已连接从服务器的情况下，才执行写命令。<br>不过，因为Redis使用异步复制，所以主服务器发送的写数据并不一定会被从服务器收到，因此，数据丢失的可能性仍然是存在的。</p>
+<p>以下是这个特性的原理：</p>
+<ul>
+<li>从服务器以每秒一次的频率<code>ping</code>主服务器一次，并报告复制流的处理情况。</li>
+<li>主服务器会记录各个从服务器最后一次向它发送<code>ping</code>的时间。</li>
+<li>用户可以通过配置，指定网络延迟的最大值<code>min-slaves-max-lag</code>，以及执行写操作所需的至少从服务器数量<code>min-slaves-to-write</code>.</li>
+</ul>
+<p>如果至少有<code>min-slaves-to-write</code>个服务器，并且这些服务器的延迟都少于<code>min-slaves-max-lag</code>秒，那么主服务器就会执行客户端请求的写操作。<br>尽管不能保证写操作的持久性，但起码丢失数据的窗口会被严格限制的指定的秒数中。<br>另一方面，如果条件达不到<code>min-slaves-to-write</code>和<code>min-slaves-max-lag</code>所指定的条件，那么写操作就不会被执行，主服务器会向请求执行写操作的客户端返回一个错误。<br>以下是这个特性的两个选项和它们所需的参数：</p>
+<ul>
+<li><code>min-slaves-to-write &lt;number of slaves&gt;</code></li>
+<li><code>min-slaves-max-lag &lt;number of second&gt;</code></li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[python字符串对齐]]></title>
       <url>http://niuzhiqiang90.coding.me/2018/10/13/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E9%BD%90/</url>
       <content type="html"><![CDATA[<h1 id="python字符串对齐"><a href="#python字符串对齐" class="headerlink" title="python字符串对齐"></a>python字符串对齐</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title = &quot;九九乘法口诀表&quot;</span><br></pre></td></tr></table></figure>

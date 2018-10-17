@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2018/10/17/Redis%E4%B8%BB%E4%BB%8E/</loc>
+    
+    <lastmod>2018-10-17T12:45:36.200Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2018/10/13/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E9%BD%90/</loc>
     
     <lastmod>2018-10-15T05:51:40.119Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/</loc>
     
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
     
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%B9%E5%99%A8/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E9%95%9C%E5%83%8F/</loc>
     
     <lastmod>2017-03-13T13:34:57.010Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E9%95%9C%E5%83%8F/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/02/27/docker%E5%AE%B9%E5%99%A8/</loc>
     
     <lastmod>2017-03-13T13:34:57.010Z</lastmod>
     
