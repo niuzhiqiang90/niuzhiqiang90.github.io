@@ -1,7 +1,7 @@
 ---
 title: Redis持久化
 date: 2018-10-16 20:46:09
-tags:
+tags: Redis
 ---
 
 
