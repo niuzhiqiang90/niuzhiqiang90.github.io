@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="git,">
+  <meta name="keywords" content="linux,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="1. 显示本地tag不带任何参数执行git tag，即可显示当前版本库里的tag列表1git tag 显示说明 -n&amp;lt;num&amp;gt; 显示最多num行的说明1git tag -n1 只显示名称和通配符相符的tag1git tag -l string* 2. 创建tag2.1 创建轻量级里程碑1git tag &amp;lt;tagname&amp;gt; [&amp;lt;commitID&amp;gt;] 2.2 创建带">
-<meta name="keywords" content="git">
+<meta name="description" content="1. 源由由于大量项目放到/home里且初期规划不合理导致磁盘空间严重不足，故需要择机对该磁盘进行更换，重新挂载到一块容量比较大的磁盘上，以满足日益增长的业务需求。 2. 添加磁盘并挂载添加完磁盘，首先需要对磁盘进行分区格式化   部分常用fdisk命令如下      command action     l list known partition types   n add a new par">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git tag操作">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/03/22/git-tag操作/index.html">
+<meta property="og:title" content="更换linux系统的home磁盘">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/04/01/更换linux系统的home磁盘/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. 显示本地tag不带任何参数执行git tag，即可显示当前版本库里的tag列表1git tag 显示说明 -n&amp;lt;num&amp;gt; 显示最多num行的说明1git tag -n1 只显示名称和通配符相符的tag1git tag -l string* 2. 创建tag2.1 创建轻量级里程碑1git tag &amp;lt;tagname&amp;gt; [&amp;lt;commitID&amp;gt;] 2.2 创建带">
+<meta property="og:description" content="1. 源由由于大量项目放到/home里且初期规划不合理导致磁盘空间严重不足，故需要择机对该磁盘进行更换，重新挂载到一块容量比较大的磁盘上，以满足日益增长的业务需求。 2. 添加磁盘并挂载添加完磁盘，首先需要对磁盘进行分区格式化   部分常用fdisk命令如下      command action     l list known partition types   n add a new par">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T22:58:30.001Z">
+<meta property="og:updated_time" content="2018-12-08T08:31:12.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git tag操作">
-<meta name="twitter:description" content="1. 显示本地tag不带任何参数执行git tag，即可显示当前版本库里的tag列表1git tag 显示说明 -n&amp;lt;num&amp;gt; 显示最多num行的说明1git tag -n1 只显示名称和通配符相符的tag1git tag -l string* 2. 创建tag2.1 创建轻量级里程碑1git tag &amp;lt;tagname&amp;gt; [&amp;lt;commitID&amp;gt;] 2.2 创建带">
+<meta name="twitter:title" content="更换linux系统的home磁盘">
+<meta name="twitter:description" content="1. 源由由于大量项目放到/home里且初期规划不合理导致磁盘空间严重不足，故需要择机对该磁盘进行更换，重新挂载到一块容量比较大的磁盘上，以满足日益增长的业务需求。 2. 添加磁盘并挂载添加完磁盘，首先需要对磁盘进行分区格式化   部分常用fdisk命令如下      command action     l list known partition types   n add a new par">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/03/22/git-tag操作/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/04/01/更换linux系统的home磁盘/">
 
-  <title> git tag操作 | Just do IT </title>
+  <title> 更换linux系统的home磁盘 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                git tag操作
+                更换linux系统的home磁盘
               
             
           </h1>
@@ -295,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-22T13:17:19+08:00" content="2017-03-22">
-              2017-03-22
+            <time itemprop="dateCreated" datetime="2017-04-01T20:50:55+08:00" content="2017-04-01">
+              2017-04-01
             </time>
           </span>
 
@@ -328,17 +328,56 @@
       
 
       
-        <h1 id="1-显示本地tag"><a href="#1-显示本地tag" class="headerlink" title="1. 显示本地tag"></a>1. 显示本地tag</h1><p>不带任何参数执行git tag，即可显示当前版本库里的tag列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure></p>
-<p>显示说明 <code>-n&lt;num&gt;</code> 显示最多num行的说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -n1</span><br></pre></td></tr></table></figure></p>
-<p>只显示名称和通配符相符的tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -l string*</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-创建tag"><a href="#2-创建tag" class="headerlink" title="2. 创建tag"></a>2. 创建tag</h1><h2 id="2-1-创建轻量级里程碑"><a href="#2-1-创建轻量级里程碑" class="headerlink" title="2.1 创建轻量级里程碑"></a>2.1 创建轻量级里程碑</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;tagname&gt; [&lt;commitID&gt;]</span><br></pre></td></tr></table></figure>
-<h2 id="2-2-创建带说明的tag"><a href="#2-2-创建带说明的tag" class="headerlink" title="2.2 创建带说明的tag"></a>2.2 创建带说明的tag</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tagname&gt; [&lt;commitID&gt;]</span><br><span class="line">或</span><br><span class="line">git tag -m &lt;msg&gt; &lt;tagname&gt; [&lt;commitID&gt;] //直接通过-m参数提供tag说明</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-创建带GnuPG签名的tag"><a href="#2-3-创建带GnuPG签名的tag" class="headerlink" title="2.3 创建带GnuPG签名的tag"></a>2.3 创建带GnuPG签名的tag</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag -s &lt;tagname&gt; [&lt;commitID&gt;]</span><br><span class="line">或</span><br><span class="line">git tag -u &lt;key-id&gt;  &lt;tagname&gt; [&lt;commitID&gt;] //-u参数选择指定的私钥进行签名</span><br></pre></td></tr></table></figure>
-<p>创建tag需要输入tag的名称(<tagname>)和一个可选的提交ID(<commitid>)。<font color="red">如果没有提供提交ID，则基于头指针HEAD创建tag。</font></commitid></tagname></p>
-<h1 id="3-删除tag"><a href="#3-删除tag" class="headerlink" title="3. 删除tag"></a>3. 删除tag</h1><p>本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;tagname&gt;</span><br></pre></td></tr></table></figure></p>
-<p>远程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete tag &lt;tagname&gt;</span><br><span class="line">或</span><br><span class="line">git tag -d &lt;tagname&gt; </span><br><span class="line">git push origin :refs/tags/&lt;tagname&gt;  #推送一个空tag到远程</span><br></pre></td></tr></table></figure></p>
-<h1 id="4-提交tag"><a href="#4-提交tag" class="headerlink" title="4. 提交tag"></a>4. 提交tag</h1><p>提交单个tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;tagname&gt;</span><br><span class="line">或</span><br><span class="line">git push tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure></p>
-<p>提交所有tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push --tags</span><br><span class="line">或</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure></p>
+        <h2 id="1-源由"><a href="#1-源由" class="headerlink" title="1. 源由"></a>1. 源由</h2><p>由于大量项目放到<code>/home</code>里且初期规划不合理导致磁盘空间严重不足，故需要择机对该磁盘进行更换，重新挂载到一块容量比较大的磁盘上，以满足日益增长的业务需求。</p>
+<h2 id="2-添加磁盘并挂载"><a href="#2-添加磁盘并挂载" class="headerlink" title="2. 添加磁盘并挂载"></a>2. 添加磁盘并挂载</h2><p>添加完磁盘，首先需要对磁盘进行分区格式化  </p>
+<p><strong>部分常用<code>fdisk</code>命令如下</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">command</th>
+<th style="text-align:left">action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">l</td>
+<td style="text-align:left">list known partition types</td>
+</tr>
+<tr>
+<td style="text-align:left">n</td>
+<td style="text-align:left">add a new partition</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">print the partition</td>
+</tr>
+<tr>
+<td style="text-align:left">d</td>
+<td style="text-align:left">delete a partition</td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">quit without saving changes</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">write table to disk and exit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-1-分区"><a href="#2-1-分区" class="headerlink" title="2.1 分区"></a>2.1 分区</h3><p><font color="red">分区时，要注意先通过<code>fdisk -l</code>命令，确定接下来要进行操作的设备文件名。<br>之下的步骤，每一步都要格外仔细，一不小心就会造成数据丢失！</font><br>例如：我确认我新添的磁盘为<code>/dev/vdbc</code>，那进行分区的命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk /dev/xvdc</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-格式化"><a href="#2-2-格式化" class="headerlink" title="2.2 格式化"></a>2.2 格式化</h3><p>通过<code>-t</code>指定磁盘要格式化成的类型，这里我要格式化成<code>ext4</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs -t ext4 /dev/xvdc1</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-创建临时挂载目录"><a href="#2-3-创建临时挂载目录" class="headerlink" title="2.3 创建临时挂载目录"></a>2.3 创建临时挂载目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /mnt/tmp-home</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-挂载磁盘"><a href="#2-4-挂载磁盘" class="headerlink" title="2.4 挂载磁盘"></a>2.4 挂载磁盘</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount /dev/xvdc1 /mnt/tmp-home</span><br></pre></td></tr></table></figure>
+<p>至此，新添的磁盘已经进行了分区，格式化，挂载操作。<br>接下来进行数据迁移，把之前的数据迁移到新磁盘上。</p>
+<h2 id="3-同步数据"><a href="#3-同步数据" class="headerlink" title="3. 同步数据"></a>3. 同步数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -avzrt --delete-after /home/USERNAME /mnt/tmp-home/</span><br></pre></td></tr></table></figure>
+<h2 id="4-重命名之前的home目录"><a href="#4-重命名之前的home目录" class="headerlink" title="4. 重命名之前的home目录"></a>4. 重命名之前的home目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /home/USERNAME /home/USERNAME-orig</span><br></pre></td></tr></table></figure>
+<h2 id="5-对比数据"><a href="#5-对比数据" class="headerlink" title="5. 对比数据"></a>5. 对比数据</h2><p>对比原来的<code>home</code>目录和新<code>home</code>目录的数据。<br>例如：通过<code>du</code>命令来对比大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">du -sh /home/USERNAME-orig</span><br><span class="line">du -sh /mnt/tmp-home</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-备份源数据"><a href="#6-备份源数据" class="headerlink" title="6. 备份源数据"></a>6. 备份源数据</h2><p>数据迁移完成后，可以将<code>USERNAME-orig</code>迁移到<code>/</code>下进行备份。</p>
+<h2 id="7-自动挂载"><a href="#7-自动挂载" class="headerlink" title="7. 自动挂载"></a>7. 自动挂载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/fstab</span><br><span class="line"># 写入如下内容</span><br><span class="line">/dev/xvdc1    /home    ext4      defaults    0  0</span><br></pre></td></tr></table></figure>
+<h2 id="8-重启服务器"><a href="#8-重启服务器" class="headerlink" title="8. 重启服务器"></a>8. 重启服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
+<h2 id="9-验证"><a href="#9-验证" class="headerlink" title="9. 验证"></a>9. 验证</h2><p>待服务器重启后，验证各个服务是否能够正常启动，尤其时<code>/home/USERNAME</code>下的项目能否正常运行。</p>
+<h2 id="10-清除备份文件"><a href="#10-清除备份文件" class="headerlink" title="10. 清除备份文件"></a>10. 清除备份文件</h2><p>验证各个服务和项目，在迁移到新的<code>/home</code>运行正常且稳定一段时间后，可以择机对原备份文件进行清理。</p>
 
       
     </div>
@@ -361,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag">#git</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
         </div>
       
@@ -370,16 +409,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/python用户交互/" rel="next" title="python用户交互">
-                <i class="fa fa-chevron-left"></i> python用户交互
+              <a href="/2017/03/25/linux系统监控基本命令/" rel="next" title="linux系统监控基本命令">
+                <i class="fa fa-chevron-left"></i> linux系统监控基本命令
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/python文件处理/" rel="prev" title="python文件处理">
-                python文件处理 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/07/Android自动打包/" rel="prev" title="Android自动打包">
+                Android自动打包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -519,7 +558,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-显示本地tag"><span class="nav-text">1. 显示本地tag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-创建tag"><span class="nav-text">2. 创建tag</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-创建轻量级里程碑"><span class="nav-text">2.1 创建轻量级里程碑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-创建带说明的tag"><span class="nav-text">2.2 创建带说明的tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-创建带GnuPG签名的tag"><span class="nav-text">2.3 创建带GnuPG签名的tag</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-删除tag"><span class="nav-text">3. 删除tag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-提交tag"><span class="nav-text">4. 提交tag</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-源由"><span class="nav-text">1. 源由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-添加磁盘并挂载"><span class="nav-text">2. 添加磁盘并挂载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-分区"><span class="nav-text">2.1 分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-格式化"><span class="nav-text">2.2 格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-创建临时挂载目录"><span class="nav-text">2.3 创建临时挂载目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-挂载磁盘"><span class="nav-text">2.4 挂载磁盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-同步数据"><span class="nav-text">3. 同步数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-重命名之前的home目录"><span class="nav-text">4. 重命名之前的home目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-对比数据"><span class="nav-text">5. 对比数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-备份源数据"><span class="nav-text">6. 备份源数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-自动挂载"><span class="nav-text">7. 自动挂载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-重启服务器"><span class="nav-text">8. 重启服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-验证"><span class="nav-text">9. 验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-清除备份文件"><span class="nav-text">10. 清除备份文件</span></a></li></ol></div>
             
           </div>
         </section>
