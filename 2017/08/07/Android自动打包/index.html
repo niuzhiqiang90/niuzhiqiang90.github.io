@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="python,">
+  <meta name="keywords" content="android,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="python指定字符编码的方式有多种编码格式是要写在解释器的下面的 1.指定方法12#!/usr/bin/env python# _*_ coding:utf-8 _*_ 12#!/usr/bin/env python# -*- coding:utf-8 -*- 12#!/usr/bin/env python# coding:utf-8 2.使用场景 在python的程序中，如果有中文字符需要指定">
-<meta name="keywords" content="python">
+<meta name="description" content="1. 配置Java环境1.1 自行从网络下载jdk并配置环境变量12345:~$ vi .bashrc# set oracle jdk environmentexport JAVA_HOME=/home/USERNAME/opt/jdk-1.8.0export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATHexport PATH=$">
+<meta name="keywords" content="android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python指定字符编码">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/07/python指定字符编码/index.html">
+<meta property="og:title" content="Android自动打包">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/07/Android自动打包/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="python指定字符编码的方式有多种编码格式是要写在解释器的下面的 1.指定方法12#!/usr/bin/env python# _*_ coding:utf-8 _*_ 12#!/usr/bin/env python# -*- coding:utf-8 -*- 12#!/usr/bin/env python# coding:utf-8 2.使用场景 在python的程序中，如果有中文字符需要指定">
+<meta property="og:description" content="1. 配置Java环境1.1 自行从网络下载jdk并配置环境变量12345:~$ vi .bashrc# set oracle jdk environmentexport JAVA_HOME=/home/USERNAME/opt/jdk-1.8.0export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATHexport PATH=$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-07T05:08:31.000Z">
+<meta property="og:updated_time" content="2018-12-08T07:44:26.089Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python指定字符编码">
-<meta name="twitter:description" content="python指定字符编码的方式有多种编码格式是要写在解释器的下面的 1.指定方法12#!/usr/bin/env python# _*_ coding:utf-8 _*_ 12#!/usr/bin/env python# -*- coding:utf-8 -*- 12#!/usr/bin/env python# coding:utf-8 2.使用场景 在python的程序中，如果有中文字符需要指定">
+<meta name="twitter:title" content="Android自动打包">
+<meta name="twitter:description" content="1. 配置Java环境1.1 自行从网络下载jdk并配置环境变量12345:~$ vi .bashrc# set oracle jdk environmentexport JAVA_HOME=/home/USERNAME/opt/jdk-1.8.0export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATHexport PATH=$">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/07/python指定字符编码/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/07/Android自动打包/">
 
-  <title> python指定字符编码 | Just do IT </title>
+  <title> Android自动打包 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                python指定字符编码
+                Android自动打包
               
             
           </h1>
@@ -295,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-07T09:37:14+08:00" content="2017-02-07">
-              2017-02-07
+            <time itemprop="dateCreated" datetime="2017-08-07T20:19:01+08:00" content="2017-08-07">
+              2017-08-07
             </time>
           </span>
 
@@ -328,15 +328,29 @@
       
 
       
-        <p>python指定字符编码的方式有多种<br><strong>编码格式是要写在解释器的下面的</strong></p>
-<h2 id="1-指定方法"><a href="#1-指定方法" class="headerlink" title="1.指定方法"></a>1.指定方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># _*_ coding:utf-8 _*_</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8 -*-</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># coding:utf-8</span><br></pre></td></tr></table></figure>
-<h2 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2.使用场景"></a>2.使用场景</h2><ul>
-<li>在python的程序中，如果有中文字符需要指定字符编码方式，无论是否是在注释中。</li>
-<li>在数据库操作中，读取或者写入的内容中有汉字时。具体的方法如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># _*_ coding:utf-8 _*_</span><br><span class="line"></span><br><span class="line">import sys</span><br><span class="line">reload(sys)                                                                      </span><br><span class="line">sys.setdefaultencoding(&apos;utf8&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h2 id="1-配置Java环境"><a href="#1-配置Java环境" class="headerlink" title="1. 配置Java环境"></a>1. 配置Java环境</h2><h3 id="1-1-自行从网络下载jdk并配置环境变量"><a href="#1-1-自行从网络下载jdk并配置环境变量" class="headerlink" title="1.1 自行从网络下载jdk并配置环境变量"></a>1.1 自行从网络下载jdk并配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:~$ vi .bashrc</span><br><span class="line"># set oracle jdk environment</span><br><span class="line">export JAVA_HOME=/home/USERNAME/opt/jdk-1.8.0</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-生效配置"><a href="#1-2-生效配置" class="headerlink" title="1.2 生效配置"></a>1.2 生效配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:~$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-验证"><a href="#1-3-验证" class="headerlink" title="1.3 验证"></a>1.3 验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:~$ java -version</span><br><span class="line">java version &quot;1.8.0_181&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_181-b13)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)</span><br></pre></td></tr></table></figure>
+<h2 id="2-配置命令行工具"><a href="#2-配置命令行工具" class="headerlink" title="2. 配置命令行工具"></a>2. 配置命令行工具</h2><p>你可以使用命令行工具里的sdkmanager下载其他的SDK包。</p>
+<h3 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h3><p>默认tools已经包含在Android Studio里了，如果你没有使用Android Studio，请访问<a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">studio</a>下载相应的命令行工具包。<br><a href="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" target="_blank" rel="noopener">linux版</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:~$ mkdir opt/android/</span><br><span class="line">:~$ cd opt/android</span><br><span class="line">:~/opt/android$ wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-解压"><a href="#2-2-解压" class="headerlink" title="2.2 解压"></a>2.2 解压</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:~/opt/android$ unzip sdk-tools-linux-3859397.zip</span><br><span class="line">:~/opt/android$ cd tools/bin/</span><br><span class="line">:~/opt/android/tools/bin$</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-安装SDK"><a href="#2-3-安装SDK" class="headerlink" title="2.3 安装SDK"></a>2.3 安装SDK</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:~/opt/android/tools/bin$ mkdir /home/USERNAME/opt/android/sdk</span><br><span class="line">:~/opt/android/tools/bin$ ./sdkmanager --sdk_root=/home/USERNAME/opt/android/sdk &quot;build-tools;23.0.2&quot;</span><br><span class="line">:~/opt/android/tools/bin$ ./sdkmanager --sdk_root=/home/USERNAME/opt/android/sdk &quot;platforms;android-23&quot;</span><br></pre></td></tr></table></figure>
+<p>命令成功执行后<br>会在<code>/home/USERNAME/opt/android/sdk</code>目录下，生成<code>build-tools</code>目录<br>会在<code>/home/USERNAME/opt/android/sdk</code>目录下，生成<code>platforms</code>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:~/opt/android/tools/bin$ ls /home/USERNAME/opt/android/sdk/build-tools</span><br><span class="line">23.0.2</span><br><span class="line">:~/opt/android/tools/bin$ ls /home/USERNAME/opt/android/sdk/platforms</span><br><span class="line">android-23</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-添加环境变量"><a href="#2-4-添加环境变量" class="headerlink" title="2.4 添加环境变量"></a>2.4 添加环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:~/opt/android/tools/bin$ vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># set android SDK environment</span><br><span class="line">export ANDROID_HOME=/home/USERNAME/opt/android</span><br><span class="line">export PATH=$PATH:$ANDROID_HOME/tools</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-安装gradle"><a href="#3-安装gradle" class="headerlink" title="3. 安装gradle"></a>3. 安装gradle</h2><h3 id="3-1-下载gradle"><a href="#3-1-下载gradle" class="headerlink" title="3.1 下载gradle"></a>3.1 下载gradle</h3><p><a href="http://services.gradle.org/distributions/" target="_blank" rel="noopener">distributions链接</a><br><a href="http://downloads.gradle.org/distributions/gradle-3.3-all.zip" target="_blank" rel="noopener">gradle-3.3-all链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:~$ cd opt</span><br><span class="line">:~/opt$ wget http://downloads.gradle.org/distributions/gradle-3.3-all.zip</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-解压gradle"><a href="#3-2-解压gradle" class="headerlink" title="3.2 解压gradle"></a>3.2 解压gradle</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/opt$ unzip gradle-3.3-all.zip</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-配置环境变量"><a href="#3-3-配置环境变量" class="headerlink" title="3.3 配置环境变量"></a>3.3 配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/opt$ vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># set gradle environment</span><br><span class="line">export GRADLE_HOME=/home/USERNAME/opt/gradle-3.3</span><br><span class="line">export PATH=$GRADLE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-生效配置"><a href="#3-4-生效配置" class="headerlink" title="3.4 生效配置"></a>3.4 生效配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/opt$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h2 id="4-打包应用"><a href="#4-打包应用" class="headerlink" title="4. 打包应用"></a>4. 打包应用</h2><p>进入android项目所在目录，执行<code>gradle assembleRelease</code>即可自动打包应用。<br>gradle在打包的过程中会自动下载所需要的依赖(默认会下载到<code>~/.gradle</code>目录)，速度可能比较慢，尤其是第一次执行，耐心等待即可。</p>
+<p>另外，在执行过程中可能会报如下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">A problem occurred configuring project &apos;:app&apos;.</span><br><span class="line">&gt; Could not resolve all dependencies for configuration &apos;:app:_debugApk&apos;.</span><br><span class="line">   &gt; A problem occurred configuring project &apos;:weexplugin&apos;.</span><br><span class="line">      &gt; Could not resolve all dependencies for configuration &apos;:weexplugin:_debugCompileCopy&apos;.</span><br><span class="line">         &gt; Could not find com.android.support:support-v4:23.1.1.</span><br><span class="line">           Required by:</span><br><span class="line">               project :weexplugin</span><br><span class="line">               project :weexplugin &gt; com.android.support:appcompat-v7:23.1.1</span><br><span class="line"></span><br><span class="line">* Try:</span><br><span class="line">Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.</span><br><span class="line"></span><br><span class="line">BUILD FAILED</span><br></pre></td></tr></table></figure></p>
+<p>执行如下命令接受证书，即可解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:~/opt/android/tools/bin$ ./sdkmanager --licenses</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-加固app"><a href="#5-加固app" class="headerlink" title="5. 加固app"></a>5. 加固app</h2><p>使用各个android软件平台的加固工具或者脚本上传到对应的平台进行加固即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:~/opt$ cd /home/USERNAME/platforms/xxx.mobile.web/platforms/android</span><br><span class="line">:android$ bash jiagu.sh</span><br><span class="line">:android$ cd /home/USERNAME/opt/android/apk</span><br><span class="line">:~/opt/android/apk$ ls</span><br><span class="line">app-release_101_jiagu_sign.apk</span><br></pre></td></tr></table></figure></p>
+<p>加固完成，即可进行发布上架。</p>
 
       
     </div>
@@ -359,7 +373,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
+            <a href="/tags/android/" rel="tag">#android</a>
           
         </div>
       
@@ -368,16 +382,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/22/ubuntu安装powerline字体/" rel="next" title="ubuntu安装powerline字体">
-                <i class="fa fa-chevron-left"></i> ubuntu安装powerline字体
+              <a href="/2017/03/25/linux系统监控基本命令/" rel="next" title="linux系统监控基本命令">
+                <i class="fa fa-chevron-left"></i> linux系统监控基本命令
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/07/ubuntu修改网卡名称/" rel="prev" title="ubuntu修改网卡名称">
-                ubuntu修改网卡名称 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/09/website-enable-ssl/" rel="prev" title="website enable ssl">
+                website enable ssl <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +531,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-指定方法"><span class="nav-text">1.指定方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用场景"><span class="nav-text">2.使用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-配置Java环境"><span class="nav-text">1. 配置Java环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-自行从网络下载jdk并配置环境变量"><span class="nav-text">1.1 自行从网络下载jdk并配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-生效配置"><span class="nav-text">1.2 生效配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-验证"><span class="nav-text">1.3 验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置命令行工具"><span class="nav-text">2. 配置命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-下载"><span class="nav-text">2.1 下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-解压"><span class="nav-text">2.2 解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-安装SDK"><span class="nav-text">2.3 安装SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-添加环境变量"><span class="nav-text">2.4 添加环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装gradle"><span class="nav-text">3. 安装gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-下载gradle"><span class="nav-text">3.1 下载gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-解压gradle"><span class="nav-text">3.2 解压gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-配置环境变量"><span class="nav-text">3.3 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-生效配置"><span class="nav-text">3.4 生效配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-打包应用"><span class="nav-text">4. 打包应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-加固app"><span class="nav-text">5. 加固app</span></a></li></ol></div>
             
           </div>
         </section>
