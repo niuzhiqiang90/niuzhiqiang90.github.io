@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="website enable ssl1. nginx enable ssl网站启用ssl需要nginx ssl 模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成">
+<meta name="description" content="1. nginx enable ssl网站启用ssl需要nginx ssl模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成证书12345sudo openssl">
 <meta name="keywords" content="nginx,ssl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="website enable ssl">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/09/website-enable-ssl/index.html">
+<meta property="og:title" content="启用ssl">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/09/启用ssl/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="website enable ssl1. nginx enable ssl网站启用ssl需要nginx ssl 模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成">
+<meta property="og:description" content="1. nginx enable ssl网站启用ssl需要nginx ssl模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成证书12345sudo openssl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T13:49:17.000Z">
+<meta property="og:updated_time" content="2018-12-08T10:24:28.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="website enable ssl">
-<meta name="twitter:description" content="website enable ssl1. nginx enable ssl网站启用ssl需要nginx ssl 模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成">
+<meta name="twitter:title" content="启用ssl">
+<meta name="twitter:description" content="1. nginx enable ssl网站启用ssl需要nginx ssl模块的支持 1.1 查看nginx是否编译了ssl模块1nginx -V 1.2 编译ssl模块123cd nginx/src/dir./configure --with-http_ssl_modulemake &amp;amp;&amp;amp; make install 2. 启用ssl2.1 生成证书12345sudo openssl">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/09/website-enable-ssl/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/09/启用ssl/">
 
-  <title> website enable ssl | Just do IT </title>
+  <title> 启用ssl | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                website enable ssl
+                启用ssl
               
             
           </h1>
@@ -328,14 +328,15 @@
       
 
       
-        <h1 id="website-enable-ssl"><a href="#website-enable-ssl" class="headerlink" title="website enable ssl"></a>website enable ssl</h1><h2 id="1-nginx-enable-ssl"><a href="#1-nginx-enable-ssl" class="headerlink" title="1. nginx enable ssl"></a>1. nginx enable ssl</h2><p>网站启用ssl需要nginx ssl 模块的支持</p>
+        <h2 id="1-nginx-enable-ssl"><a href="#1-nginx-enable-ssl" class="headerlink" title="1. nginx enable ssl"></a>1. nginx enable ssl</h2><p>网站启用ssl需要nginx ssl模块的支持</p>
 <h3 id="1-1-查看nginx是否编译了ssl模块"><a href="#1-1-查看nginx是否编译了ssl模块" class="headerlink" title="1.1 查看nginx是否编译了ssl模块"></a>1.1 查看nginx是否编译了ssl模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -V</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-编译ssl模块"><a href="#1-2-编译ssl模块" class="headerlink" title="1.2 编译ssl模块"></a>1.2 编译ssl模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd nginx/src/dir</span><br><span class="line">./configure --with-http_ssl_module</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 <h2 id="2-启用ssl"><a href="#2-启用ssl" class="headerlink" title="2. 启用ssl"></a>2. 启用ssl</h2><h3 id="2-1-生成证书"><a href="#2-1-生成证书" class="headerlink" title="2.1 生成证书"></a>2.1 生成证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo openssl genrsa -des3 -out server.key 2048</span><br><span class="line">sudo openssl req -new -key server.key -out server.csr</span><br><span class="line">sudo cp server.key server.key.org</span><br><span class="line">sudo openssl rsa -in server.key.org -out server.key</span><br><span class="line">sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</span><br></pre></td></tr></table></figure>
-<h2 id="2-2-在server区域，指定证书位置"><a href="#2-2-在server区域，指定证书位置" class="headerlink" title="2.2 在server区域，指定证书位置"></a>2.2 在server区域，指定证书位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssl_certificate /dir/server.crt;</span><br><span class="line">ssl_certificate_key /dir/server.key;</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-修改监听的端口号"><a href="#2-3-修改监听的端口号" class="headerlink" title="2.3 修改监听的端口号"></a>2.3 修改监听的端口号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen       443 ssl; </span><br><span class="line">server_name  ssl.test.cn;</span><br></pre></td></tr></table></figure>
-<h2 id="2-4-将http的访问redirect到https"><a href="#2-4-将http的访问redirect到https" class="headerlink" title="2.4 将http的访问redirect到https"></a>2.4 将http的访问redirect到https</h2><p>在http区域添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  ssl.test.cn;;</span><br><span class="line">       return 301 https://ssl.test.cn:443$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-5-重启或者reloadnginx"><a href="#2-5-重启或者reloadnginx" class="headerlink" title="2.5 重启或者reloadnginx"></a>2.5 重启或者reloadnginx</h2><h2 id="2-6-测试"><a href="#2-6-测试" class="headerlink" title="2.6 测试"></a>2.6 测试</h2><p>访问<a href="http://ssl.test.cn" target="_blank" rel="noopener">http://ssl.test.cn</a><br>已经会自动跳转到<a href="https://ssl.test.cn" target="_blank" rel="noopener">https://ssl.test.cn</a></p>
+<h3 id="2-2-在server区域，指定证书位置"><a href="#2-2-在server区域，指定证书位置" class="headerlink" title="2.2 在server区域，指定证书位置"></a>2.2 在server区域，指定证书位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssl_certificate /path/server.crt;</span><br><span class="line">ssl_certificate_key /path/server.key;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-启用ssl"><a href="#2-3-启用ssl" class="headerlink" title="2.3 启用ssl"></a>2.3 启用ssl</h3><p>修改nginx配置，启用ssl<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen       443 ssl; </span><br><span class="line">server_name  ssl.test.cn;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4-将http的访问redirect到https"><a href="#2-4-将http的访问redirect到https" class="headerlink" title="2.4 将http的访问redirect到https"></a>2.4 将http的访问redirect到https</h3><p>在http区域添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  ssl.test.cn;;</span><br><span class="line">       return 301 https://ssl.test.cn:443$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-生效配置"><a href="#3-生效配置" class="headerlink" title="3. 生效配置"></a>3. 生效配置</h2><p>重启或者<code>reload</code> nginx</p>
+<h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h2><p>浏览器访问<a href="http://ssl.test.cn，测试验证。" target="_blank" rel="noopener">http://ssl.test.cn，测试验证。</a></p>
 
       
     </div>
@@ -518,7 +519,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#website-enable-ssl"><span class="nav-text">website enable ssl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-nginx-enable-ssl"><span class="nav-text">1. nginx enable ssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-查看nginx是否编译了ssl模块"><span class="nav-text">1.1 查看nginx是否编译了ssl模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-编译ssl模块"><span class="nav-text">1.2 编译ssl模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启用ssl"><span class="nav-text">2. 启用ssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-生成证书"><span class="nav-text">2.1 生成证书</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-在server区域，指定证书位置"><span class="nav-text">2.2 在server区域，指定证书位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-修改监听的端口号"><span class="nav-text">2.3 修改监听的端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-将http的访问redirect到https"><span class="nav-text">2.4 将http的访问redirect到https</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-重启或者reloadnginx"><span class="nav-text">2.5 重启或者reloadnginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-测试"><span class="nav-text">2.6 测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-nginx-enable-ssl"><span class="nav-text">1. nginx enable ssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-查看nginx是否编译了ssl模块"><span class="nav-text">1.1 查看nginx是否编译了ssl模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-编译ssl模块"><span class="nav-text">1.2 编译ssl模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启用ssl"><span class="nav-text">2. 启用ssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-生成证书"><span class="nav-text">2.1 生成证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-在server区域，指定证书位置"><span class="nav-text">2.2 在server区域，指定证书位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-启用ssl"><span class="nav-text">2.3 启用ssl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-将http的访问redirect到https"><span class="nav-text">2.4 将http的访问redirect到https</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-生效配置"><span class="nav-text">3. 生效配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-测试"><span class="nav-text">4. 测试</span></a></li></ol></div>
             
           </div>
         </section>
