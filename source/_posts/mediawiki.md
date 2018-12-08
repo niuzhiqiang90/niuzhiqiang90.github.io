@@ -30,8 +30,8 @@ server {
         listen  443 ssl;
         server_name     mediawiki.xxx.cn;
 
-        ssl_certificate /home/USERNAME/opt/nginx-1.9/conf/etc/wiki-server.crt;
-        ssl_certificate_key /home/USERNAME/opt/nginx-1.9/conf/etc/wiki-server.key;
+        ssl_certificate /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.crt;
+        ssl_certificate_key /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.key;
 
 
         root    /mnt/data/mediawiki-1.27.3;
