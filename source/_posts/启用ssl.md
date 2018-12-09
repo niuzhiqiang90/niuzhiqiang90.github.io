@@ -4,7 +4,7 @@ date: 2017-08-09 20:33:10
 tags: [nginx,ssl]
 ---
 
-## 1. nginx enable ssl
+## 1. nginx启用ssl
 网站启用ssl需要nginx ssl模块的支持
 
 ### 1.1 查看nginx是否编译了ssl模块
