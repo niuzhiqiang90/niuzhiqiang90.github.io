@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2017/05/16/ubuntu%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
+    <lastmod>2018-12-10T08:32:56.275Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu发送邮件</title>
+        <pubTime>2017-05-16T13:23:23.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2017/08/10/Jenkins/</loc>
     <lastmod>2018-12-09T05:37:47.949Z</lastmod>
     <data>
@@ -341,12 +356,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python字符编码</title>
-        <pubTime>2017-03-20T13:20:21.000Z</pubTime>
+        <title>python用户交互</title>
+        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -358,12 +373,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python用户交互</title>
-        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
+        <title>python字符编码</title>
+        <pubTime>2017-03-20T13:20:21.000Z</pubTime>
         
         <tag>python</tag>
          
