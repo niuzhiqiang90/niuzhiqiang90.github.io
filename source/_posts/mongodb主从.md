@@ -1,7 +1,7 @@
 ---
 title: mongodb主从
 date: 2018-12-11 20:44:12
-tags: mongodb
+tags: 模拟
 ---
 
 ## 1. 安装
