@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2018/12/11/mongodb%E4%B8%BB%E4%BB%8E/</loc>
+    <lastmod>2018-12-12T01:30:07.050Z</lastmod>
+    <data>
+        <display>
+        <title>mongodb主从</title>
+        <pubTime>2018-12-11T12:44:12.000Z</pubTime>
+        
+        <tag>mongodb</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2017/05/16/ubuntu%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
     <lastmod>2018-12-10T08:32:56.275Z</lastmod>
     <data>
@@ -356,12 +373,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python用户交互</title>
-        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
+        <title>python使用和导入模块</title>
+        <pubTime>2017-03-20T13:47:06.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -390,12 +407,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python使用和导入模块</title>
-        <pubTime>2017-03-20T13:47:06.000Z</pubTime>
+        <title>python用户交互</title>
+        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
         
         <tag>python</tag>
          
