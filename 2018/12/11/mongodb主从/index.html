@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="mongodb,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
+<meta name="description" content="1. 安装根据需求从这里下载相应的版本即可。例如下载完后放到~/opt123cd ~/opttar -zxvf mongodb-linux-x86_64-ubuntu1604-4.1.6.tgzmv mongodb-linux-x86_64-ubuntu1604-4.1.6 mongodb-4.1.6 2. 配置2.1 创建配置目录在master和slaver上创建配置文件目录12cd ~/opt">
+<meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mediawiki">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/index.html">
+<meta property="og:title" content="mongodb主从">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2018/12/11/mongodb主从/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
+<meta property="og:description" content="1. 安装根据需求从这里下载相应的版本即可。例如下载完后放到~/opt123cd ~/opttar -zxvf mongodb-linux-x86_64-ubuntu1604-4.1.6.tgzmv mongodb-linux-x86_64-ubuntu1604-4.1.6 mongodb-4.1.6 2. 配置2.1 创建配置目录在master和slaver上创建配置文件目录12cd ~/opt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-08T09:51:01.658Z">
+<meta property="og:updated_time" content="2018-12-12T01:30:07.050Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mediawiki">
-<meta name="twitter:description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
+<meta name="twitter:title" content="mongodb主从">
+<meta name="twitter:description" content="1. 安装根据需求从这里下载相应的版本即可。例如下载完后放到~/opt123cd ~/opttar -zxvf mongodb-linux-x86_64-ubuntu1604-4.1.6.tgzmv mongodb-linux-x86_64-ubuntu1604-4.1.6 mongodb-4.1.6 2. 配置2.1 创建配置目录在master和slaver上创建配置文件目录12cd ~/opt">
 
 
 
@@ -117,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2018/12/11/mongodb主从/">
 
-  <title> mediawiki | Just do IT </title>
+  <title> mongodb主从 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +283,7 @@
             
             
               
-                mediawiki
+                mongodb主从
               
             
           </h1>
@@ -294,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-18T21:08:11+08:00" content="2017-08-18">
-              2017-08-18
+            <time itemprop="dateCreated" datetime="2018-12-11T20:44:12+08:00" content="2018-12-11">
+              2018-12-11
             </time>
           </span>
 
@@ -327,11 +328,27 @@
       
 
       
-        <h2 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h2><p><code>mediawiki</code>依赖<code>LNMP</code>环境，所以在部署前，需要首先搭建<code>LNMP</code>环境，参考上一篇。</p>
-<h2 id="2-下载mediawiki并解压"><a href="#2-下载mediawiki并解压" class="headerlink" title="2. 下载mediawiki并解压"></a>2. 下载mediawiki并解压</h2><p><a href="https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz" target="_blank" rel="noopener">下载链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz</span><br><span class="line">mv mediawiki-1.27.3.tar.gz /mnt/data/</span><br><span class="line">cd /mnt/data</span><br><span class="line">tar -zxvf mediawiki-1.27.3.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-进行域名解析"><a href="#3-进行域名解析" class="headerlink" title="3. 进行域名解析"></a>3. 进行域名解析</h2><p>将要使用的域名(例如<code>mediawiki.xxx.cn</code>)解析到该服务器</p>
-<h2 id="4-配置nginx"><a href="#4-配置nginx" class="headerlink" title="4. 配置nginx"></a>4. 配置nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen  80;</span><br><span class="line">    server_name  mediawiki.xxx.cn;</span><br><span class="line">    return 301 https://mediawiki.xxx.cn:443$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen  443 ssl;</span><br><span class="line">        server_name     mediawiki.xxx.cn;</span><br><span class="line"></span><br><span class="line">        ssl_certificate /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.crt;</span><br><span class="line">        ssl_certificate_key /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.key;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        root    /mnt/data/mediawiki-1.27.3;</span><br><span class="line">        #index  index.php index.html index.htm;</span><br><span class="line"></span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">             root               /mnt/data/mediawiki-1.27.3;</span><br><span class="line">             fastcgi_pass       127.0.0.1:9000;</span><br><span class="line">             fastcgi_index      index.php;</span><br><span class="line">             fastcgi_param      SCRIPT_FILENAME /scripts$fastcgi_script_name;</span><br><span class="line">             include            fastcgi.conf;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;            </span><br><span class="line">             root               /mnt/data/mediawiki-1.27.3;</span><br><span class="line">             index index.php;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-安装"><a href="#5-安装" class="headerlink" title="5. 安装"></a>5. 安装</h2><p>通过浏览器访问<code>mediawiki.xxx.cn</code>配置安装即可。<br>其中要注意正确设置连接数据库的用户名密码。</p>
+        <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>根据需求从<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">这里</a>下载相应的版本即可。<br>例如下载完后放到<code>~/opt</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/opt</span><br><span class="line">tar -zxvf mongodb-linux-x86_64-ubuntu1604-4.1.6.tgz</span><br><span class="line">mv mongodb-linux-x86_64-ubuntu1604-4.1.6 mongodb-4.1.6</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><h3 id="2-1-创建配置目录"><a href="#2-1-创建配置目录" class="headerlink" title="2.1 创建配置目录"></a>2.1 创建配置目录</h3><p>在<code>master</code>和<code>slaver</code>上创建配置文件目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/opt/mongodb-4.1.6</span><br><span class="line">mkdir conf</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-配置项"><a href="#2-2-配置项" class="headerlink" title="2.2 配置项"></a>2.2 配置项</h3><p>配置文件可以放到<code>~/opt/mongodb-4.1.6/conf</code>里</p>
+<p>master配置文件<code>mongod.conf</code>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">dbpath=/mnt/data/dbs/mongodb/data</span><br><span class="line">logpath=/mnt/data/dbs/mongodb/logs/mongod.log</span><br><span class="line"></span><br><span class="line">logappend=true</span><br><span class="line">port = 27017</span><br><span class="line"></span><br><span class="line"># Listen to local interface only. Comment out to listen on all interfaces. </span><br><span class="line">bind_ip = 10.211.55.6,127.0.0.1</span><br><span class="line"></span><br><span class="line">directoryperdb = true</span><br><span class="line">profile = 1 </span><br><span class="line"></span><br><span class="line">master = true</span><br></pre></td></tr></table></figure></p>
+<p>slaver的配置文件<code>mongod.conf</code>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dbpath=/mnt/data/dbs/mongodb/data</span><br><span class="line">logpath=/mnt/data/dbs/mongodb/logs/mongod.log</span><br><span class="line"></span><br><span class="line">logappend=true</span><br><span class="line">port = 27017</span><br><span class="line"></span><br><span class="line"># Listen to local interface only. Comment out to listen on all interfaces. </span><br><span class="line">bind_ip = 10.221.55.7,127.0.0.1</span><br><span class="line"> </span><br><span class="line">directoryperdb = true</span><br><span class="line">profile = 1 </span><br><span class="line"> </span><br><span class="line">source = 10.211.55.6:27017</span><br><span class="line">slave = true</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-创建数据目录"><a href="#2-3-创建数据目录" class="headerlink" title="2.3 创建数据目录"></a>2.3 创建数据目录</h3><p>在<code>master</code>和<code>slaver</code>上创建数据目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/data/dbs/mongodb/&#123;data,logs&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-启动并测试"><a href="#2-4-启动并测试" class="headerlink" title="2.4 启动并测试"></a>2.4 启动并测试</h3><p>在<code>master</code>和<code>slaver</code>上分别启动<code>mongodb</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/opt/mongodb-4.1.6/</span><br><span class="line">./bin/mongod --config ./config/mongod.conf</span><br></pre></td></tr></table></figure>
+<p>服务启动后，在<code>master</code>执行写入数据命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongo </span><br><span class="line">&gt; #写入数据命令</span><br></pre></td></tr></table></figure></p>
+<p>在<code>slaver</code>上进行查询验证写入的数据。</p>
+<h2 id="3-添加用户名密码"><a href="#3-添加用户名密码" class="headerlink" title="3. 添加用户名密码"></a>3. 添加用户名密码</h2><p>上述过程，<code>mongodb</code>主从就已经配置完成，但是这样是不安全的，生产环境通常需要对数据库设置用户名密码。</p>
+<p>在<code>master</code>和<code>slaver</code>的配置文件中，分别添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auth = true</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-1-添加root用户"><a href="#3-1-添加root用户" class="headerlink" title="3.1 添加root用户"></a>3.1 添加root用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongo </span><br><span class="line">&gt; use admin</span><br><span class="line">&gt; db.createUser(</span><br><span class="line">&#123; </span><br><span class="line">user: &quot;root&quot;,</span><br><span class="line">pwd: &quot;pwd4root&quot;,</span><br><span class="line">roles: [ &#123; role: &quot;root&quot;, db: &quot;admin&quot; &#125; ]</span><br><span class="line">&#125;</span><br><span class="line">)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-为数据库添加用户"><a href="#3-2-为数据库添加用户" class="headerlink" title="3.2 为数据库添加用户"></a>3.2 为数据库添加用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongo </span><br><span class="line">&gt; use db_name</span><br><span class="line">&gt; db.createUser(</span><br><span class="line">&#123;</span><br><span class="line">user: &quot;dbowner&quot;,</span><br><span class="line">pwd: &quot;pwd4dbowner&quot;,</span><br><span class="line">roles: [ &#123; role: &quot;dbOwner&quot;, db:&quot;db_name&quot;&#125;]</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-删除错建用户"><a href="#3-3-删除错建用户" class="headerlink" title="3.3 删除错建用户"></a>3.3 删除错建用户</h3><p>获取当前数据库的用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongo </span><br><span class="line">&gt; use db_name</span><br><span class="line">&gt; db.auth(&quot;dbowner&quot;,&quot;pwd4dbowner&quot;)</span><br><span class="line">&gt; db.getUsers()</span><br></pre></td></tr></table></figure></p>
+<p>删除不需要的数据库用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongo </span><br><span class="line">&gt; use db_name</span><br><span class="line">&gt; db.auth(&quot;dbowner&quot;,&quot;pwd4dbowner&quot;)</span><br><span class="line">&gt; db.dropUser(&quot;drop_username&quot;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-创建认证keyfile"><a href="#3-3-创建认证keyfile" class="headerlink" title="3.3 创建认证keyfile"></a>3.3 创建认证keyfile</h3><p>在<code>master</code>服务器上生成<code>keyfile</code><br>修改权限为700<br>复制到<code>slaver</code>服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/data/dbs/mongodb/</span><br><span class="line">openssl rand -base64 741 &gt;&gt; keyfile </span><br><span class="line">chmod 700 keyfile</span><br></pre></td></tr></table></figure></p>
+<p>在<code>master</code>和<code>slaver</code>的配置文件中，分别添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keyFile = /mnt/data/dbs/mongodb/keyfile</span><br></pre></td></tr></table></figure></p>
+<p>依次重启<code>master</code>和<code>slaver</code>服务器的<code>mongodb</code></p>
+<h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h2><p>在<code>master</code>服务器进行数据写入操作<br>在<code>slaver</code>服务器进行验证，新写入的数据同步了，包括数据库的用户认证信息也会同步。</p>
 
       
     </div>
@@ -352,22 +369,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/mongodb/" rel="tag">#mongodb</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/17/LNMP环境部署/" rel="next" title="LNMP环境部署">
-                <i class="fa fa-chevron-left"></i> LNMP环境部署
+              <a href="/2018/10/17/Redis主从/" rel="next" title="Redis主从">
+                <i class="fa fa-chevron-left"></i> Redis主从
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/18/开源项目管理系统-zentao/" rel="prev" title="开源项目管理系统-zentao">
-                开源项目管理系统-zentao <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +525,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备"><span class="nav-text">1. 准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-下载mediawiki并解压"><span class="nav-text">2. 下载mediawiki并解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-进行域名解析"><span class="nav-text">3. 进行域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置nginx"><span class="nav-text">4. 配置nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安装"><span class="nav-text">5. 安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text">1. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-创建配置目录"><span class="nav-text">2.1 创建配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置项"><span class="nav-text">2.2 配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-创建数据目录"><span class="nav-text">2.3 创建数据目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-启动并测试"><span class="nav-text">2.4 启动并测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加用户名密码"><span class="nav-text">3. 添加用户名密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-添加root用户"><span class="nav-text">3.1 添加root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-为数据库添加用户"><span class="nav-text">3.2 为数据库添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-删除错建用户"><span class="nav-text">3.3 删除错建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-创建认证keyfile"><span class="nav-text">3.3 创建认证keyfile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-测试"><span class="nav-text">4. 测试</span></a></li></ol></div>
             
           </div>
         </section>
