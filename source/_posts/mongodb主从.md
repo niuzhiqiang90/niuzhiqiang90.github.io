@@ -153,4 +153,15 @@ keyFile = /mnt/data/dbs/mongodb/keyfile
 
 ## 4. 测试
 在`master`服务器进行数据写入操作  
-在`slaver`服务器进行验证，新写入的数据同步了，包括数据库的用户认证信息也会同步。
+在`slaver`服务器进行验证，新写入的数据同步了，包括数据库的用户认证信息也会同步。  
+**注：**  
+在`slaver`登陆`mongo`并认证通过后，需要执行`rs.slaveOk()`才可以在从数据库上开启读操作。  
+例如：
+```
+$ cd ~/opt/mongodb-4.1.6
+$ ./bin/mongo
+> use db_name
+> db.auth("dbowner","pwd4dbowner")
+> rs.slaveOk()
+> show collections
+```
