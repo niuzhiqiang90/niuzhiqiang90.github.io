@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="docker,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -86,18 +86,13 @@
 
 
 
-<meta name="description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
-<meta name="keywords" content="docker">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker-registry">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/27/docker-registry/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Just do IT">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/tags/模拟/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T15:13:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker-registry">
-<meta name="twitter:description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
+<meta name="twitter:title" content="Just do IT">
 
 
 
@@ -118,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/27/docker-registry/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/tags/模拟/">
 
-  <title> docker-registry | Just do IT </title>
+  <title> 标签: 模拟 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -262,172 +257,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2>
+        模拟
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2018/12/11/mongodb主从/" itemprop="url">
               
-                docker-registry
+                <span itemprop="name">mongodb主从</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-27T19:44:00+08:00" content="2017-02-27">
-              2017-02-27
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T20:44:12+08:00" content="2018-12-11">
+          12-11
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="1-启动registry"><a href="#1-启动registry" class="headerlink" title="1. 启动registry"></a>1. 启动registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5000:5000 --name registry registry</span><br></pre></td></tr></table></figure>
-<p><strong>说明</strong></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-p 5000:5000</code></td>
-<td>第一个是host的端口，第二个是container的端口</td>
-</tr>
-<tr>
-<td><code>--name registry registry1</code></td>
-<td>registry是镜像名字，registry1是自定义的私有registry名字</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-测试私有仓库"><a href="#2-测试私有仓库" class="headerlink" title="2. 测试私有仓库"></a>2. 测试私有仓库</h2><h3 id="2-1-新pull一个镜像"><a href="#2-1-新pull一个镜像" class="headerlink" title="2.1 新pull一个镜像"></a>2.1 新pull一个镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull busybox</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-给镜像打个tag"><a href="#2-2-给镜像打个tag" class="headerlink" title="2.2 给镜像打个tag"></a>2.2 给镜像打个tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker tag busybox xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-push到私有仓库"><a href="#2-3-push到私有仓库" class="headerlink" title="2.3 push到私有仓库"></a>2.3 push到私有仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-查看私有镜像仓库中的镜像"><a href="#2-4-查看私有镜像仓库中的镜像" class="headerlink" title="2.4 查看私有镜像仓库中的镜像"></a>2.4 查看私有镜像仓库中的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://xxx.xxx.xxx.xxx:5000/v2/_catalog</span><br></pre></td></tr></table></figure>
-<h3 id="2-5-删除本地的镜像"><a href="#2-5-删除本地的镜像" class="headerlink" title="2.5 删除本地的镜像"></a>2.5 删除本地的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-6-将刚才的删除的镜像，从私有镜像仓库pull回来"><a href="#2-6-将刚才的删除的镜像，从私有镜像仓库pull回来" class="headerlink" title="2.6 将刚才的删除的镜像，从私有镜像仓库pull回来"></a>2.6 将刚才的删除的镜像，从私有镜像仓库pull回来</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h2 id="3-报错及处理"><a href="#3-报错及处理" class="headerlink" title="3. 报错及处理"></a>3. 报错及处理</h2><h3 id="3-1-在本地push时，出现如下错误"><a href="#3-1-在本地push时，出现如下错误" class="headerlink" title="3.1 在本地push时，出现如下错误"></a>3.1 在本地push时，出现如下错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br><span class="line">The push refers to a repository [xxx.xxx.xxx.xxx:5000/myfirstimage]</span><br><span class="line">Get https://xxx.xxx.xxx.xxx:5000/v1/_ping: http: server gave HTTP response to HTTPS client</span><br></pre></td></tr></table></figure>
-<p><strong>解决方案</strong></p>
-<ol>
-<li><p>修改配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/default/docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOCKER_OPTS=&quot;--insecure-registry xxx.xxx.xxx.xxx:5000&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启docker服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/docker/" rel="tag">#docker</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/27/docker容器/" rel="next" title="docker容器">
-                <i class="fa fa-chevron-left"></i> docker容器
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/13/ceph/" rel="prev" title="ceph">
-                ceph <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -435,10 +302,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -458,17 +321,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Niu Zhiqiang">
           <p class="site-author-name" itemprop="name">Niu Zhiqiang</p>
@@ -543,17 +397,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-启动registry"><span class="nav-text">1. 启动registry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-测试私有仓库"><span class="nav-text">2. 测试私有仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-新pull一个镜像"><span class="nav-text">2.1 新pull一个镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-给镜像打个tag"><span class="nav-text">2.2 给镜像打个tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-push到私有仓库"><span class="nav-text">2.3 push到私有仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-查看私有镜像仓库中的镜像"><span class="nav-text">2.4 查看私有镜像仓库中的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-删除本地的镜像"><span class="nav-text">2.5 删除本地的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-将刚才的删除的镜像，从私有镜像仓库pull回来"><span class="nav-text">2.6 将刚才的删除的镜像，从私有镜像仓库pull回来</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-报错及处理"><span class="nav-text">3. 报错及处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-在本地push时，出现如下错误"><span class="nav-text">3.1 在本地push时，出现如下错误</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -689,10 +532,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 

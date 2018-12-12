@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="docker,">
+  <meta name="keywords" content="supervisor,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
-<meta name="keywords" content="docker">
+<meta name="description" content="1. 简介supervisor是一个用Python写的进程管理工具，可以很方便的用来启动、重启、关闭进程。不仅可以控制单个进程，还可以同时启动、关闭多个进程。 2. 安装12pip install --upgrade pippip install supervisor 3. 配置配置文件为/etc/supervisord.conf 3.1 生成配置文件1sudo echo_supervisord_">
+<meta name="keywords" content="supervisor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker-registry">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/02/27/docker-registry/index.html">
+<meta property="og:title" content="通过supervisor管理服务">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2018/05/09/通过supervisor管理服务/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
+<meta property="og:description" content="1. 简介supervisor是一个用Python写的进程管理工具，可以很方便的用来启动、重启、关闭进程。不仅可以控制单个进程，还可以同时启动、关闭多个进程。 2. 安装12pip install --upgrade pippip install supervisor 3. 配置配置文件为/etc/supervisord.conf 3.1 生成配置文件1sudo echo_supervisord_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T15:13:37.000Z">
+<meta property="og:updated_time" content="2018-12-12T04:57:59.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker-registry">
-<meta name="twitter:description" content="1. 启动registry1docker run -d -p 5000:5000 --name registry registry 说明    参数 说明     -p 5000:5000 第一个是host的端口，第二个是container的端口   --name registry registry1 registry是镜像名字，registry1是自定义的私有registry名字    2. 测">
+<meta name="twitter:title" content="通过supervisor管理服务">
+<meta name="twitter:description" content="1. 简介supervisor是一个用Python写的进程管理工具，可以很方便的用来启动、重启、关闭进程。不仅可以控制单个进程，还可以同时启动、关闭多个进程。 2. 安装12pip install --upgrade pippip install supervisor 3. 配置配置文件为/etc/supervisord.conf 3.1 生成配置文件1sudo echo_supervisord_">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/02/27/docker-registry/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2018/05/09/通过supervisor管理服务/">
 
-  <title> docker-registry | Just do IT </title>
+  <title> 通过supervisor管理服务 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                docker-registry
+                通过supervisor管理服务
               
             
           </h1>
@@ -295,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-27T19:44:00+08:00" content="2017-02-27">
-              2017-02-27
+            <time itemprop="dateCreated" datetime="2018-05-09T20:54:10+08:00" content="2018-05-09">
+              2018-05-09
             </time>
           </span>
 
@@ -328,49 +328,23 @@
       
 
       
-        <h2 id="1-启动registry"><a href="#1-启动registry" class="headerlink" title="1. 启动registry"></a>1. 启动registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5000:5000 --name registry registry</span><br></pre></td></tr></table></figure>
-<p><strong>说明</strong></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-p 5000:5000</code></td>
-<td>第一个是host的端口，第二个是container的端口</td>
-</tr>
-<tr>
-<td><code>--name registry registry1</code></td>
-<td>registry是镜像名字，registry1是自定义的私有registry名字</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-测试私有仓库"><a href="#2-测试私有仓库" class="headerlink" title="2. 测试私有仓库"></a>2. 测试私有仓库</h2><h3 id="2-1-新pull一个镜像"><a href="#2-1-新pull一个镜像" class="headerlink" title="2.1 新pull一个镜像"></a>2.1 新pull一个镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull busybox</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-给镜像打个tag"><a href="#2-2-给镜像打个tag" class="headerlink" title="2.2 给镜像打个tag"></a>2.2 给镜像打个tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker tag busybox xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-push到私有仓库"><a href="#2-3-push到私有仓库" class="headerlink" title="2.3 push到私有仓库"></a>2.3 push到私有仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-查看私有镜像仓库中的镜像"><a href="#2-4-查看私有镜像仓库中的镜像" class="headerlink" title="2.4 查看私有镜像仓库中的镜像"></a>2.4 查看私有镜像仓库中的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://xxx.xxx.xxx.xxx:5000/v2/_catalog</span><br></pre></td></tr></table></figure>
-<h3 id="2-5-删除本地的镜像"><a href="#2-5-删除本地的镜像" class="headerlink" title="2.5 删除本地的镜像"></a>2.5 删除本地的镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h3 id="2-6-将刚才的删除的镜像，从私有镜像仓库pull回来"><a href="#2-6-将刚才的删除的镜像，从私有镜像仓库pull回来" class="headerlink" title="2.6 将刚才的删除的镜像，从私有镜像仓库pull回来"></a>2.6 将刚才的删除的镜像，从私有镜像仓库pull回来</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-<h2 id="3-报错及处理"><a href="#3-报错及处理" class="headerlink" title="3. 报错及处理"></a>3. 报错及处理</h2><h3 id="3-1-在本地push时，出现如下错误"><a href="#3-1-在本地push时，出现如下错误" class="headerlink" title="3.1 在本地push时，出现如下错误"></a>3.1 在本地push时，出现如下错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br><span class="line">The push refers to a repository [xxx.xxx.xxx.xxx:5000/myfirstimage]</span><br><span class="line">Get https://xxx.xxx.xxx.xxx:5000/v1/_ping: http: server gave HTTP response to HTTPS client</span><br></pre></td></tr></table></figure>
-<p><strong>解决方案</strong></p>
-<ol>
-<li><p>修改配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/default/docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOCKER_OPTS=&quot;--insecure-registry xxx.xxx.xxx.xxx:5000&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启docker服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker push xxx.xxx.xxx.xxx:5000/myfirstimage</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p><a href="http://supervisord.org" target="_blank" rel="noopener">supervisor</a>是一个用Python写的进程管理工具，可以很方便的用来启动、重启、关闭进程。不仅可以控制单个进程，还可以同时启动、关闭多个进程。</p>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade pip</span><br><span class="line">pip install supervisor</span><br></pre></td></tr></table></figure>
+<h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h2><p>配置文件为<code>/etc/supervisord.conf</code></p>
+<h3 id="3-1-生成配置文件"><a href="#3-1-生成配置文件" class="headerlink" title="3.1 生成配置文件"></a>3.1 生成配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-配置项"><a href="#3-2-配置项" class="headerlink" title="3.2 配置项"></a>3.2 配置项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">; supervisor config file                                                                                                                                                                                        </span><br><span class="line"></span><br><span class="line">[unix_http_server]</span><br><span class="line">file=/var/run/supervisor.sock   ; (the path to the socket file)</span><br><span class="line">chmod=0700                       ; sockef file mode (default 0700)</span><br><span class="line"> </span><br><span class="line">[supervisord]</span><br><span class="line">logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)</span><br><span class="line">pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)</span><br><span class="line">childlogdir=/var/log/supervisor            ; (&apos;AUTO&apos; child log dir, default $TEMP)</span><br><span class="line"></span><br><span class="line">minfds=2000000</span><br><span class="line"> </span><br><span class="line">; the below section must remain in the config file for RPC </span><br><span class="line">; (supervisorctl/web interface) to work, additional interfaces may be</span><br><span class="line">; added by defining them in separate rpcinterface: sections</span><br><span class="line">[rpcinterface:supervisor]</span><br><span class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</span><br><span class="line"> </span><br><span class="line">[supervisorctl]</span><br><span class="line">serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket</span><br><span class="line"> </span><br><span class="line">; The [include] section can just contain the &quot;files&quot; setting.  This</span><br><span class="line">; setting can list multiple files (separated by whitespace or</span><br><span class="line">; newlines).  It can also contain wildcards.  The filenames are </span><br><span class="line">; interpreted as relative to this file.  Included files *cannot*</span><br><span class="line">; include files themselves.</span><br><span class="line"> </span><br><span class="line">[include]</span><br><span class="line">files = /etc/supervisor/conf.d/*.conf</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-创建目录"><a href="#3-3-创建目录" class="headerlink" title="3.3 创建目录"></a>3.3 创建目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /var/log/supervisor</span><br><span class="line">sudo mkdir /etc/supervisor/conf.d</span><br></pre></td></tr></table></figure>
+<h2 id="4-启动"><a href="#4-启动" class="headerlink" title="4. 启动"></a>4. 启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervirsord</span><br></pre></td></tr></table></figure>
+<p>如果有报错，修改刚才创建的目录权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /var/run/</span><br><span class="line">sudo chmod 777 /var/log/supervisor</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-添加管理项"><a href="#5-添加管理项" class="headerlink" title="5. 添加管理项"></a>5. 添加管理项</h2><p>待服务启动后，就可以添加需要<code>supervisor</code>管理的服务</p>
+<h3 id="5-1-创建服务配置文件"><a href="#5-1-创建服务配置文件" class="headerlink" title="5.1 创建服务配置文件"></a>5.1 创建服务配置文件</h3><p>将需要被管理的配置文件放到<code>/etc/supervisor/conf.d/</code>下<br><strong>需要用到的环境变量通过<code>environment</code>来设置即可，多个环境变量用<code>,</code>分割</strong><br>例如：创建<code>consul.conf</code>文件内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[program:consul]                                                                                                                                                                                                </span><br><span class="line">user=USERNAME</span><br><span class="line">environment=GOMAXPROCS=4</span><br><span class="line">command=/home/USERNAME/opt/consul/bin/consul agent -domain &quot;test.&quot; -config-file /home/USERNAME/opt/consul/conf/consul.json</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">stdout_logfile=/mnt/data/logs/supervisor/consul-out.log</span><br><span class="line">stdout_logfile_maxbytes=1MB</span><br><span class="line">stdout_logfile_backups=10</span><br><span class="line">stdout_capture_maxbytes=1MB</span><br><span class="line">stderr_logfile=/mnt/data/logs/supervisor/consul-err.log</span><br><span class="line">stderr_logfile_maxbytes=1MB</span><br><span class="line">stderr_logfile_backups=10</span><br><span class="line">stderr_capture_maxbytes=1MB</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-2-reload配置文件"><a href="#5-2-reload配置文件" class="headerlink" title="5.2 reload配置文件"></a>5.2 reload配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reread</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-更新配置文件"><a href="#5-3-更新配置文件" class="headerlink" title="5.3 更新配置文件"></a>5.3 更新配置文件</h3><p>更新配置文件后，服务会自动添加到<code>supervisor</code>列表里，并自动把服务器管理起来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl update consul</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-4-测试"><a href="#5-4-测试" class="headerlink" title="5.4 测试"></a>5.4 测试</h3><p><code>consul</code>启动后，人为<code>kill</code>掉<code>consul</code>，测试<code>supervisord</code>是否会自动将<code>consul</code>重启。</p>
+<h2 id="6-其他相关命令"><a href="#6-其他相关命令" class="headerlink" title="6. 其他相关命令"></a>6. 其他相关命令</h2><h3 id="6-1-重启supervisord"><a href="#6-1-重启supervisord" class="headerlink" title="6.1 重启supervisord"></a>6.1 重启supervisord</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reload</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-更新配置文件"><a href="#6-2-更新配置文件" class="headerlink" title="6.2 更新配置文件"></a>6.2 更新配置文件</h3><p><code>PROGRAM-NAME</code>为可选参数，不指定为所有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reread</span><br><span class="line">sudo supervisorctl update [PROGRAM-NAME]</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-3-管理服务"><a href="#6-3-管理服务" class="headerlink" title="6.3 管理服务"></a>6.3 管理服务</h3><p><code>PROGRAM-NAME</code>为可选参数，不指定为所有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl start [PROGRAM-NAME]</span><br><span class="line">sudo supervisorctl stop [PROGRAM-NAME]</span><br><span class="line">sudo supervisorctl restart [PROGRAM-NAME]</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-4-查询所有服务状态"><a href="#6-4-查询所有服务状态" class="headerlink" title="6.4 查询所有服务状态"></a>6.4 查询所有服务状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl status</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -392,7 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag">#docker</a>
+            <a href="/tags/supervisor/" rel="tag">#supervisor</a>
           
         </div>
       
@@ -401,16 +375,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/27/docker容器/" rel="next" title="docker容器">
-                <i class="fa fa-chevron-left"></i> docker容器
+              <a href="/2017/09/15/nginx编译安装lua模块/" rel="next" title="nginx编译安装lua模块">
+                <i class="fa fa-chevron-left"></i> nginx编译安装lua模块
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/13/ceph/" rel="prev" title="ceph">
-                ceph <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/13/python字符串对齐/" rel="prev" title="python字符串对齐">
+                python字符串对齐 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +524,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-启动registry"><span class="nav-text">1. 启动registry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-测试私有仓库"><span class="nav-text">2. 测试私有仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-新pull一个镜像"><span class="nav-text">2.1 新pull一个镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-给镜像打个tag"><span class="nav-text">2.2 给镜像打个tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-push到私有仓库"><span class="nav-text">2.3 push到私有仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-查看私有镜像仓库中的镜像"><span class="nav-text">2.4 查看私有镜像仓库中的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-删除本地的镜像"><span class="nav-text">2.5 删除本地的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-将刚才的删除的镜像，从私有镜像仓库pull回来"><span class="nav-text">2.6 将刚才的删除的镜像，从私有镜像仓库pull回来</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-报错及处理"><span class="nav-text">3. 报错及处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-在本地push时，出现如下错误"><span class="nav-text">3.1 在本地push时，出现如下错误</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-text">2. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置"><span class="nav-text">3. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-生成配置文件"><span class="nav-text">3.1 生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-配置项"><span class="nav-text">3.2 配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-创建目录"><span class="nav-text">3.3 创建目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-启动"><span class="nav-text">4. 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加管理项"><span class="nav-text">5. 添加管理项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-创建服务配置文件"><span class="nav-text">5.1 创建服务配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-reload配置文件"><span class="nav-text">5.2 reload配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-更新配置文件"><span class="nav-text">5.3 更新配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-测试"><span class="nav-text">5.4 测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-其他相关命令"><span class="nav-text">6. 其他相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-重启supervisord"><span class="nav-text">6.1 重启supervisord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-更新配置文件"><span class="nav-text">6.2 更新配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-管理服务"><span class="nav-text">6.3 管理服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-查询所有服务状态"><span class="nav-text">6.4 查询所有服务状态</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -4,14 +4,31 @@
 
     
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2018/05/09/%E9%80%9A%E8%BF%87supervisor%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-12-12T04:57:59.938Z</lastmod>
+    <data>
+        <display>
+        <title>通过supervisor管理服务</title>
+        <pubTime>2018-05-09T12:54:10.000Z</pubTime>
+        
+        <tag>supervisor</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2018/12/11/mongodb%E4%B8%BB%E4%BB%8E/</loc>
-    <lastmod>2018-12-12T01:30:07.050Z</lastmod>
+    <lastmod>2018-12-12T02:58:43.414Z</lastmod>
     <data>
         <display>
         <title>mongodb主从</title>
         <pubTime>2018-12-11T12:44:12.000Z</pubTime>
         
-        <tag>mongodb</tag>
+        <tag>模拟</tag>
          
          
            
@@ -390,12 +407,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python字符编码</title>
-        <pubTime>2017-03-20T13:20:21.000Z</pubTime>
+        <title>python用户交互</title>
+        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -407,12 +424,12 @@
 
     
   <url>
-    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92/</loc>
+    <loc>http://niuzhiqiang90.coding.me/2017/03/20/python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2017-03-21T13:16:24.321Z</lastmod>
     <data>
         <display>
-        <title>python用户交互</title>
-        <pubTime>2017-03-20T14:05:30.000Z</pubTime>
+        <title>python字符编码</title>
+        <pubTime>2017-03-20T13:20:21.000Z</pubTime>
         
         <tag>python</tag>
          
