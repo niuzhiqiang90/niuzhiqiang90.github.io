@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="python,">
+  <meta name="keywords" content="mysql,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="1. raw_input()raw_input() 从标准输入中读取一个字符串1234567raw_input(...)    raw_input([prompt]) -&amp;gt; string        Read a string from standard input.  The trailing newline is stripped.    If the user hits EOF (U">
-<meta name="keywords" content="python">
+<meta name="description" content="大多数情况下我们会想指定mysql的basedir和datadir或者mysql的启动用户。 1. 修改配置文件/etc/my.cnf添加如下内容123[mysqld]basedir     = /home/USERNAME/opt/mysql-5.5.57 #mysql安装目录datadir     = /mnt/data/mysqld/data #mysql数据目录 同时也可以修改mysql的">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python用户交互">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/03/20/python用户交互/index.html">
+<meta property="og:title" content="mysql配置项修改">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/17/mysql配置项修改/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. raw_input()raw_input() 从标准输入中读取一个字符串1234567raw_input(...)    raw_input([prompt]) -&amp;gt; string        Read a string from standard input.  The trailing newline is stripped.    If the user hits EOF (U">
+<meta property="og:description" content="大多数情况下我们会想指定mysql的basedir和datadir或者mysql的启动用户。 1. 修改配置文件/etc/my.cnf添加如下内容123[mysqld]basedir     = /home/USERNAME/opt/mysql-5.5.57 #mysql安装目录datadir     = /mnt/data/mysqld/data #mysql数据目录 同时也可以修改mysql的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-03-21T13:16:24.321Z">
+<meta property="og:updated_time" content="2018-12-25T06:06:20.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python用户交互">
-<meta name="twitter:description" content="1. raw_input()raw_input() 从标准输入中读取一个字符串1234567raw_input(...)    raw_input([prompt]) -&amp;gt; string        Read a string from standard input.  The trailing newline is stripped.    If the user hits EOF (U">
+<meta name="twitter:title" content="mysql配置项修改">
+<meta name="twitter:description" content="大多数情况下我们会想指定mysql的basedir和datadir或者mysql的启动用户。 1. 修改配置文件/etc/my.cnf添加如下内容123[mysqld]basedir     = /home/USERNAME/opt/mysql-5.5.57 #mysql安装目录datadir     = /mnt/data/mysqld/data #mysql数据目录 同时也可以修改mysql的">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/03/20/python用户交互/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/17/mysql配置项修改/">
 
-  <title> python用户交互 | Just do IT </title>
+  <title> mysql配置项修改 | Just do IT </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +283,7 @@
             
             
               
-                python用户交互
+                mysql配置项修改
               
             
           </h1>
@@ -295,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-20T22:05:30+08:00" content="2017-03-20">
-              2017-03-20
+            <time itemprop="dateCreated" datetime="2017-08-17T21:12:03+08:00" content="2017-08-17">
+              2017-08-17
             </time>
           </span>
 
@@ -328,12 +328,13 @@
       
 
       
-        <h2 id="1-raw-input"><a href="#1-raw-input" class="headerlink" title="1. raw_input()"></a>1. raw_input()</h2><p>raw_input() 从标准输入中读取一个字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">raw_input(...)</span><br><span class="line">    raw_input([prompt]) -&gt; string</span><br><span class="line">    </span><br><span class="line">    Read a string from standard input.  The trailing newline is stripped.</span><br><span class="line">    If the user hits EOF (Unix: Ctl-D, Windows: Ctl-Z+Return), raise EOFError.</span><br><span class="line">    On Unix, GNU readline is used if enabled.  The prompt string, if given,</span><br><span class="line">    is printed without a trailing newline before reading.</span><br></pre></td></tr></table></figure></p>
-<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = raw_input(&apos;Please input your name:&apos;)</span><br><span class="line">age = raw_input(&apos;age:&apos;)</span><br><span class="line">print &quot;name: &quot; % name</span><br><span class="line">print &quot;age:&quot; % age</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">name = raw_input(&apos;Please input your name:&apos;)</span><br><span class="line">age = raw_input(&apos;age:&apos;)</span><br><span class="line">job = raw_input(&apos;Job:&apos;)</span><br><span class="line">salary = raw_input(&apos;Salary:&apos;)</span><br><span class="line"></span><br><span class="line">print &apos;&apos;&apos;</span><br><span class="line">Personal information of %s:</span><br><span class="line">   Name : %s</span><br><span class="line">   Age  : %s     d只能输入数字 f只能输入浮点型</span><br><span class="line">    Job : %s</span><br><span class="line">  Salary: %s</span><br><span class="line">&apos;&apos;&apos; %(name, name, age, job, salary)</span><br></pre></td></tr></table></figure>
-<h2 id="2-input"><a href="#2-input" class="headerlink" title="2. input()"></a>2. input()</h2><p>input()    输入的是什么就是什么格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input(...)</span><br><span class="line">    input([prompt]) -&gt; value</span><br><span class="line">    </span><br><span class="line">    Equivalent to eval(raw_input(prompt)).</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; info = &quot;This var will be printed out ...&quot;</span><br><span class="line">&gt;&gt;&gt; age = input(&apos;age:&apos;)</span><br><span class="line">age:info</span><br><span class="line">&gt;&gt;&gt; print age</span><br><span class="line">This var will be printed out ...</span><br></pre></td></tr></table></figure>
+        <p>大多数情况下我们会想指定<code>mysql</code>的<code>basedir</code>和<code>datadir</code>或者<code>mysql</code>的启动用户。</p>
+<h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h2><p><code>/etc/my.cnf</code><br>添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir     = /home/USERNAME/opt/mysql-5.5.57 #mysql安装目录</span><br><span class="line">datadir     = /mnt/data/mysqld/data #mysql数据目录</span><br></pre></td></tr></table></figure></p>
+<p>同时也可以修改mysql的启动用户<br><a href="https://dev.mysql.com/doc/refman/5.5/en/changing-mysql-user.html" target="_blank" rel="noopener">Run MySQL as a Normal User</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user         = USERNAME   #修改mysql的用户</span><br><span class="line">bind-address = 127.0.0.1 #修改绑定的ip</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-同步数据文件"><a href="#2-同步数据文件" class="headerlink" title="2. 同步数据文件"></a>2. 同步数据文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/data/mysqld/data</span><br><span class="line">sudo rsync -avz /home/USERNAME/opt/mysql-5.5.57/data/* ./</span><br><span class="line">sudo chown -R USERNAME:USERNAME ../data  #如果没有修改mysql的用户，该步忽略</span><br></pre></td></tr></table></figure>
+<h2 id="3-启动并检测"><a href="#3-启动并检测" class="headerlink" title="3. 启动并检测"></a>3. 启动并检测</h2><p>执行<code>mysql</code>相关命令来启动进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqld-svc start</span><br><span class="line">ps -ef | grep mysqld</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-补充"><a href="#4-补充" class="headerlink" title="4. 补充"></a>4. 补充</h2><p>修改mysql的日志文件位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld_safe]</span><br><span class="line">log-error   = /mnt/data/mysqld/logs/mysqld.log</span><br></pre></td></tr></table></figure></p>
+<p>记得创建日志文件目录。</p>
 
       
     </div>
@@ -356,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
           
         </div>
       
@@ -365,16 +366,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/python使用和导入模块/" rel="next" title="python使用和导入模块">
-                <i class="fa fa-chevron-left"></i> python使用和导入模块
+              <a href="/2017/08/17/LNMP环境部署/" rel="next" title="LNMP环境部署">
+                <i class="fa fa-chevron-left"></i> LNMP环境部署
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/git-tag操作/" rel="prev" title="git tag操作">
-                git tag操作 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/18/mediawiki/" rel="prev" title="mediawiki">
+                mediawiki <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -514,7 +515,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-raw-input"><span class="nav-text">1. raw_input()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-input"><span class="nav-text">2. input()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-修改配置文件"><span class="nav-text">1. 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-同步数据文件"><span class="nav-text">2. 同步数据文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-启动并检测"><span class="nav-text">3. 启动并检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-补充"><span class="nav-text">4. 补充</span></a></li></ol></div>
             
           </div>
         </section>
