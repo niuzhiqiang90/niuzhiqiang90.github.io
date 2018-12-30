@@ -290,6 +290,19 @@ duoshuo_info:
   user_id: 0
   #admin_nickname: Author
 
+gitment:
+  enable: true
+  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  count: true # Show comments count in post meta area
+  lazy: false # Comments lazy loading with a button
+  cleanly: false # Hide 'Powered by ...' on footer, and more
+  language: # Force language, or auto switch by theme
+  github_user: niuzhiqiang90
+  github_repo: #新建一个代码仓库,用于存储评论内容, 这里千万注意添加仓库名称而不是完整地址
+  # MUST HAVE, Github client id for the Gitment
+  client_id: 66d495baec5be06e195e
+  # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  client_secret: 7173a08d26e2e9d68f34964f37daf1cc58c4c759 
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
