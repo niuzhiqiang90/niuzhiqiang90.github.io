@@ -298,7 +298,7 @@ gitment:
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
   github_user: niuzhiqiang90
-  github_repo: #新建一个代码仓库,用于存储评论内容, 这里千万注意添加仓库名称而不是完整地址
+  github_repo: niuzhiqiang90.github.io #新建一个代码仓库,用于存储评论内容, 这里千万注意添加仓库名称而不是完整地址
   # MUST HAVE, Github client id for the Gitment
   client_id: 66d495baec5be06e195e
   # EITHER this or proxy_gateway, Github access secret token for the Gitment
