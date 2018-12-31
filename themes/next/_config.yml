@@ -178,8 +178,8 @@ site_state: true
 social:
   GitHub: https://github.com/niuzhiqiang90|| github
   Coding: https://coding.net/u/niuzhiqiang90
-  E-Mail: niuzhiqiang90@foxmail.com
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  #E-Mail: 
+  E-Mail: mailto:niuzhiqiang90@foxmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter

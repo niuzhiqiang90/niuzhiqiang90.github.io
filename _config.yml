@@ -9,7 +9,7 @@ description:
 author: Niu Zhiqiang
 language: zh-Hans
 timezone:
-avatar: /images/avatar.png
+#avatar: /images/avatar.png
 
 search:
     path: search.xml
