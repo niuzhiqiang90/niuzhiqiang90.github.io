@@ -1,43 +1,62 @@
-<div class="copyright" >
-  {% set current = date(Date.now(), "YYYY") %}
-  &copy; {% if theme.since and theme.since != current %} {{ theme.since }} - {% endif %}
-  <span itemprop="copyrightYear">{{ current }}</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+<div class="copyright">{#
+#}{% set current = date(Date.now(), "YYYY") %}{#
+#}{% if theme.footer.beian.enable %}{#
+#}  {{ next_url('http://www.miitbeian.gov.cn', theme.footer.beian.icp + ' ') }}{#
+#}{% endif %}{#
+#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
+#}<span itemprop="copyrightYear">{{ current }}</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+
+  {% if config.symbols_count_time.total_symbols %}
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    {% if theme.symbols_count_time.item_text_total %}
+      <span class="post-meta-item-text">{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
+    {% endif %}
+    <span title="{{ __('symbols_count_time.count_total') }}">{#
+    #}{{ symbolsCountTotal(site) }}{#
+  #}</span>
+  {% endif %}
+
+  {% if config.symbols_count_time.total_time %}
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    {% if theme.symbols_count_time.item_text_total %}
+      <span class="post-meta-item-text">{{ __('symbols_count_time.time_total')}} &asymp;</span>
+    {% endif %}
+    <span title="{{ __('symbols_count_time.time_total') }}">{#
+    #}{{ symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
+  #}</span>
+  {% endif %}
 </div>
 
-<div class="powered-by">
-  {{ __('footer.powered', '<a class="theme-link" href="https://hexo.io">Hexo</a>') }}
-</div>
+{% if theme.footer.powered.enable %}
+  <div class="powered-by">{#
+  #}{{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}{#
+  #}{% if theme.footer.powered.version %} v{{ hexo_env('version') }}{% endif %}{#
+ #}</div>
+{% endif %}
 
-<div class="theme-info">
-  {{ __('footer.theme') }} -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.{{ theme.scheme }}
-  </a>
-</div>
+{% if theme.footer.powered.enable and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
 
-<br>
+{% if theme.footer.theme.enable %}
+  <div class="theme-info">{#
+  #}{{ __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
+  #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
+#}</div>
+{% endif %}
 
-本站总点击 <span id="busuanzi_value_site_pv"></span> 次
-&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
-&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/sitemap.xml">Google网站地图</a></span>
-&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/baidusitemap.xml">百度网站地图</a></span>
-
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
- })();
-</script>
-
+{% if theme.footer.custom_text %}
+  <div class="footer-custom">{#
+  #}{{ theme.footer.custom_text }}{#
+#}</div>
+{% endif %}
