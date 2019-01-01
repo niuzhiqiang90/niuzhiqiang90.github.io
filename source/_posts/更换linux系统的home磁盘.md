@@ -1,6 +1,7 @@
 ---
 title: 更换linux系统的home磁盘
 date: 2017-04-01 20:50:55
+categories: linux
 tags: linux
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: tmux安装配置使用
 date: 2017-01-19 16:35:05
+categories: tmux
 tags: tmux
 ---
 

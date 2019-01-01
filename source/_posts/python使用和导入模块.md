@@ -1,6 +1,7 @@
 ---
 title: python使用和导入模块
 date: 2017-03-20 21:47:06
+categories: python
 tags: python
 ---
 

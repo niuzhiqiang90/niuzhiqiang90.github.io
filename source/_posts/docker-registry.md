@@ -1,6 +1,7 @@
 ---
 title: docker-registry
 date: 2017-02-27 19:44:00
+categories: docker
 tags: docker
 ---
 

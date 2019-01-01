@@ -1,6 +1,7 @@
 ---
 title: linux添加swap
 date: 2017-02-14 14:39:33
+categories: linux
 tags: linux
 ---
 

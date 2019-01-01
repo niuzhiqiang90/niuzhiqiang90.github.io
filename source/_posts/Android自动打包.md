@@ -1,6 +1,7 @@
 ---
 title: Android自动打包
 date: 2017-08-07 20:19:01
+categories: android
 tags: android
 ---
 

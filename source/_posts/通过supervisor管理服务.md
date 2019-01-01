@@ -1,6 +1,7 @@
 ---
 title: 通过supervisor管理服务
 date: 2018-05-09 20:54:10
+categories: linux
 tags: supervisor
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: LNMP环境部署
 date: 2017-08-17 20:36:39
+categories: LNMP
 tags:
 ---
 ## 0. 源由

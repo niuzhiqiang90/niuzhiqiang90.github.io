@@ -1,6 +1,7 @@
 ---
 title: docker容器
 date: 2017-02-27 17:26:49
+categories: docker
 tags: docker
 ---
 

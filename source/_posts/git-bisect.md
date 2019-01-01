@@ -1,6 +1,7 @@
 ---
 title: git bisect
 date: 2017-08-30 22:06:12
+categories: git
 tags: git
 ---
 

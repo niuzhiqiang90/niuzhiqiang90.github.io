@@ -1,6 +1,7 @@
 ---
 title: python文件处理
 date: 2017-03-22 20:51:07
+categories: python
 tags: python
 ---
 

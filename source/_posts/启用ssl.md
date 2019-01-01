@@ -1,6 +1,7 @@
 ---
 title: 启用ssl
 date: 2017-08-09 20:33:10
+categories: nginx
 tags: [nginx,ssl]
 ---
 

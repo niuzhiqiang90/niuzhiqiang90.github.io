@@ -1,6 +1,7 @@
 ---
 title: python字符串对齐
 date: 2018-10-13 11:15:18
+categories: python
 tags: python
 ---
 

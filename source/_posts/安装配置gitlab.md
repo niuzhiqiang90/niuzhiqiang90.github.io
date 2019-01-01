@@ -1,6 +1,7 @@
 ---
 title: 安装配置gitlab
 date: 2017-08-02 21:51:17
+categories: gitlab
 tags: gitlab
 ---
 

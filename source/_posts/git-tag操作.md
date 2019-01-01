@@ -1,6 +1,7 @@
 ---
 title: git tag操作
 date: 2017-03-22 13:17:19
+categories: git
 tags: git
 ---
 

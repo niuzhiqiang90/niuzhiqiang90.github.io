@@ -1,6 +1,7 @@
 ---
 title: linux系统监控基本命令
 date: 2017-03-25 17:09:57
+categories: linux
 tags: linux
 ---
 

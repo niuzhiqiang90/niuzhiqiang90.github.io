@@ -4,6 +4,7 @@ date: 2018-10-17 15:58:19
 tags: Redis
 ---
 
+本文转载整理自http://doc.redisfans.com/topic/replication.html
 Redis支持简单且易用的主从复制功能
 
 ## 1. Redis复制功能的几个重要方面

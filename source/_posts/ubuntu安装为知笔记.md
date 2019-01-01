@@ -1,6 +1,7 @@
 ---
 title: ubuntu安装为知笔记
 date: 2017-01-20 15:38:17
+categories: ubuntu
 tags: ubuntu
 ---
 

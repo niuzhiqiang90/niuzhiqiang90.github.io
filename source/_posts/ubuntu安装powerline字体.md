@@ -1,6 +1,7 @@
 ---
 title: ubuntu安装powerline字体
 date: 2017-01-22 14:25:10
+categories: ubuntu
 tags: vim插件
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: mysql配置项修改
 date: 2017-08-17 21:12:03
+categories: mysql
 tags: mysql
 ---
 

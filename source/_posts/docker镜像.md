@@ -1,6 +1,7 @@
 ---
 title: docker镜像
 date: 2017-02-27 17:15:33
+categories: docker
 tags: docker
 ---
 

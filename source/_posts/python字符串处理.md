@@ -1,6 +1,7 @@
 ---
 title: python字符串处理
 date: 2017-03-23 21:49:45
+categories: python
 tags: python
 ---
 

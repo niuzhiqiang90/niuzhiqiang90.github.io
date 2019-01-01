@@ -1,6 +1,7 @@
 ---
 title: nginx编译安装lua模块
 date: 2017-09-15 20:51:59
+categories: nginx
 tags: nginx
 ---
 

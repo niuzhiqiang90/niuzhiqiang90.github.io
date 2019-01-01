@@ -1,7 +1,8 @@
 ---
 title: 'mediawiki'
 date: 2017-08-18 21:08:11
-tags:
+categories: linux
+tags: linux
 ---
 
 ## 1. 准备

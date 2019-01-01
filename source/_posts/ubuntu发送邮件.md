@@ -1,7 +1,8 @@
 ---
 title: ubuntu发送邮件
 date: 2017-05-16 21:23:23
-tags:
+categories: ubuntu
+tags: ubuntu
 ---
 
 ## 1. 安装

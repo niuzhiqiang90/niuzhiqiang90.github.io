@@ -1,6 +1,7 @@
 ---
 title: Jenkins
 date: 2017-08-10 21:47:34
+categories: Jenkins
 tags:
 ---
 Jenkins是一个开源的、提供友好操作界面的持续集成(CI)工具，起源于Hudson（Hudson是商用的），主要用于持续、自动的构建/测试软件项目。

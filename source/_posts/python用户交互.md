@@ -1,6 +1,7 @@
 ---
 title: python用户交互
 date: 2017-03-20 22:05:30
+categories: python
 tags: python
 ---
 

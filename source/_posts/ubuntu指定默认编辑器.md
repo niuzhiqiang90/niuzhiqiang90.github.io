@@ -1,7 +1,7 @@
 ---
 title: ubuntu指定默认编辑器
 date: 2017-02-07 13:28:17
-categories: 
+categories: ubuntu 
 tags: ubuntu
 ---
 

@@ -4,7 +4,7 @@ date: 2018-10-16 20:46:09
 tags: Redis
 ---
 
-
+本文档转载整理自http://doc.redisfans.com/topic/persistence.html
 ## 1. Redis持久化 
 
 Redis提供了多种不同级别的持久化方式：

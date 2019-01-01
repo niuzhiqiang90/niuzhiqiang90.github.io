@@ -1,6 +1,7 @@
 ---
 title: ubuntu修改网卡名称
 date: 2017-02-07 11:21:00
+categories: ubuntu
 tags: ubuntu
 ---
 

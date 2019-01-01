@@ -1,6 +1,7 @@
 ---
 title: docker安装
 date: 2017-02-27 17:03:14
+categories: docker
 tags: docker
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: python指定字符编码
 date: 2017-02-07 09:37:14
+categories: python
 tags: python
 ---
 

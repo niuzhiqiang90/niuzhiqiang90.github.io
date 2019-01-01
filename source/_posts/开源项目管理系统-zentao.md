@@ -1,7 +1,8 @@
 ---
 title: 开源项目管理系统-zentao
 date: 2017-08-18 21:38:11
-tags:
+categories: linux
+tags: zentao
 ---
 ## 1.下载zentao的安装包并解压
 

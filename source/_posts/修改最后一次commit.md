@@ -1,7 +1,8 @@
 ---
 title: 修改最后一次commit
 date: 2017-01-11 21:42:43
-tags:
+categories: git
+tags: git
 ---
 
 ## 命令
