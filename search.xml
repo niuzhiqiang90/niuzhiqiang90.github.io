@@ -29,10 +29,16 @@
 <h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h2><p>在<code>master</code>服务器进行数据写入操作<br>在<code>slaver</code>服务器进行验证，新写入的数据同步了，包括数据库的用户认证信息也会同步。<br><strong>注：</strong><br>在<code>slaver</code>登陆<code>mongo</code>并认证通过后，需要执行<code>rs.slaveOk()</code>才可以在从数据库上开启读操作。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/opt/mongodb-4.1.6</span><br><span class="line">$ ./bin/mongo</span><br><span class="line">&gt; use db_name</span><br><span class="line">&gt; db.auth(&quot;dbowner&quot;,&quot;pwd4dbowner&quot;)</span><br><span class="line">&gt; rs.slaveOk()</span><br><span class="line">&gt; show collections</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> mongodb </category>
+            
+        </categories>
+        
         
         <tags>
             
-            <tag> 模拟 </tag>
+            <tag> mongodb </tag>
             
         </tags>
         
@@ -41,7 +47,7 @@
     <entry>
       <title><![CDATA[Redis主从]]></title>
       <url>http://niuzhiqiang90.coding.me/2018/10/17/Redis%E4%B8%BB%E4%BB%8E/</url>
-      <content type="html"><![CDATA[<p>Redis支持简单且易用的主从复制功能</p>
+      <content type="html"><![CDATA[<p>本文转载整理自<a href="http://doc.redisfans.com/topic/replication.html" target="_blank" rel="noopener">http://doc.redisfans.com/topic/replication.html</a><br>Redis支持简单且易用的主从复制功能</p>
 <h2 id="1-Redis复制功能的几个重要方面"><a href="#1-Redis复制功能的几个重要方面" class="headerlink" title="1. Redis复制功能的几个重要方面"></a>1. Redis复制功能的几个重要方面</h2><ul>
 <li>Redis使用异步复制。从服务器会以每秒一次的频率向主服务器报告复制流的处理进度。</li>
 <li>一个主服务器可以有多个从服务器。</li>
@@ -107,7 +113,8 @@
     <entry>
       <title><![CDATA[Redis持久化]]></title>
       <url>http://niuzhiqiang90.coding.me/2018/10/16/Redis%E6%8C%81%E4%B9%85%E5%8C%96/</url>
-      <content type="html"><![CDATA[<h2 id="1-Redis持久化"><a href="#1-Redis持久化" class="headerlink" title="1. Redis持久化"></a>1. Redis持久化</h2><p>Redis提供了多种不同级别的持久化方式：</p>
+      <content type="html"><![CDATA[<p>本文档转载整理自<a href="http://doc.redisfans.com/topic/persistence.html" target="_blank" rel="noopener">http://doc.redisfans.com/topic/persistence.html</a></p>
+<h2 id="1-Redis持久化"><a href="#1-Redis持久化" class="headerlink" title="1. Redis持久化"></a>1. Redis持久化</h2><p>Redis提供了多种不同级别的持久化方式：</p>
 <ul>
 <li>RDB持久化可以在指定的时间间隔内生成数据集的时间点快照。</li>
 <li>AOF持久化记录服务器执行的所有写操作命令，并在服务器启动时，通过重新执行这些命令来还原数据集。<br>AOF文件中的命令全部以Redis协议的格式来保存，新命令会被追加到文件的末尾。<br><strong>Redis还可以在后台对AOF文件进行重写，使得AOF文件的体积不会超出保存数据集状态所需的实际大小。</strong></li>
@@ -212,6 +219,12 @@
 <p>用逗号作金额的分隔符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;&#123;:,&#125;&apos;.format(123456789))</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -240,8 +253,15 @@
 <h2 id="6-其他相关命令"><a href="#6-其他相关命令" class="headerlink" title="6. 其他相关命令"></a>6. 其他相关命令</h2><h3 id="6-1-重启supervisord"><a href="#6-1-重启supervisord" class="headerlink" title="6.1 重启supervisord"></a>6.1 重启supervisord</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reload</span><br></pre></td></tr></table></figure>
 <h3 id="6-2-更新配置文件"><a href="#6-2-更新配置文件" class="headerlink" title="6.2 更新配置文件"></a>6.2 更新配置文件</h3><p><code>PROGRAM-NAME</code>为可选参数，不指定为所有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reread</span><br><span class="line">sudo supervisorctl update [PROGRAM-NAME]</span><br></pre></td></tr></table></figure></p>
 <h3 id="6-3-管理服务"><a href="#6-3-管理服务" class="headerlink" title="6.3 管理服务"></a>6.3 管理服务</h3><p><code>PROGRAM-NAME</code>为可选参数，不指定为所有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl start [PROGRAM-NAME]</span><br><span class="line">sudo supervisorctl stop [PROGRAM-NAME]</span><br><span class="line">sudo supervisorctl restart [PROGRAM-NAME]</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-4-查询所有服务状态"><a href="#6-4-查询所有服务状态" class="headerlink" title="6.4 查询所有服务状态"></a>6.4 查询所有服务状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl status</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="6-4-查询所有服务状态"><a href="#6-4-查询所有服务状态" class="headerlink" title="6.4 查询所有服务状态"></a>6.4 查询所有服务状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl status</span><br></pre></td></tr></table></figure>
+]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -267,6 +287,12 @@
 <p>nginx的lua模块安装完成。  </p>
 ]]></content>
       
+        <categories>
+            
+            <category> nginx </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -297,6 +323,12 @@
 <h2 id="6-结束"><a href="#6-结束" class="headerlink" title="6.结束"></a>6.结束</h2><p>查找到引入bug的commit之后，回到最初的HEAD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bisect reset</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -315,6 +347,18 @@
 <h2 id="4-安装"><a href="#4-安装" class="headerlink" title="4. 安装"></a>4. 安装</h2><p>通过浏览器访问<code>http://zentao.xxx.cn</code>，配置安装<code>zentao</code>即可。<br>确保mysql的账户密码信息正确。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> zentao </tag>
+            
+        </tags>
         
     </entry>
     
@@ -328,6 +372,18 @@
 <h2 id="5-安装"><a href="#5-安装" class="headerlink" title="5. 安装"></a>5. 安装</h2><p>通过浏览器访问<code>mediawiki.xxx.cn</code>配置安装即可。<br>其中要注意正确设置连接数据库的用户名密码。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
         
     </entry>
     
@@ -343,6 +399,12 @@
 <p>记得创建日志文件目录。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> mysql </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -382,6 +444,12 @@
 <p>通过curl访问<code>localhost/index.php</code>即可查看到当前环境的php信息。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> LNMP </category>
+            
+        </categories>
+        
         
     </entry>
     
@@ -439,6 +507,12 @@
 <h2 id="3-日志"><a href="#3-日志" class="headerlink" title="3.日志"></a>3.日志</h2><p>Jenkins的日志在<code>/var/log/USERNAME/jenkins.log</code></p>
 ]]></content>
       
+        <categories>
+            
+            <category> Jenkins </category>
+            
+        </categories>
+        
         
     </entry>
     
@@ -456,6 +530,12 @@
 <h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h2><p>浏览器访问<a href="http://ssl.test.cn，测试验证。" target="_blank" rel="noopener">http://ssl.test.cn，测试验证。</a></p>
 ]]></content>
       
+        <categories>
+            
+            <category> nginx </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -495,6 +575,12 @@
 <p>加固完成，即可进行发布上架。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> android </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -533,6 +619,12 @@
 <h3 id="4-4-测试"><a href="#4-4-测试" class="headerlink" title="4.4 测试"></a>4.4 测试</h3><p>之前的数据已经导入到新的<code>gitlab</code>服务器。<br>现在可以通过原有的账号信息进行登陆验证。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> gitlab </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -562,6 +654,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mutt -s &quot;测试&quot; username@xxx.cn &lt; gotty</span><br></pre></td></tr></table></figure>
 ]]></content>
       
+        <categories>
+            
+            <category> ubuntu </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
         
     </entry>
     
@@ -620,6 +724,12 @@
 <h2 id="10-清除备份文件"><a href="#10-清除备份文件" class="headerlink" title="10. 清除备份文件"></a>10. 清除备份文件</h2><p>验证各个服务和项目，在迁移到新的<code>/home</code>运行正常且稳定一段时间后，可以择机对原备份文件进行清理。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -822,6 +932,12 @@
 <h2 id="6-linux系统性能分析"><a href="#6-linux系统性能分析" class="headerlink" title="6. linux系统性能分析"></a>6. linux系统性能分析</h2><p>分析次序为cpu mem disk network</p>
 ]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -935,6 +1051,12 @@
 <p><strong>拓展</strong><br><code>+=</code>和<code>.join</code>实现的效果是一样的，但是<code>+=</code>每次都会新开辟空间，但是<code>.join</code>不用<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &apos;the&apos;</span><br><span class="line">&gt;&gt;&gt; a += &apos; test&apos;</span><br><span class="line">&gt;&gt;&gt; a += &apos; is&apos;</span><br><span class="line">&gt;&gt;&gt; a += &apos; end&apos;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&apos;the test is end&apos;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; &apos;&apos;.join(a)</span><br><span class="line">&apos;the test is end&apos;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1051,6 +1173,12 @@
 </table>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1076,6 +1204,12 @@
 <p>提交所有tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push --tags</span><br><span class="line">或</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1096,6 +1230,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; info = &quot;This var will be printed out ...&quot;</span><br><span class="line">&gt;&gt;&gt; age = input(&apos;age:&apos;)</span><br><span class="line">age:info</span><br><span class="line">&gt;&gt;&gt; print age</span><br><span class="line">This var will be printed out ...</span><br></pre></td></tr></table></figure>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1129,6 +1269,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from sys import argv</span><br><span class="line"># 不需要使用`sys.`</span><br><span class="line">print argv</span><br></pre></td></tr></table></figure>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1300,6 +1446,12 @@
 </ol>
 ]]></content>
       
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1332,6 +1484,12 @@
 <p>如果要删除一个运行中的容器，可以添加<code>-f</code>参数。docker会发送SIGKILL信号给容器。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1371,6 +1529,12 @@
 <h2 id="6-删除本地镜像"><a href="#6-删除本地镜像" class="headerlink" title="6. 删除本地镜像"></a>6. 删除本地镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi IMAGE_ID</span><br></pre></td></tr></table></figure>
 ]]></content>
       
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1424,6 +1588,12 @@
 <p><a href="https://github.com/docker/docker" target="_blank" rel="noopener">docker on github</a><br><a href="https://docs.docker.com/engine/installation/" target="_blank" rel="noopener">docker install mothed</a></p>
 ]]></content>
       
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1466,6 +1636,12 @@
 </ul>
 ]]></content>
       
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1484,6 +1660,12 @@
 <p>输入<code>3</code>就可以了。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> ubuntu </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1505,6 +1687,12 @@
 <p><a href="http://askubuntu.com/questions/637591/my-ethernet-interface-name-has-changed-from-eth0-to-eth1" target="_blank" rel="noopener">From askubuntu</a></p>
 ]]></content>
       
+        <categories>
+            
+            <category> ubuntu </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1528,6 +1716,12 @@
 </ul>
 ]]></content>
       
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1547,6 +1741,12 @@
 <p>这样vim中的powerline字体就能够正确显示了。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> ubuntu </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1573,6 +1773,12 @@
 </ul>
 ]]></content>
       
+        <categories>
+            
+            <category> ubuntu </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -1680,6 +1886,12 @@
 </table>
 ]]></content>
       
+        <categories>
+            
+            <category> tmux </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -2086,6 +2298,18 @@
 <p>修改commit描述，然后保存退出，这样注释就修改了，再重新push就可以了。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
         
     </entry>
     
