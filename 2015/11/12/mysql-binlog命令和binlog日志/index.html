@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="0. 源由由于公司需要搭建一些项目，例如zentao和mediawiki，依赖LNMP环境。 1. 安装Nginx12345678910# 安装依赖sudo aptitude install libssl-dev libpcre3 libpcre3-dev zlib1g-dev  cd /home/USERNAME/opt# clone nginx源代码git clone https://gith">
+  <meta name="description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LNMP环境部署">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/17/LNMP环境部署/index.html">
+<meta property="og:title" content="mysql binlog命令和binlog日志">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2015/11/12/mysql-binlog命令和binlog日志/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="0. 源由由于公司需要搭建一些项目，例如zentao和mediawiki，依赖LNMP环境。 1. 安装Nginx12345678910# 安装依赖sudo aptitude install libssl-dev libpcre3 libpcre3-dev zlib1g-dev  cd /home/USERNAME/opt# clone nginx源代码git clone https://gith">
+<meta property="og:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-01T00:33:15.509Z">
+<meta property="og:updated_time" content="2019-01-02T06:58:51.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LNMP环境部署">
-<meta name="twitter:description" content="0. 源由由于公司需要搭建一些项目，例如zentao和mediawiki，依赖LNMP环境。 1. 安装Nginx12345678910# 安装依赖sudo aptitude install libssl-dev libpcre3 libpcre3-dev zlib1g-dev  cd /home/USERNAME/opt# clone nginx源代码git clone https://gith">
+<meta name="twitter:title" content="mysql binlog命令和binlog日志">
+<meta name="twitter:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
 
 
 
@@ -115,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/17/LNMP环境部署/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2015/11/12/mysql-binlog命令和binlog日志/">
 
 
 
@@ -125,7 +126,7 @@
   };
 </script>
 
-  <title>LNMP环境部署 | Just do IT</title>
+  <title>mysql binlog命令和binlog日志 | Just do IT</title>
   
 
 
@@ -370,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2017/08/17/LNMP环境部署/">
+    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2015/11/12/mysql-binlog命令和binlog日志/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Niu Zhiqiang">
@@ -387,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LNMP环境部署
+          <h1 class="post-title" itemprop="name headline">mysql binlog命令和binlog日志
 
               
             
@@ -413,7 +414,7 @@
                 
               
 
-              <time title="Created: 2017-08-17 20:36:39" itemprop="dateCreated datePublished" datetime="2017-08-17T20:36:39+08:00">2017-08-17</time>
+              <time title="Created: 2015-11-12 14:45:25" itemprop="dateCreated datePublished" datetime="2015-11-12T14:45:25+08:00">2015-11-12</time>
             
 
             
@@ -431,7 +432,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LNMP/" itemprop="url" rel="index"><span itemprop="name">LNMP</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -446,8 +447,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/17/LNMP环境部署/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2017/08/17/LNMP环境部署/" itemprop="commentsCount"></span>
+                <a href="/2015/11/12/mysql-binlog命令和binlog日志/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2015/11/12/mysql-binlog命令和binlog日志/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -475,31 +476,11 @@
       
 
       
-        <h2 id="0-源由"><a href="#0-源由" class="headerlink" title="0. 源由"></a>0. 源由</h2><p>由于公司需要搭建一些项目，例如<code>zentao</code>和<code>mediawiki</code>，依赖<code>LNMP</code>环境。</p>
-<h2 id="1-安装Nginx"><a href="#1-安装Nginx" class="headerlink" title="1. 安装Nginx"></a>1. 安装Nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 安装依赖</span><br><span class="line">sudo aptitude install libssl-dev libpcre3 libpcre3-dev zlib1g-dev  </span><br><span class="line">cd /home/USERNAME/opt</span><br><span class="line"># clone nginx源代码</span><br><span class="line">git clone https://github.com/nginx/nginx.git nginx-releases</span><br><span class="line">cd ./nginx-releases  </span><br><span class="line">git checkout -b release-1.9 release-1.9</span><br><span class="line">./auto/configure --prefix=../nginx-1.9  --with-http_ssl_module</span><br><span class="line">make -j4  </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装MySQL"><a href="#2-安装MySQL" class="headerlink" title="2. 安装MySQL"></a>2. 安装MySQL</h2><p><a href="https://cdn.mysql.com//Downloads/MySQL-5.5/mysql-5.5.57-linux-glibc2.12-x86_64.tar.gz" target="_blank" rel="noopener">Download link</a><br><a href="https://dev.mysql.com/doc/refman/5.5/en/binary-installation.html" target="_blank" rel="noopener">Installing MySQL on Unix/Linux Using Generic Binaries</a></p>
-<h3 id="2-1-安装依赖库"><a href="#2-1-安装依赖库" class="headerlink" title="2.1 安装依赖库"></a>2.1 安装依赖库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; apt-get install libaio1 # install library</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-安装mysql"><a href="#2-2-安装mysql" class="headerlink" title="2.2 安装mysql"></a>2.2 安装mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; groupadd mysql</span><br><span class="line">shell&gt; useradd -r -g mysql -s /bin/false mysql</span><br><span class="line">shell&gt; cd /home/USERNAME/opt</span><br><span class="line">shell&gt; tar zxvf mysql-5.5.57-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">shell&gt; mv mysql-5.5.57-linux-glibc2.12-x86_64 mysql-5.5.57</span><br><span class="line">shell&gt; cd mysql-5.5.57</span><br><span class="line">shell&gt; chown -R mysql .</span><br><span class="line">shell&gt; chgrp -R mysql .</span><br><span class="line">shell&gt; scripts/mysql_install_db --user=mysql</span><br><span class="line">shell&gt; chown -R root .</span><br><span class="line">shell&gt; chown -R mysql data</span><br><span class="line"># Next command is optional</span><br><span class="line">shell&gt; cp support-files/my-medium.cnf /etc/my.cnf</span><br><span class="line">shell&gt; bin/mysqld_safe --user=mysql &amp;</span><br><span class="line"># Next command is optional</span><br><span class="line">shell&gt; cp support-files/mysql.server /etc/init.d/mysql.server</span><br></pre></td></tr></table></figure>
-<p>到此mysql已经安装完成。</p>
-<h2 id="3-安装PHP"><a href="#3-安装PHP" class="headerlink" title="3. 安装PHP"></a>3. 安装PHP</h2><p><a href="http://us1.php.net/distributions/php-5.6.31.tar.gz" target="_blank" rel="noopener">PHP 5.6.31下载链接</a></p>
-<h3 id="3-1-解压安装包"><a href="#3-1-解压安装包" class="headerlink" title="3.1 解压安装包"></a>3.1 解压安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php-5.6.31.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-解决依赖"><a href="#3-2-解决依赖" class="headerlink" title="3.2 解决依赖"></a>3.2 解决依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libxml2-dev</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libpng12-0 libpng12-dev</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-编译"><a href="#3-3-编译" class="headerlink" title="3.3 编译"></a>3.3 编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31.src</span><br><span class="line">./configure --prefix=/home/USERNAME/opt/php-5.6.31 --with-gd --with-zlib --with-mysql=/home/USERNAME/opt/mysql-5.5.57 --with-config-file-path=/home/USERNAME/opt/php-5.6.31 --enable-mbstring --enable-fpm</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-安装"><a href="#3-4-安装" class="headerlink" title="3.4 安装"></a>3.4 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h3 id="3-5-拷贝配置文件到指定位置"><a href="#3-5-拷贝配置文件到指定位置" class="headerlink" title="3.5 拷贝配置文件到指定位置"></a>3.5 拷贝配置文件到指定位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31</span><br><span class="line">cp -p /home/USERNAME/opt/php-5.6.31/php.ini-development ./php.ini</span><br><span class="line"></span><br><span class="line">cd /home/USERNAME/opt/php-5.6.31/etc/</span><br><span class="line">cp -p php-fpm.conf.default php-fpm.conf</span><br></pre></td></tr></table></figure>
-<h3 id="3-6-修改php-fpm-conf"><a href="#3-6-修改php-fpm-conf" class="headerlink" title="3.6 修改php-fpm.conf"></a>3.6 修改php-fpm.conf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi php-fpm.conf</span><br></pre></td></tr></table></figure>
-<p>修改为如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pid=run/php-fpm.pid</span><br><span class="line">user = USERNAME</span><br><span class="line">group = USERNAME</span><br><span class="line">pm.max_children = 50</span><br><span class="line">pm.start_servers = 20</span><br><span class="line">pm.min_spare_servers = 5</span><br><span class="line">pm.max_spare_servers = 35</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-7-安装pdo模块"><a href="#3-7-安装pdo模块" class="headerlink" title="3.7 安装pdo模块"></a>3.7 安装<code>pdo</code>模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31.src/ext/pdo</span><br><span class="line">/home/USERNAME/opt/php-5.6.31/bin/phpize</span><br><span class="line">./configure --with-php-config=/home/USERNAME/opt/php-5.6.31/bin/php-config</span><br><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
-<h3 id="3-8-安装pdo-mysql模块"><a href="#3-8-安装pdo-mysql模块" class="headerlink" title="3.8 安装pdo_mysql模块"></a>3.8 安装<code>pdo_mysql</code>模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31.src/ext/pdo_mysql</span><br><span class="line">/home/USERNAME/opt/php-5.6.31/bin/phpize</span><br><span class="line">./configure --with-php-config=/home/USERNAME/opt/php5/bin/php-config --with-pdo-mysql=/home/USERNAME/opt/mysql-5.5.57/</span><br></pre></td></tr></table></figure>
-<h3 id="3-9-安装openssl模块"><a href="#3-9-安装openssl模块" class="headerlink" title="3.9 安装openssl模块"></a>3.9 安装<code>openssl</code>模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31.src/ext/openssl</span><br><span class="line">cp -p config0.m4 config.m4</span><br><span class="line">/home/USERNAME/opt/php-5.6.31/bin/phpize</span><br><span class="line">ln -s /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib</span><br><span class="line">./configure --with-openssl --with-php-config=/home/USERNAME/opt/php-5.6.31/bin/php-config</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p><code>--with-php-config</code>指定配置<br><code>--with-pdo-MySQL</code>指定mysql数据库的安装目录</p>
-<p>安装完成会出现如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Installing shared extensions:	/home/USERNAME/opt/php-5.6.31/lib/php/extensions/no-debug-non-zts-20131226/</span><br></pre></td></tr></table></figure></p>
-<p>编辑php.ini文件，将出现的内容添加到配置文件里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extension=/home/USERNAME/opt/php-5.6.31/lib/php/extensions/no-debug-non-zts-20131226/pdo_mysql.so</span><br><span class="line">extension=/home/USERNAME/opt/php-5.6.31/lib/php/extensions/no-debug-non-zts-20131226/openssl.so</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-10-启动fpm"><a href="#3-10-启动fpm" class="headerlink" title="3.10 启动fpm"></a>3.10 启动fpm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/php-5.6.31/sbin</span><br><span class="line">sudo php-fpm</span><br></pre></td></tr></table></figure>
-<h2 id="4-编辑测试文件并测试"><a href="#4-编辑测试文件并测试" class="headerlink" title="4. 编辑测试文件并测试"></a>4. 编辑测试文件并测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home/USERNAME/opt/nginx-1.9/html/</span><br><span class="line">echo &quot;&lt;?php</span><br><span class="line">phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>修改nginx配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen  80;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	</span><br><span class="line">	location ~ \.php$ &#123;</span><br><span class="line">             root   /home/USERNAME/opt/nginx-1.9/html;</span><br><span class="line">             fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">             fastcgi_index index.php;</span><br><span class="line">             fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span><br><span class="line">             include fastcgi.conf;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过curl访问<code>localhost/index.php</code>即可查看到当前环境的php信息。</p>
+        <h2 id="1-mysql的binlog日志作用"><a href="#1-mysql的binlog日志作用" class="headerlink" title="1. mysql的binlog日志作用"></a>1. mysql的binlog日志作用</h2><p>用来记录<code>mysql</code>增删改查等对<code>mysql</code>数据库有更新操作的命令记录。<br>不对数据库内容产生修改的操作，像<code>select</code>、<code>show</code>命令都不会被记录。</p>
+<h2 id="2-mysqlbinlog命令"><a href="#2-mysqlbinlog命令" class="headerlink" title="2. mysqlbinlog命令"></a>2. <code>mysqlbinlog</code>命令</h2><h3 id="2-1-作用"><a href="#2-1-作用" class="headerlink" title="2.1 作用"></a>2.1 作用</h3><p>用来解析<code>bin-log</code>，也用来做增量备份。<br>注：<code>bin-log</code>是二进制文件<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 | less</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-分库"><a href="#2-2-分库" class="headerlink" title="2.2 分库"></a>2.2 分库</h3><p><code>binlog</code>文件记录的是所有库的增删改查记录。如果想要获取对某个库的操作,可以用<code>-d</code>选项截取指定库的<code>binlog</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog -d testdb /mnt/data/dbs/mysqld/data/mysql-bin.000006 &gt; testdb.sql</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-基于位置点的增量备份"><a href="#2-3-基于位置点的增量备份" class="headerlink" title="2.3 基于位置点的增量备份"></a>2.3 基于位置点的增量备份</h3><p>例如：输出初始位置1990，结束位置2020的所有<code>binlog</code>日志导到<code>pos.sql</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 --start-position=1990 --stop-position=2020 -r pos.sql</span><br></pre></td></tr></table></figure></p>
+<p>恢复<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot -p123456 testdb &lt; pos.sql</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -521,6 +502,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
 
       
       
@@ -530,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/10/Jenkins/" rel="next" title="Jenkins">
-                <i class="fa fa-chevron-left"></i> Jenkins
+              <a href="/2015/11/04/mysql主从同步/" rel="next" title="mysql主从同步">
+                <i class="fa fa-chevron-left"></i> mysql主从同步
               </a>
             
           </div>
@@ -540,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/17/mysql配置项修改/" rel="prev" title="mysql配置项修改">
-                mysql配置项修改 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/11/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -795,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-源由"><span class="nav-number">1.</span> <span class="nav-text">0. 源由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Nginx"><span class="nav-number">2.</span> <span class="nav-text">1. 安装Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装MySQL"><span class="nav-number">3.</span> <span class="nav-text">2. 安装MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装依赖库"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 安装依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-安装mysql"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 安装mysql</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装PHP"><span class="nav-number">4.</span> <span class="nav-text">3. 安装PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-解压安装包"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 解压安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-解决依赖"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 解决依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-编译"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-安装"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-拷贝配置文件到指定位置"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 拷贝配置文件到指定位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-修改php-fpm-conf"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 修改php-fpm.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-安装pdo模块"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 安装pdo模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-安装pdo-mysql模块"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 安装pdo_mysql模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-安装openssl模块"><span class="nav-number">4.9.</span> <span class="nav-text">3.9 安装openssl模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-10-启动fpm"><span class="nav-number">4.10.</span> <span class="nav-text">3.10 启动fpm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-编辑测试文件并测试"><span class="nav-number">5.</span> <span class="nav-text">4. 编辑测试文件并测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql的binlog日志作用"><span class="nav-number">1.</span> <span class="nav-text">1. mysql的binlog日志作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-mysqlbinlog命令"><span class="nav-number">2.</span> <span class="nav-text">2. mysqlbinlog命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-作用"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-分库"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 分库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-基于位置点的增量备份"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基于位置点的增量备份</span></a></li></ol></li></ol></div>
             
 
           </div>
