@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://niuzhiqiang90.github.io/"/>
+  <link href="http://niuzhiqiang90.coding.me/"/>
   <updated>2019-01-01T00:41:40.281Z</updated>
-  <id>http://niuzhiqiang90.github.io/</id>
+  <id>http://niuzhiqiang90.coding.me/</id>
   
   <author>
     <name>Niu Zhiqiang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>mongodb主从</title>
-    <link href="http://niuzhiqiang90.github.io/2018/12/11/mongodb%E4%B8%BB%E4%BB%8E/"/>
-    <id>http://niuzhiqiang90.github.io/2018/12/11/mongodb主从/</id>
+    <link href="http://niuzhiqiang90.coding.me/2018/12/11/mongodb%E4%B8%BB%E4%BB%8E/"/>
+    <id>http://niuzhiqiang90.coding.me/2018/12/11/mongodb主从/</id>
     <published>2018-12-11T12:44:12.000Z</published>
     <updated>2019-01-01T00:41:40.281Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="mongodb" scheme="http://niuzhiqiang90.github.io/categories/mongodb/"/>
+      <category term="mongodb" scheme="http://niuzhiqiang90.coding.me/categories/mongodb/"/>
     
     
-      <category term="mongodb" scheme="http://niuzhiqiang90.github.io/tags/mongodb/"/>
+      <category term="mongodb" scheme="http://niuzhiqiang90.coding.me/tags/mongodb/"/>
     
   </entry>
   
   <entry>
     <title>Redis主从</title>
-    <link href="http://niuzhiqiang90.github.io/2018/10/17/Redis%E4%B8%BB%E4%BB%8E/"/>
-    <id>http://niuzhiqiang90.github.io/2018/10/17/Redis主从/</id>
+    <link href="http://niuzhiqiang90.coding.me/2018/10/17/Redis%E4%B8%BB%E4%BB%8E/"/>
+    <id>http://niuzhiqiang90.coding.me/2018/10/17/Redis主从/</id>
     <published>2018-10-17T07:58:19.000Z</published>
     <updated>2019-01-01T00:29:30.902Z</updated>
     
@@ -60,14 +60,14 @@
     </summary>
     
     
-      <category term="Redis" scheme="http://niuzhiqiang90.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="http://niuzhiqiang90.coding.me/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis持久化</title>
-    <link href="http://niuzhiqiang90.github.io/2018/10/16/Redis%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    <id>http://niuzhiqiang90.github.io/2018/10/16/Redis持久化/</id>
+    <link href="http://niuzhiqiang90.coding.me/2018/10/16/Redis%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>http://niuzhiqiang90.coding.me/2018/10/16/Redis持久化/</id>
     <published>2018-10-16T12:46:09.000Z</published>
     <updated>2019-01-01T00:30:28.186Z</updated>
     
@@ -83,14 +83,14 @@
     </summary>
     
     
-      <category term="Redis" scheme="http://niuzhiqiang90.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="http://niuzhiqiang90.coding.me/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>python字符串对齐</title>
-    <link href="http://niuzhiqiang90.github.io/2018/10/13/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E9%BD%90/"/>
-    <id>http://niuzhiqiang90.github.io/2018/10/13/python字符串对齐/</id>
+    <link href="http://niuzhiqiang90.coding.me/2018/10/13/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E9%BD%90/"/>
+    <id>http://niuzhiqiang90.coding.me/2018/10/13/python字符串对齐/</id>
     <published>2018-10-13T03:15:18.000Z</published>
     <updated>2019-01-01T00:42:48.614Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/categories/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/categories/python/"/>
     
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/tags/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>通过supervisor管理服务</title>
-    <link href="http://niuzhiqiang90.github.io/2018/05/09/%E9%80%9A%E8%BF%87supervisor%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://niuzhiqiang90.github.io/2018/05/09/通过supervisor管理服务/</id>
+    <link href="http://niuzhiqiang90.coding.me/2018/05/09/%E9%80%9A%E8%BF%87supervisor%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://niuzhiqiang90.coding.me/2018/05/09/通过supervisor管理服务/</id>
     <published>2018-05-09T12:54:10.000Z</published>
     <updated>2019-01-01T00:45:47.236Z</updated>
     
@@ -130,17 +130,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/categories/linux/"/>
     
     
-      <category term="supervisor" scheme="http://niuzhiqiang90.github.io/tags/supervisor/"/>
+      <category term="supervisor" scheme="http://niuzhiqiang90.coding.me/tags/supervisor/"/>
     
   </entry>
   
   <entry>
     <title>nginx编译安装lua模块</title>
-    <link href="http://niuzhiqiang90.github.io/2017/09/15/nginx%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85lua%E6%A8%A1%E5%9D%97/"/>
-    <id>http://niuzhiqiang90.github.io/2017/09/15/nginx编译安装lua模块/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/09/15/nginx%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85lua%E6%A8%A1%E5%9D%97/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/09/15/nginx编译安装lua模块/</id>
     <published>2017-09-15T12:51:59.000Z</published>
     <updated>2019-01-01T00:42:05.048Z</updated>
     
@@ -155,17 +155,17 @@
     
     </summary>
     
-      <category term="nginx" scheme="http://niuzhiqiang90.github.io/categories/nginx/"/>
+      <category term="nginx" scheme="http://niuzhiqiang90.coding.me/categories/nginx/"/>
     
     
-      <category term="nginx" scheme="http://niuzhiqiang90.github.io/tags/nginx/"/>
+      <category term="nginx" scheme="http://niuzhiqiang90.coding.me/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>git bisect</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/30/git-bisect/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/30/git-bisect/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/30/git-bisect/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/30/git-bisect/</id>
     <published>2017-08-30T14:06:12.000Z</published>
     <updated>2019-01-01T00:34:21.645Z</updated>
     
@@ -180,17 +180,17 @@
     
     </summary>
     
-      <category term="git" scheme="http://niuzhiqiang90.github.io/categories/git/"/>
+      <category term="git" scheme="http://niuzhiqiang90.coding.me/categories/git/"/>
     
     
-      <category term="git" scheme="http://niuzhiqiang90.github.io/tags/git/"/>
+      <category term="git" scheme="http://niuzhiqiang90.coding.me/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>开源项目管理系统-zentao</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/18/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-zentao/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/18/开源项目管理系统-zentao/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/18/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-zentao/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/18/开源项目管理系统-zentao/</id>
     <published>2017-08-18T13:38:11.000Z</published>
     <updated>2019-01-01T00:46:27.844Z</updated>
     
@@ -205,17 +205,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/categories/linux/"/>
     
     
-      <category term="zentao" scheme="http://niuzhiqiang90.github.io/tags/zentao/"/>
+      <category term="zentao" scheme="http://niuzhiqiang90.coding.me/tags/zentao/"/>
     
   </entry>
   
   <entry>
     <title>mediawiki</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/18/mediawiki/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/18/mediawiki/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/</id>
     <published>2017-08-18T13:08:11.000Z</published>
     <updated>2019-01-01T00:40:48.147Z</updated>
     
@@ -230,17 +230,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/tags/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>mysql配置项修改</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/17/mysql%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BF%AE%E6%94%B9/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/17/mysql配置项修改/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/17/mysql%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BF%AE%E6%94%B9/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/17/mysql配置项修改/</id>
     <published>2017-08-17T13:12:03.000Z</published>
     <updated>2019-01-01T00:41:54.127Z</updated>
     
@@ -256,17 +256,17 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://niuzhiqiang90.github.io/categories/mysql/"/>
+      <category term="mysql" scheme="http://niuzhiqiang90.coding.me/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://niuzhiqiang90.github.io/tags/mysql/"/>
+      <category term="mysql" scheme="http://niuzhiqiang90.coding.me/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>LNMP环境部署</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/17/LNMP%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/17/LNMP环境部署/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/17/LNMP%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/17/LNMP环境部署/</id>
     <published>2017-08-17T12:36:39.000Z</published>
     <updated>2019-01-01T00:33:15.509Z</updated>
     
@@ -281,15 +281,15 @@
     
     </summary>
     
-      <category term="LNMP" scheme="http://niuzhiqiang90.github.io/categories/LNMP/"/>
+      <category term="LNMP" scheme="http://niuzhiqiang90.coding.me/categories/LNMP/"/>
     
     
   </entry>
   
   <entry>
     <title>Jenkins</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/10/Jenkins/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/10/Jenkins/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/10/Jenkins/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/10/Jenkins/</id>
     <published>2017-08-10T13:47:34.000Z</published>
     <updated>2019-01-01T00:33:00.793Z</updated>
     
@@ -305,15 +305,15 @@
     
     </summary>
     
-      <category term="Jenkins" scheme="http://niuzhiqiang90.github.io/categories/Jenkins/"/>
+      <category term="Jenkins" scheme="http://niuzhiqiang90.coding.me/categories/Jenkins/"/>
     
     
   </entry>
   
   <entry>
     <title>启用ssl</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/09/%E5%90%AF%E7%94%A8ssl/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/09/启用ssl/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/09/%E5%90%AF%E7%94%A8ssl/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/09/启用ssl/</id>
     <published>2017-08-09T12:33:10.000Z</published>
     <updated>2019-01-01T00:45:35.535Z</updated>
     
@@ -329,19 +329,19 @@
     
     </summary>
     
-      <category term="nginx" scheme="http://niuzhiqiang90.github.io/categories/nginx/"/>
+      <category term="nginx" scheme="http://niuzhiqiang90.coding.me/categories/nginx/"/>
     
     
-      <category term="nginx" scheme="http://niuzhiqiang90.github.io/tags/nginx/"/>
+      <category term="nginx" scheme="http://niuzhiqiang90.coding.me/tags/nginx/"/>
     
-      <category term="ssl" scheme="http://niuzhiqiang90.github.io/tags/ssl/"/>
+      <category term="ssl" scheme="http://niuzhiqiang90.coding.me/tags/ssl/"/>
     
   </entry>
   
   <entry>
     <title>Android自动打包</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/07/Android%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/07/Android自动打包/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/07/Android%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/07/Android自动打包/</id>
     <published>2017-08-07T12:19:01.000Z</published>
     <updated>2019-01-01T00:32:30.733Z</updated>
     
@@ -356,17 +356,17 @@
     
     </summary>
     
-      <category term="android" scheme="http://niuzhiqiang90.github.io/categories/android/"/>
+      <category term="android" scheme="http://niuzhiqiang90.coding.me/categories/android/"/>
     
     
-      <category term="android" scheme="http://niuzhiqiang90.github.io/tags/android/"/>
+      <category term="android" scheme="http://niuzhiqiang90.coding.me/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>安装配置gitlab</title>
-    <link href="http://niuzhiqiang90.github.io/2017/08/02/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/"/>
-    <id>http://niuzhiqiang90.github.io/2017/08/02/安装配置gitlab/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/08/02/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEgitlab/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/08/02/安装配置gitlab/</id>
     <published>2017-08-02T13:51:17.000Z</published>
     <updated>2019-01-01T00:45:57.980Z</updated>
     
@@ -381,17 +381,17 @@
     
     </summary>
     
-      <category term="gitlab" scheme="http://niuzhiqiang90.github.io/categories/gitlab/"/>
+      <category term="gitlab" scheme="http://niuzhiqiang90.coding.me/categories/gitlab/"/>
     
     
-      <category term="gitlab" scheme="http://niuzhiqiang90.github.io/tags/gitlab/"/>
+      <category term="gitlab" scheme="http://niuzhiqiang90.coding.me/tags/gitlab/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu发送邮件</title>
-    <link href="http://niuzhiqiang90.github.io/2017/05/16/ubuntu%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
-    <id>http://niuzhiqiang90.github.io/2017/05/16/ubuntu发送邮件/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/05/16/ubuntu%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/05/16/ubuntu发送邮件/</id>
     <published>2017-05-16T13:23:23.000Z</published>
     <updated>2019-01-01T00:44:15.797Z</updated>
     
@@ -406,17 +406,17 @@
     
     </summary>
     
-      <category term="ubuntu" scheme="http://niuzhiqiang90.github.io/categories/ubuntu/"/>
+      <category term="ubuntu" scheme="http://niuzhiqiang90.coding.me/categories/ubuntu/"/>
     
     
-      <category term="ubuntu" scheme="http://niuzhiqiang90.github.io/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="http://niuzhiqiang90.coding.me/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>更换linux系统的home磁盘</title>
-    <link href="http://niuzhiqiang90.github.io/2017/04/01/%E6%9B%B4%E6%8D%A2linux%E7%B3%BB%E7%BB%9F%E7%9A%84home%E7%A3%81%E7%9B%98/"/>
-    <id>http://niuzhiqiang90.github.io/2017/04/01/更换linux系统的home磁盘/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/04/01/%E6%9B%B4%E6%8D%A2linux%E7%B3%BB%E7%BB%9F%E7%9A%84home%E7%A3%81%E7%9B%98/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/04/01/更换linux系统的home磁盘/</id>
     <published>2017-04-01T12:50:55.000Z</published>
     <updated>2019-01-01T00:45:17.909Z</updated>
     
@@ -431,17 +431,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/tags/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>linux系统监控基本命令</title>
-    <link href="http://niuzhiqiang90.github.io/2017/03/25/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
-    <id>http://niuzhiqiang90.github.io/2017/03/25/linux系统监控基本命令/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/03/25/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/03/25/linux系统监控基本命令/</id>
     <published>2017-03-25T09:09:57.000Z</published>
     <updated>2019-01-01T00:35:10.033Z</updated>
     
@@ -456,17 +456,17 @@
     
     </summary>
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/categories/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://niuzhiqiang90.github.io/tags/linux/"/>
+      <category term="linux" scheme="http://niuzhiqiang90.coding.me/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>python字符串处理</title>
-    <link href="http://niuzhiqiang90.github.io/2017/03/23/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
-    <id>http://niuzhiqiang90.github.io/2017/03/23/python字符串处理/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/03/23/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/03/23/python字符串处理/</id>
     <published>2017-03-23T13:49:45.000Z</published>
     <updated>2019-01-01T00:42:31.773Z</updated>
     
@@ -485,17 +485,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/categories/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/categories/python/"/>
     
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/tags/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python文件处理</title>
-    <link href="http://niuzhiqiang90.github.io/2017/03/22/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/"/>
-    <id>http://niuzhiqiang90.github.io/2017/03/22/python文件处理/</id>
+    <link href="http://niuzhiqiang90.coding.me/2017/03/22/python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/"/>
+    <id>http://niuzhiqiang90.coding.me/2017/03/22/python文件处理/</id>
     <published>2017-03-22T12:51:07.000Z</published>
     <updated>2019-01-01T00:43:09.560Z</updated>
     
@@ -510,10 +510,10 @@
     
     </summary>
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/categories/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/categories/python/"/>
     
     
-      <category term="python" scheme="http://niuzhiqiang90.github.io/tags/python/"/>
+      <category term="python" scheme="http://niuzhiqiang90.coding.me/tags/python/"/>
     
   </entry>
   
