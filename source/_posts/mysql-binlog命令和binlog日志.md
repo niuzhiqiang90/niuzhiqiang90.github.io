@@ -8,10 +8,10 @@ tags: mysql
 用来记录`mysql`增删改查等对`mysql`数据库有更新操作的命令记录。  
 不对数据库内容产生修改的操作，像`select`、`show`命令都不会被记录。
 
-## 2. `mysqlbinlog`命令
+## 2. `mysqlbinlog`命令作用
 
-### 2.1 作用      
-`bin-log`是二进制文件，`mysqlbinlog`用来解析这个二进制文件，也用来做增量备份。  
+### 2.1 解析二进制文件
+`bin-log`是二进制文件，`mysqlbinlog`用来解析这个二进制文件。  
 例如：
 ```
 $ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 | less
