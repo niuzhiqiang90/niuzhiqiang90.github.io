@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
-<meta name="keywords" content="linux">
+  <meta name="description" content="1. mysql启动和关闭1.1 启动方法方法一：1[root@localhost ~]# /usr/local/mysql/bin/mysqld_safe --user=mysql &amp;amp; 方法二：1[root@localhost ~]# /etc/init.d/mysqld start 方法三：前提是mysql.server的启动脚本拷贝到了/etc/init.d目录下1[root@loc">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mediawiki">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/index.html">
+<meta property="og:title" content="mysql相关管理命令">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2015/11/12/mysql相关管理命令/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
+<meta property="og:description" content="1. mysql启动和关闭1.1 启动方法方法一：1[root@localhost ~]# /usr/local/mysql/bin/mysqld_safe --user=mysql &amp;amp; 方法二：1[root@localhost ~]# /etc/init.d/mysqld start 方法三：前提是mysql.server的启动脚本拷贝到了/etc/init.d目录下1[root@loc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-01T00:40:48.147Z">
+<meta property="og:updated_time" content="2019-01-02T07:47:32.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mediawiki">
-<meta name="twitter:description" content="1. 准备mediawiki依赖LNMP环境，所以在部署前，需要首先搭建LNMP环境，参考上一篇。 2. 下载mediawiki并解压下载链接1234wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gzmv mediawiki-1.27.3.tar.gz /mnt/data/cd /mnt/datata">
+<meta name="twitter:title" content="mysql相关管理命令">
+<meta name="twitter:description" content="1. mysql启动和关闭1.1 启动方法方法一：1[root@localhost ~]# /usr/local/mysql/bin/mysqld_safe --user=mysql &amp;amp; 方法二：1[root@localhost ~]# /etc/init.d/mysqld start 方法三：前提是mysql.server的启动脚本拷贝到了/etc/init.d目录下1[root@loc">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2015/11/12/mysql相关管理命令/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>mediawiki | Just do IT</title>
+  <title>mysql相关管理命令 | Just do IT</title>
   
 
 
@@ -371,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2017/08/18/mediawiki/">
+    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2015/11/12/mysql相关管理命令/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Niu Zhiqiang">
@@ -388,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mediawiki
+          <h1 class="post-title" itemprop="name headline">mysql相关管理命令
 
               
             
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="Created: 2017-08-18 21:08:11" itemprop="dateCreated datePublished" datetime="2017-08-18T21:08:11+08:00">2017-08-18</time>
+              <time title="Created: 2015-11-12 15:12:02" itemprop="dateCreated datePublished" datetime="2015-11-12T15:12:02+08:00">2015-11-12</time>
             
 
             
@@ -432,7 +432,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -447,8 +447,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/18/mediawiki/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2017/08/18/mediawiki/" itemprop="commentsCount"></span>
+                <a href="/2015/11/12/mysql相关管理命令/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2015/11/12/mysql相关管理命令/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -476,11 +476,25 @@
       
 
       
-        <h2 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h2><p><code>mediawiki</code>依赖<code>LNMP</code>环境，所以在部署前，需要首先搭建<code>LNMP</code>环境，参考上一篇。</p>
-<h2 id="2-下载mediawiki并解压"><a href="#2-下载mediawiki并解压" class="headerlink" title="2. 下载mediawiki并解压"></a>2. 下载mediawiki并解压</h2><p><a href="https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz" target="_blank" rel="noopener">下载链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz</span><br><span class="line">mv mediawiki-1.27.3.tar.gz /mnt/data/</span><br><span class="line">cd /mnt/data</span><br><span class="line">tar -zxvf mediawiki-1.27.3.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-进行域名解析"><a href="#3-进行域名解析" class="headerlink" title="3. 进行域名解析"></a>3. 进行域名解析</h2><p>将要使用的域名(例如<code>mediawiki.xxx.cn</code>)解析到该服务器</p>
-<h2 id="4-配置nginx"><a href="#4-配置nginx" class="headerlink" title="4. 配置nginx"></a>4. 配置nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen  80;</span><br><span class="line">    server_name  mediawiki.xxx.cn;</span><br><span class="line">    return 301 https://mediawiki.xxx.cn:443$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen  443 ssl;</span><br><span class="line">        server_name     mediawiki.xxx.cn;</span><br><span class="line"></span><br><span class="line">        ssl_certificate /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.crt;</span><br><span class="line">        ssl_certificate_key /home/USERNAME/opt/nginx-1.9/conf/etc/mediawiki-server.key;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        root    /mnt/data/mediawiki-1.27.3;</span><br><span class="line">        #index  index.php index.html index.htm;</span><br><span class="line"></span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">             root               /mnt/data/mediawiki-1.27.3;</span><br><span class="line">             fastcgi_pass       127.0.0.1:9000;</span><br><span class="line">             fastcgi_index      index.php;</span><br><span class="line">             fastcgi_param      SCRIPT_FILENAME /scripts$fastcgi_script_name;</span><br><span class="line">             include            fastcgi.conf;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;            </span><br><span class="line">             root               /mnt/data/mediawiki-1.27.3;</span><br><span class="line">             index index.php;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-安装"><a href="#5-安装" class="headerlink" title="5. 安装"></a>5. 安装</h2><p>通过浏览器访问<code>mediawiki.xxx.cn</code>配置安装即可。<br>其中要注意正确设置连接数据库的用户名密码。</p>
+        <h2 id="1-mysql启动和关闭"><a href="#1-mysql启动和关闭" class="headerlink" title="1. mysql启动和关闭"></a>1. mysql启动和关闭</h2><h3 id="1-1-启动方法"><a href="#1-1-启动方法" class="headerlink" title="1.1 启动方法"></a>1.1 启动方法</h3><p>方法一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /usr/local/mysql/bin/mysqld_safe --user=mysql &amp;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /etc/init.d/mysqld start</span><br></pre></td></tr></table></figure></p>
+<p>方法三：<br>前提是<code>mysql.server</code>的启动脚本拷贝到了<code>/etc/init.d</code>目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# service mysqld start</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-关闭方法"><a href="#1-2-关闭方法" class="headerlink" title="1.2 关闭方法"></a>1.2 关闭方法</h3><p>方法一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysqladmin -uroot -p123456 shutdown</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# /etc/init.d/mysqld stop</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-登陆mysql的方法"><a href="#2-登陆mysql的方法" class="headerlink" title="2. 登陆mysql的方法"></a>2. 登陆<code>mysql</code>的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql  -uroot  -p</span><br></pre></td></tr></table></figure>
+<p>如果没有设置密码，直接执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br></pre></td></tr></table></figure></p>
+<p>也可以。</p>
+<h2 id="3-设置及修改mysql-root用户密码"><a href="#3-设置及修改mysql-root用户密码" class="headerlink" title="3. 设置及修改mysql root用户密码"></a>3. 设置及修改mysql root用户密码</h2><h3 id="3-1-第一次设置密码"><a href="#3-1-第一次设置密码" class="headerlink" title="3.1 第一次设置密码"></a>3.1 第一次设置密码</h3><p>单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysqladmin -u root password &apos;123456&apos;</span><br></pre></td></tr></table></figure></p>
+<p>多实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysqladmin -u root password &apos;123456&apos; -S /data/3306/mysql.sock</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-2-修改密码"><a href="#3-2-修改密码" class="headerlink" title="3.2 修改密码"></a>3.2 修改密码</h3><p>未登陆进数据库<br>单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysqladmin -u root -p123456 password &apos;654321&apos;</span><br></pre></td></tr></table></figure></p>
+<p>多实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mysqladmin -u root -P123456 password &apos;654321&apos; -S /data/3306/mysql.sock</span><br></pre></td></tr></table></figure></p>
+<p>已登陆进数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 注意，一定要用password()函数来设置密码，这样设置的密码是加密的</span><br><span class="line">mysql&gt; update mysql.user set password=password(654321) where user=&apos;root&apos; and host=&apos;localhost&apos;;</span><br><span class="line"># 更新权限</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-mysql密码找回"><a href="#4-mysql密码找回" class="headerlink" title="4. mysql密码找回"></a>4. mysql密码找回</h2><h3 id="4-1-准备工作"><a href="#4-1-准备工作" class="headerlink" title="4.1 准备工作"></a>4.1 准备工作</h3><p>因为在重新设置<code>mysql</code>的<code>root</code>密码的间隙，数据库完全处于没有密码保护的状态下，其他的用户也可以任意地登录和修改<code>mysql</code>的信息，所以<font color="red">首先要确认服务器处于没有人能够任意地连接<code>mysql</code>数据库的安全状态。</font>可以将<code>mysql</code>的对外端口临时关闭，并且停止所有可能连接<code>mysql</code>的进程，例如：<code>nginx</code>。最安全的状态是到服务器的Console上面操作，并且拔掉网线。</p>
+<h3 id="4-2-修改mysql的登录设置："><a href="#4-2-修改mysql的登录设置：" class="headerlink" title="4.2 修改mysql的登录设置："></a>4.2 修改mysql的登录设置：</h3><p>在配置文件<code>/etc/my.cnf</code>的<code>[mysqld]</code>区域中加上一句：<code>skip-grant-tables</code><br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/mnt/data/dbs/mysqld/data</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-3-重启mysqld"><a href="#4-3-重启mysqld" class="headerlink" title="4.3 重启mysqld"></a>4.3 重启mysqld</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/mysqld restart</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-登录并修改root密码"><a href="#4-4-登录并修改root密码" class="headerlink" title="4.4 登录并修改root密码"></a>4.4 登录并修改root密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/mysql</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update user set password = password (&apos;654321&apos;) where user = &apos;root&apos;;</span><br><span class="line">mysql&gt; flush privileges ;</span><br><span class="line">mysql&gt; quit</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-将登录设置修改回来"><a href="#4-5-将登录设置修改回来" class="headerlink" title="4.5 将登录设置修改回来"></a>4.5 将登录设置修改回来</h3><p>将刚才在<code>[mysqld]</code>区域中加上的<code>skip-grant-tables</code>删除。</p>
+<h3 id="4-6-重启mysqld"><a href="#4-6-重启mysqld" class="headerlink" title="4.6 重启mysqld"></a>4.6 重启mysqld</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/mysqld restart</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -504,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -517,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/17/mysql配置项修改/" rel="next" title="mysql配置项修改">
-                <i class="fa fa-chevron-left"></i> mysql配置项修改
+              <a href="/2015/11/12/mysql-binlog命令和binlog日志/" rel="next" title="mysql binlog命令和binlog日志">
+                <i class="fa fa-chevron-left"></i> mysql binlog命令和binlog日志
               </a>
             
           </div>
@@ -527,8 +541,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/18/开源项目管理系统-zentao/" rel="prev" title="开源项目管理系统-zentao">
-                开源项目管理系统-zentao <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/11/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -782,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备"><span class="nav-text">1. 准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-下载mediawiki并解压"><span class="nav-text">2. 下载mediawiki并解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-进行域名解析"><span class="nav-text">3. 进行域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置nginx"><span class="nav-text">4. 配置nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安装"><span class="nav-text">5. 安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql启动和关闭"><span class="nav-text">1. mysql启动和关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-启动方法"><span class="nav-text">1.1 启动方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-关闭方法"><span class="nav-text">1.2 关闭方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-登陆mysql的方法"><span class="nav-text">2. 登陆mysql的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-设置及修改mysql-root用户密码"><span class="nav-text">3. 设置及修改mysql root用户密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-第一次设置密码"><span class="nav-text">3.1 第一次设置密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-修改密码"><span class="nav-text">3.2 修改密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-mysql密码找回"><span class="nav-text">4. mysql密码找回</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-准备工作"><span class="nav-text">4.1 准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-修改mysql的登录设置："><span class="nav-text">4.2 修改mysql的登录设置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-重启mysqld"><span class="nav-text">4.3 重启mysqld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-登录并修改root密码"><span class="nav-text">4.4 登录并修改root密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-将登录设置修改回来"><span class="nav-text">4.5 将登录设置修改回来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-重启mysqld"><span class="nav-text">4.6 重启mysqld</span></a></li></ol></li></ol></div>
             
 
           </div>

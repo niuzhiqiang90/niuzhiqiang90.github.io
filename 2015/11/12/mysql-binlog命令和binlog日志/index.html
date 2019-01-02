@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
+  <meta name="description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用bin-log是二进制文件，mysqlbinlog用来解析这个二进制文件，也用来做增量备份。例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/dat">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql binlog命令和binlog日志">
 <meta property="og:url" content="http://niuzhiqiang90.coding.me/2015/11/12/mysql-binlog命令和binlog日志/index.html">
 <meta property="og:site_name" content="Just do IT">
-<meta property="og:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
+<meta property="og:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用bin-log是二进制文件，mysqlbinlog用来解析这个二进制文件，也用来做增量备份。例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/dat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T06:58:51.670Z">
+<meta property="og:updated_time" content="2019-01-02T07:05:02.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql binlog命令和binlog日志">
-<meta name="twitter:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用用来解析bin-log，也用来做增量备份。注：bin-log是二进制文件例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bi">
+<meta name="twitter:description" content="1. mysql的binlog日志作用用来记录mysql增删改查等对mysql数据库有更新操作的命令记录。不对数据库内容产生修改的操作，像select、show命令都不会被记录。 2. mysqlbinlog命令2.1 作用bin-log是二进制文件，mysqlbinlog用来解析这个二进制文件，也用来做增量备份。例如：1$ mysqlbinlog /mnt/data/dbs/mysqld/dat">
 
 
 
@@ -476,8 +476,8 @@
       
 
       
-        <h2 id="1-mysql的binlog日志作用"><a href="#1-mysql的binlog日志作用" class="headerlink" title="1. mysql的binlog日志作用"></a>1. mysql的binlog日志作用</h2><p>用来记录<code>mysql</code>增删改查等对<code>mysql</code>数据库有更新操作的命令记录。<br>不对数据库内容产生修改的操作，像<code>select</code>、<code>show</code>命令都不会被记录。</p>
-<h2 id="2-mysqlbinlog命令"><a href="#2-mysqlbinlog命令" class="headerlink" title="2. mysqlbinlog命令"></a>2. <code>mysqlbinlog</code>命令</h2><h3 id="2-1-作用"><a href="#2-1-作用" class="headerlink" title="2.1 作用"></a>2.1 作用</h3><p>用来解析<code>bin-log</code>，也用来做增量备份。<br>注：<code>bin-log</code>是二进制文件<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 | less</span><br></pre></td></tr></table></figure></p>
+        <h2 id="1-mysql的binlog日志作用"><a href="#1-mysql的binlog日志作用" class="headerlink" title="1. mysql的binlog日志作用"></a>1. mysql的<code>binlog</code>日志作用</h2><p>用来记录<code>mysql</code>增删改查等对<code>mysql</code>数据库有更新操作的命令记录。<br>不对数据库内容产生修改的操作，像<code>select</code>、<code>show</code>命令都不会被记录。</p>
+<h2 id="2-mysqlbinlog命令"><a href="#2-mysqlbinlog命令" class="headerlink" title="2. mysqlbinlog命令"></a>2. <code>mysqlbinlog</code>命令</h2><h3 id="2-1-作用"><a href="#2-1-作用" class="headerlink" title="2.1 作用"></a>2.1 作用</h3><p><code>bin-log</code>是二进制文件，<code>mysqlbinlog</code>用来解析这个二进制文件，也用来做增量备份。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 | less</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-2-分库"><a href="#2-2-分库" class="headerlink" title="2.2 分库"></a>2.2 分库</h3><p><code>binlog</code>文件记录的是所有库的增删改查记录。如果想要获取对某个库的操作,可以用<code>-d</code>选项截取指定库的<code>binlog</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog -d testdb /mnt/data/dbs/mysqld/data/mysql-bin.000006 &gt; testdb.sql</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-3-基于位置点的增量备份"><a href="#2-3-基于位置点的增量备份" class="headerlink" title="2.3 基于位置点的增量备份"></a>2.3 基于位置点的增量备份</h3><p>例如：输出初始位置1990，结束位置2020的所有<code>binlog</code>日志导到<code>pos.sql</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysqlbinlog /mnt/data/dbs/mysqld/data/mysql-bin.000006 --start-position=1990 --stop-position=2020 -r pos.sql</span><br></pre></td></tr></table></figure></p>
 <p>恢复<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot -p123456 testdb &lt; pos.sql</span><br></pre></td></tr></table></figure></p>
@@ -527,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/11/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/12/mysql相关管理命令/" rel="prev" title="mysql相关管理命令">
+                mysql相关管理命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -608,7 +608,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -782,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql的binlog日志作用"><span class="nav-number">1.</span> <span class="nav-text">1. mysql的binlog日志作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-mysqlbinlog命令"><span class="nav-number">2.</span> <span class="nav-text">2. mysqlbinlog命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-作用"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-分库"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 分库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-基于位置点的增量备份"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基于位置点的增量备份</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql的binlog日志作用"><span class="nav-text">1. mysql的binlog日志作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-mysqlbinlog命令"><span class="nav-text">2. mysqlbinlog命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-作用"><span class="nav-text">2.1 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-分库"><span class="nav-text">2.2 分库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-基于位置点的增量备份"><span class="nav-text">2.3 基于位置点的增量备份</span></a></li></ol></li></ol></div>
             
 
           </div>

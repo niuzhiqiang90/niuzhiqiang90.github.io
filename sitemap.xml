@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2015/11/12/mysql%E7%9B%B8%E5%85%B3%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2019-01-02T07:47:32.412Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2015/11/12/mysql-binlog%E5%91%BD%E4%BB%A4%E5%92%8Cbinlog%E6%97%A5%E5%BF%97/</loc>
     
-    <lastmod>2019-01-02T06:58:51.670Z</lastmod>
+    <lastmod>2019-01-02T07:05:02.717Z</lastmod>
     
   </url>
   
