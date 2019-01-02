@@ -1,6 +1,6 @@
 ---
-title: mysql主从
-date: 2018-12-29 20:52:11
+title: mysql主从同步
+date: 2015-11-04 20:52:11
 categories: mysql
 tags: mysql
 ---
@@ -96,6 +96,7 @@ master_password='123456',
 master_log_file='mysql-bin.00000序号'，
 master_log_pos=数字；
 ```
+**上述的信息会存在master.info中**
 
 ## 7. 启动slave
 在从服务器登陆`mysql`，并启动`slave`
@@ -109,5 +110,8 @@ $ mysql -uroot -p
 Slave_IO_Running : Yes
 Slave_SQL_Running : Yes
 ```
-说明配置成功！
+说明基本配置成功！
 
+## 8. 测试主从同步
+1. 在主库中写个数据，看是否同步到备库。
+2. 查看`master.info`
