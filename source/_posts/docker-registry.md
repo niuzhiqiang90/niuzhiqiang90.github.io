@@ -11,7 +11,7 @@ docker run -d -p 5000:5000 --name registry registry
 ```
 **说明**
 
-| 参数                      | 说明                                                    |  
+| 参数                      | 说明                                                   |  
 | -----                     | ------                                                  |
 | `-p 5000:5000`              | 第一个是host的端口，第二个是container的端口             |
 | `--name registry registry1` | registry是镜像名字，registry1是自定义的私有registry名字 |

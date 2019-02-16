@@ -10,26 +10,39 @@ tags: [nginx,ssl]
 
 ### 1.1 查看nginx是否编译了ssl模块
 ```
-nginx -V
+$ nginx -V
 ```
 
 ### 1.2 编译ssl模块
 ```
-cd nginx/src/dir
-./configure --with-http_ssl_module
-make && make install
+$ cd nginx/src/dir
+$ ./configure --with-http_ssl_module
+$ make && make install
 ```
 
 ## 2. 启用ssl
 
 ### 2.1 生成证书
 ```
-sudo openssl genrsa -des3 -out server.key 2048
-sudo openssl req -new -key server.key -out server.csr
-sudo cp server.key server.key.org
-sudo openssl rsa -in server.key.org -out server.key
-sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+$ sudo openssl genrsa -des3 -out server.key 2048
+$ sudo openssl req -new -key server.key -out server.csr
+$ sudo cp server.key server.key.org
+$ sudo openssl rsa -in server.key.org -out server.key
+$ sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```
+
+crt证书转换为cer
+```
+$ openssl x509 -in server.crt -out server.cer -outform der
+```
+
+查看证书到期时间
+```
+$ openssl x509 -in server.crt -noout -dates
+notBefore=Jan  4 02:21:00 2017 GMT
+notAfter=Jan  4 02:21:00 2018 GMT
+```
+
 
 ### 2.2 在server区域，指定证书位置
 ``` 
