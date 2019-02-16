@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="0. 依赖问题 vault是go语言编写，所以需要配置golang相关环境 vault存储如果选用consul，需要配置部署consul 如果通过supervisor来管理，需要配置supervisor  1. 安装vault1.1 下载安装vault下载地址下载并解压例如1234$ mkdir -p ~/opt/vault/&amp;#123;bin,conf&amp;#125;$ unzip vault_1.">
+<meta name="keywords" content="vault">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用vault来存储机密信息">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2019/02/14/使用vault来存储机密信息/index.html">
+<meta property="og:site_name" content="Just do IT">
+<meta property="og:description" content="0. 依赖问题 vault是go语言编写，所以需要配置golang相关环境 vault存储如果选用consul，需要配置部署consul 如果通过supervisor来管理，需要配置supervisor  1. 安装vault1.1 下载安装vault下载地址下载并解压例如1234$ mkdir -p ~/opt/vault/&amp;#123;bin,conf&amp;#125;$ unzip vault_1.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-15T01:38:39.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用vault来存储机密信息">
+<meta name="twitter:description" content="0. 依赖问题 vault是go语言编写，所以需要配置golang相关环境 vault存储如果选用consul，需要配置部署consul 如果通过supervisor来管理，需要配置supervisor  1. 安装vault1.1 下载安装vault下载地址下载并解压例如1234$ mkdir -p ~/opt/vault/&amp;#123;bin,conf&amp;#125;$ unzip vault_1.">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Just do IT" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2019/02/14/使用vault来存储机密信息/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>使用vault来存储机密信息 | Just do IT</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Just do IT</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2019/02/14/使用vault来存储机密信息/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Niu Zhiqiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Just do IT">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用vault来存储机密信息
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-14 13:26:24" itemprop="dateCreated datePublished" datetime="2019-02-14T13:26:24+08:00">2019-02-14</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/14/使用vault来存储机密信息/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/14/使用vault来存储机密信息/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0-依赖问题"><a href="#0-依赖问题" class="headerlink" title="0. 依赖问题"></a>0. 依赖问题</h2><ul>
+<li>vault是go语言编写，所以需要配置golang相关环境</li>
+<li>vault存储如果选用<code>consul</code>，需要配置部署<code>consul</code></li>
+<li>如果通过<code>supervisor</code>来管理，需要配置<code>supervisor</code></li>
+</ul>
+<h2 id="1-安装vault"><a href="#1-安装vault" class="headerlink" title="1. 安装vault"></a>1. 安装vault</h2><h3 id="1-1-下载安装"><a href="#1-1-下载安装" class="headerlink" title="1.1 下载安装"></a>1.1 下载安装</h3><p><a href="https://www.vaultproject.io/downloads.html" target="_blank" rel="noopener">vault下载地址</a><br>下载并解压<br>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p ~/opt/vault/&#123;bin,conf&#125;</span><br><span class="line">$ unzip vault_1.0.1_linux_amd64.zip</span><br><span class="line">$ mv vault ~/opt/vault/bin/</span><br><span class="line">$ ln -s ~/opt/vault/bin/vault ~/bin/</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-修改配置"><a href="#1-2-修改配置" class="headerlink" title="1.2 修改配置"></a>1.2 修改配置</h3><p>修改配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/opt/vault/conf/config.json</span><br></pre></td></tr></table></figure></p>
+<p>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;storage&quot;: &#123;</span><br><span class="line">        &quot;consul&quot;: &#123;</span><br><span class="line">            &quot;address&quot;: &quot;127.0.0.1:8500&quot;,</span><br><span class="line">            &quot;path&quot;: &quot;vault&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;listener&quot;: &#123;</span><br><span class="line">        &quot;tcp&quot;: &#123;</span><br><span class="line">            &quot;address&quot;: &quot;0.0.0.0:8200&quot;,</span><br><span class="line">            &quot;tls_disable&quot;: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;disable_mlock&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里指定使用<code>consul</code>来进行存储，所以要提前配置<code>consul</code></p>
+<h3 id="1-3-启动"><a href="#1-3-启动" class="headerlink" title="1.3 启动"></a>1.3 启动</h3><h4 id="1-3-1-直接通过命令启动"><a href="#1-3-1-直接通过命令启动" class="headerlink" title="1.3.1 直接通过命令启动"></a>1.3.1 直接通过命令启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vault server -config=/home/USERNAME/opt/vault/conf/config.json</span><br></pre></td></tr></table></figure>
+<p>如果不使用<code>supervisor</code>来管理<code>vault</code>,下述步骤可忽略。</p>
+<h4 id="1-3-2-通过supervisor管理"><a href="#1-3-2-通过supervisor管理" class="headerlink" title="1.3.2 通过supervisor管理"></a>1.3.2 通过supervisor管理</h4><p>vault的supervisor配置文件如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[program:vault]</span><br><span class="line">user=USERNAME</span><br><span class="line">environment=GOMAXPROCS=4</span><br><span class="line">command=/home/USERNAME/opt/vault/bin/vault server -config=/home/USERNAME/opt/vault/conf/config.json</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">stdout_logfile=/mnt/data/logs/supervisor/vault.log</span><br><span class="line">stdout_logfile_maxbytes=1MB</span><br><span class="line">stdout_logfile_backups=10</span><br><span class="line">stdout_capture_maxbytes=1MB</span><br><span class="line">stderr_logfile=/mnt/data/logs/supervisor/vault.log</span><br><span class="line">stderr_logfile_maxbytes=1MB</span><br><span class="line">stderr_logfile_backups=10</span><br><span class="line">stderr_capture_maxbytes=1MB</span><br></pre></td></tr></table></figure></p>
+<p>更新配置并启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo supervisorctl update</span><br><span class="line">$ sudo supervisorctl update vault</span><br><span class="line">$ sudo supervisorctl status</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-vault初始化"><a href="#2-vault初始化" class="headerlink" title="2. vault初始化"></a>2. vault初始化</h2><h3 id="2-1-导入环境变量"><a href="#2-1-导入环境变量" class="headerlink" title="2.1 导入环境变量"></a>2.1 导入环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export VAULT_ADDR=https://localhost:8200</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-初始化"><a href="#2-2-初始化" class="headerlink" title="2.2 初始化"></a>2.2 初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ vault operator init</span><br><span class="line">Unseal Key 1: i4K5DCbfe0iy6LcciewfEeCH2ljmkqR8lTtM+1051nTd</span><br><span class="line">Unseal Key 2: 3ILnLasd11hbuKvRm40Ec4Eyb3dE5ZoON4yazePyxf3T</span><br><span class="line">Unseal Key 3: 7C64bO5RbWfUWcBcAeVQKH5DGya887nr4T4iSW71PZsf</span><br><span class="line">Unseal Key 4: CA8mQqAs/se6jMjbnhRsflehHK6URKde795j2ybufsGE</span><br><span class="line">Unseal Key 5: lZeNsdvi/E4ykDG6d9FPFi7OFkuwAj6miHrFef5ebKxn</span><br><span class="line"></span><br><span class="line">Initial Root Token: s.6HadHafLVhVWKy9LRaiLcpbK</span><br><span class="line"></span><br><span class="line">Vault initialized with 5 key shares and a key threshold of 3. Please securely</span><br><span class="line">distribute the key shares printed above. When the Vault is re-sealed,</span><br><span class="line">restarted, or stopped, you must supply at least 3 of these keys to unseal it</span><br><span class="line">before it can start servicing requests.</span><br><span class="line"></span><br><span class="line">Vault does not store the generated master key. Without at least 3 key to</span><br><span class="line">reconstruct the master key, Vault will remain permanently sealed!</span><br><span class="line"></span><br><span class="line">It is possible to generate new unseal keys, provided you have a quorum of</span><br><span class="line">existing unseal keys shares. See &quot;vault operator rekey&quot; for more information.</span><br></pre></td></tr></table></figure>
+<p>前5行是我们稍后用于解开Vault存储的主密钥。<br><strong>vault仅在初始化期间显示解封密钥,以后不会再出现。</strong><br>记下并安全地存储它们，否则在服务器重启时我们将无法访问我们的机密信息！<br>另外，请注意根令牌，因为我们稍后会需要它。与unseal键不同，root令牌可以在以后轻松生成，因此一旦完成所有配置任务就可以安全地销毁它。</p>
+<h3 id="2-3-导入token"><a href="#2-3-导入token" class="headerlink" title="2.3 导入token"></a>2.3 导入token</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export VAULT_TOKEN=s.6HadHafLVhVWKy9LRaiLcpbK</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-查看状态"><a href="#2-4-查看状态" class="headerlink" title="2.4 查看状态"></a>2.4 查看状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ vault status</span><br><span class="line">Key                Value</span><br><span class="line">---                -----</span><br><span class="line">Seal Type          shamir</span><br><span class="line">Sealed             true</span><br><span class="line">Total Shares       5</span><br><span class="line">Threshold          3</span><br><span class="line">Unseal Progress    0/3</span><br><span class="line">Unseal Nonce       n/a</span><br><span class="line">Version            0.11.3</span><br><span class="line">HA Enabled         false</span><br></pre></td></tr></table></figure>
+<p>到目前为止，vault还是密封的</p>
+<h2 id="3-vault解封"><a href="#3-vault解封" class="headerlink" title="3. vault解封"></a>3. vault解封</h2><p>vault解封需要用到上述步骤中的key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vault operator unseal i4K5DCbfe0iy6LcciewfEeCH2ljmkqR8lTtM+1051nTd</span><br><span class="line">$ vault operator unseal 3ILnLasd11hbuKvRm40Ec4Eyb3dE5ZoON4yazePyxf3T</span><br><span class="line">$ vault operator unseal 7C64bO5RbWfUWcBcAeVQKH5DGya887nr4T4iSW71PZsf</span><br></pre></td></tr></table></figure></p>
+<p>发出每个命令后，vault将打印启封进度，包括它需要多少个共享。<br>发送最后一个密钥共享后，我们会看到如下消息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Key             Value</span><br><span class="line">---             -----</span><br><span class="line">Seal Type       shamir</span><br><span class="line">Initialized     true</span><br><span class="line">Sealed          false</span><br><span class="line">Total Shares    5</span><br><span class="line">Threshold       3</span><br><span class="line">Version         1.0.1</span><br><span class="line">Cluster Name    vault-cluster-d972c3af</span><br><span class="line">Cluster ID      70faee28-ee84-f47d-3097-2b5e68eee71d</span><br><span class="line">HA Enabled      true</span><br><span class="line">HA Cluster      https://127.0.0.1:8201</span><br><span class="line">HA Mode         active</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-测试vault"><a href="#4-测试vault" class="headerlink" title="4. 测试vault"></a>4. 测试vault</h2><p>使用键/值Secret<br>写入信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vault kv put secret/aaa.bbb.data spring.datasource.username=mysql_dbowner spring.datasource.password=pwd4datasource</span><br></pre></td></tr></table></figure></p>
+<p>获取信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ vault kv get secret/aaa.bbb.data</span><br><span class="line">=============== Data ===============</span><br><span class="line">Key                           Value</span><br><span class="line">---                           -----</span><br><span class="line">spring.datasource.password    pwd4datasource</span><br><span class="line">spring.datasource.username    mysql_dbowner</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-策略"><a href="#5-策略" class="headerlink" title="5. 策略"></a>5. 策略</h2><p>我们使用策略来创建更多受限制的令牌。<br>例如，我们可以定义一个策略，该策略只允许对我们之前使用的路径<code>secret/aaa.bbb.data</code>进行读访问</p>
+<h3 id="5-1-创建策略"><a href="#5-1-创建策略" class="headerlink" title="5.1 创建策略"></a>5.1 创建策略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ～/opt/vault/conf/aaa.bbb.data-policy.hcl</span><br></pre></td></tr></table></figure>
+<p>策略内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path &quot;secret/aaa.bbb.data&quot; &#123;</span><br><span class="line">  capabilities = [&quot;read&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-2-写入策略"><a href="#5-2-写入策略" class="headerlink" title="5.2 写入策略"></a>5.2 写入策略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vault policy write aaa.bbb.data aaa.bbb.data-policy.hcl</span><br><span class="line">Success! Uploaded policy: aaa.bbb.data</span><br><span class="line"></span><br><span class="line">$ vault policy list</span><br><span class="line">default</span><br><span class="line">aaa.bbb.data</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-测试策略"><a href="#5-3-测试策略" class="headerlink" title="5.3 测试策略"></a>5.3 测试策略</h3><h4 id="5-3-1-生成token"><a href="#5-3-1-生成token" class="headerlink" title="5.3.1 生成token"></a>5.3.1 生成token</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ vault token create -policy=aaa.bbb.data</span><br><span class="line">Key                  Value</span><br><span class="line">---                  -----</span><br><span class="line">token                s.1qC6a2s0w7pat7x97xAOoqu1</span><br><span class="line">token_accessor       6sYvJvTKhRY7YPLHQvlDlZkz</span><br><span class="line">token_duration       768h</span><br><span class="line">token_renewable      true</span><br><span class="line">token_policies       [&quot;default&quot; &quot;aaa.bbb.data&quot;]</span><br><span class="line">identity_policies    []</span><br><span class="line">policies             [&quot;default&quot; &quot;aaa.bbb.data&quot;]</span><br></pre></td></tr></table></figure>
+<h4 id="5-3-2-测试该token只有读取权限，没有写入权限"><a href="#5-3-2-测试该token只有读取权限，没有写入权限" class="headerlink" title="5.3.2 测试该token只有读取权限，没有写入权限"></a>5.3.2 测试该token只有读取权限，没有写入权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ export VAULT_TOKEN=s.1qC6a2s0w7pat7x97xAOoqu1</span><br><span class="line"></span><br><span class="line">$ vault kv get secret/aaa.bbb.data</span><br><span class="line">=============== Data ===============</span><br><span class="line">Key                           Value</span><br><span class="line">---                           -----</span><br><span class="line">spring.datasource.password    pwd4datasource</span><br><span class="line">spring.datasource.username    mysql_dbowner</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ vault kv put  secret/aaa.bbb.data aaa=bbb</span><br><span class="line">Error writing data to secret/aaa.bbb.data: Error making API request.</span><br><span class="line"></span><br><span class="line">URL: PUT http://localhost:8200/v1/secret/aaa.bbb.data</span><br><span class="line">Code: 403. Errors:</span><br><span class="line"></span><br><span class="line">* 1 error occurred:</span><br><span class="line">        * permission denied</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vault/" rel="tag"># vault</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/24/CentOS安装配置tomcat/" rel="next" title="CentOS安装配置tomcat">
+                <i class="fa fa-chevron-left"></i> CentOS安装配置tomcat
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Niu Zhiqiang">
+            
+              <p class="site-author-name" itemprop="name">Niu Zhiqiang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/niuzhiqiang90" title="GitHub &rarr; https://github.com/niuzhiqiang90" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://coding.net/u/niuzhiqiang90" title="Coding &rarr; https://coding.net/u/niuzhiqiang90" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Coding</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:niuzhiqiang90@foxmail.com" title="E-Mail &rarr; mailto:niuzhiqiang90@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-依赖问题"><span class="nav-text">0. 依赖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装vault"><span class="nav-text">1. 安装vault</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-下载安装"><span class="nav-text">1.1 下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-修改配置"><span class="nav-text">1.2 修改配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-启动"><span class="nav-text">1.3 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-直接通过命令启动"><span class="nav-text">1.3.1 直接通过命令启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-通过supervisor管理"><span class="nav-text">1.3.2 通过supervisor管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-vault初始化"><span class="nav-text">2. vault初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-导入环境变量"><span class="nav-text">2.1 导入环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-初始化"><span class="nav-text">2.2 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-导入token"><span class="nav-text">2.3 导入token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-查看状态"><span class="nav-text">2.4 查看状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-vault解封"><span class="nav-text">3. vault解封</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-测试vault"><span class="nav-text">4. 测试vault</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-策略"><span class="nav-text">5. 策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-创建策略"><span class="nav-text">5.1 创建策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-写入策略"><span class="nav-text">5.2 写入策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-测试策略"><span class="nav-text">5.3 测试策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-生成token"><span class="nav-text">5.3.1 生成token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-测试该token只有读取权限，没有写入权限"><span class="nav-text">5.3.2 测试该token只有读取权限，没有写入权限</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niu Zhiqiang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+  
+    
+    <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+    <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+  
+<!-- END LOCAL -->
+
+  
+
+  
+    <script>
+    function renderGitment(){
+      var gitment = new Gitmint({
+        id: window.location.pathname,
+        owner: 'niuzhiqiang90',
+        repo: 'niuzhiqiang90.github.io',
+        
+        lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+        
+        oauth: {
+        
+        
+          client_secret: '7173a08d26e2e9d68f34964f37daf1cc58c4c759',
+        
+          client_id: '66d495baec5be06e195e'
+        }});
+      gitment.render('gitment-container');
+    }
+
+    
+      renderGitment();
+    
+    </script>
+  
+
+
+
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
