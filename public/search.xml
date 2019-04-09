@@ -49,7 +49,22 @@
     <entry>
       <title><![CDATA[CentOS安装配置tomcat]]></title>
       <url>http://niuzhiqiang90.coding.me/2019/01/24/CentOS%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEtomcat/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h2 id="1-更新系统软件"><a href="#1-更新系统软件" class="headerlink" title="1. 更新系统软件"></a>1. 更新系统软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<h2 id="2-下载并解压"><a href="#2-下载并解压" class="headerlink" title="2. 下载并解压"></a>2. 下载并解压</h2><p>下载tomcat，并解压至<code>/usr/local/</code>文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-7.0.92.tar.gz -C /usr/local/</span><br><span class="line">ln -s /usr/local/apache-tomcat-7.0.92 /usr/local/tomcat</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3. 启动tomcat"></a>3. 启动tomcat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/tomcat/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<h2 id="4-将tomcat配置为系统服务"><a href="#4-将tomcat配置为系统服务" class="headerlink" title="4. 将tomcat配置为系统服务"></a>4. 将tomcat配置为系统服务</h2><h3 id="4-1-添加tomcat文件"><a href="#4-1-添加tomcat文件" class="headerlink" title="4.1 添加tomcat文件"></a>4.1 添加<code>tomcat</code>文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cp catalina.sh /etc/init.d</span><br><span class="line"># mv catalina.sh tomcat</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-修改tomcat文件"><a href="#4-2-修改tomcat文件" class="headerlink" title="4.2 修改tomcat文件"></a>4.2 修改tomcat文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/init.d/tomcat</span><br></pre></td></tr></table></figure>
+<p>加入如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#chkconfig:2345 10 90</span><br><span class="line">#description:Tomcat service</span><br><span class="line">CATALINA_HOME=/usr/local/tomcat</span><br><span class="line">JAVA_HOME=/usr/local/jdk</span><br></pre></td></tr></table></figure></p>
+<font color="red">注：上述代码必须加在<code>#OS specific support...</code>之上。</font>
+
+
+<h3 id="4-3-修改权限"><a href="#4-3-修改权限" class="headerlink" title="4.3 修改权限"></a>4.3 修改权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/tomcat</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-加入服务列表"><a href="#4-4-加入服务列表" class="headerlink" title="4.4 加入服务列表"></a>4.4 加入服务列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --add tomcat</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-验证是否加入列表"><a href="#4-5-验证是否加入列表" class="headerlink" title="4.5 验证是否加入列表"></a>4.5 验证是否加入列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --list tomcat</span><br></pre></td></tr></table></figure>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h2><p>通过<code>service</code>命令来测试<code>tomcat</code>的启动与关闭<br>启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service tomcat start</span><br></pre></td></tr></table></figure></p>
+<p>启动后，通过浏览器访问<code>http://IP:8080/</code>可以看到tomcat主页</p>
+<p>关闭<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service tomcat stop</span><br></pre></td></tr></table></figure></p>
+]]></content>
       
         
     </entry>

@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://niuzhiqiang90.coding.me/2019/01/24/CentOS%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEtomcat/</loc>
+    <lastmod>2019-03-04T08:10:22.348Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS安装配置tomcat</title>
+        <pubTime>2019-01-24T04:26:41.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://niuzhiqiang90.coding.me/2015/11/12/NFS%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2019-02-15T06:57:21.497Z</lastmod>
     <data>
@@ -108,21 +123,6 @@
              
               <breadCrumb title="nginx" url="http://niuzhiqiang90.coding.me/categories/nginx/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://niuzhiqiang90.coding.me/2019/01/24/CentOS%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEtomcat/</loc>
-    <lastmod>2019-01-24T04:26:41.595Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS安装配置tomcat</title>
-        <pubTime>2019-01-24T04:26:41.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
