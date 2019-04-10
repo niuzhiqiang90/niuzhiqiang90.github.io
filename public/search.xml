@@ -2850,6 +2850,67 @@
         
     </entry>
     
+    <entry>
+      <title><![CDATA[Tcp wrappers]]></title>
+      <url>http://niuzhiqiang90.coding.me/2015/09/13/Tcp-wrappers/</url>
+      <content type="html"><![CDATA[<h2 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h2><p>针对服务或程序的访问控制</p>
+<h2 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a>2. 配置文件</h2><p>/etc/hosts.allow（<strong>设置允许访问的服务</strong>）<br>/etc/hosts.deny    （<strong>设置拒绝访问的服务</strong>）</p>
+<h2 id="3-策略格式"><a href="#3-策略格式" class="headerlink" title="3. 策略格式"></a>3. 策略格式</h2><p><strong>服务名称:客户机地址列表</strong>   也可用<strong>ALL:ALL</strong><br>如果设置某一个服务，那就直接写服务名称；<br>如果想设置允许所有服务，就写一个ALL。如果允许所有地址，就在地址写ALL  </p>
+<font color="red">ALL:ALL 允许所有服务被所有地址访问（在hosts.allow文件中）<br>拒绝所有服务被所有地址访问（在hosts.deny文件中） </font><br>如果不想设置单个的IP，也不想设置所有的IP，<strong>可以用通配符?和*来设置</strong>，也可以来声明一个网段或者声明一个域名都是可以的。<br><br><strong>网段地址</strong><br>如192.168.4<font color="red">.</font> 或者192.168.1.0/255.255.255.0<font color="red">（不支持/8、/16、/24格式）</font>
+
+<p><strong>区域地址</strong><br>如.abc.com</p>
+<p>例如：<br>在<code>hosts.allow</code>中添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sshd:192.168.2??.252 	（表示只要是2开头，后面有两位的网段都允许访问）</span><br><span class="line">sshd:192.168.* 表示前边是192.168后面任意的网段 </span><br><span class="line">192.168.1. 代表 192.168.1.0/255.255.255.0（192.168.1.0网段）</span><br><span class="line">sshd:www. 代表sshd服务，不能被www开头的主机访问</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sshd:192.168.2??.252</td>
+<td>（表示只要是2开头，后面有两位的网段都允许访问）</td>
+</tr>
+<tr>
+<td>sshd:192.168.*</td>
+<td>表示前边是192.168后面任意的网段</td>
+</tr>
+<tr>
+<td>192.168.1.</td>
+<td>代表 192.168.1.0/255.255.255.0（192.168.1.0网段）</td>
+</tr>
+<tr>
+<td>sshd:www.</td>
+<td>代表sshd服务，不能被www开头的主机访问</td>
+</tr>
+</tbody>
+</table>
+<p><strong><font color="red">注意：以.开头或者以.结束的格式里不能使用通配符</font></strong></p>
+<h2 id="4-规则"><a href="#4-规则" class="headerlink" title="4. 规则"></a>4. 规则</h2><ol>
+<li>不做任何配置时，默认允许访问</li>
+<li>定义网段时，不能使用/24的方式</li>
+<li>可以使用<strong><font color="red">.</font></strong>作为开始或结</li>
+<li>以<strong><font color="red">.</font></strong>开头或者以<strong><font color="red">.</font></strong>结束的格式里<strong><font color="red">不能使用通配符</font></strong></li>
+<li>应用顺序，先allow，后den</li>
+<li>允许个别，拒绝所有时，在allow文件中添加<strong>服务名称:允许的主机IP</strong>后，在deny文件中添加<strong>服务名称:ALL</strong></li>
+<li>允许所有，拒绝个别时，allow中为空即可</li>
+</ol>
+<p><strong>例</strong><br>在主机A上编辑<code>/etc/hosts.deny</code>添加  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh:主机B的地址</span><br></pre></td></tr></table></figure>
+<p><strong>不需要重启任何服务，它是即时生效的</strong><br>此时，之前可以ssh连接到主机A的主机B，已经不能再通过ssh服务连接到主机A了<br>把同样的内容写入<code>/etc/hosts.allow</code>就是代表允许主机B通过ssh访问主机A<br><strong>一般设置允许的话，不需要这样做，因为默认就是允许的</strong><br><strong><font color="red">先看allow后看deny，如果同一条策略两个文件里都写了，那么allow里的文件生效</font></strong></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
   
   
 </search>
