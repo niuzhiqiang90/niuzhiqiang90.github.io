@@ -96,13 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Just do IT">
-<meta property="og:url" content="http://niuzhiqiang90.coding.me/archives/2017/02/index.html">
+  <meta name="description" content="1. 作用针对服务或程序的访问控制 2. 配置文件/etc/hosts.allow（设置允许访问的服务）/etc/hosts.deny    （设置拒绝访问的服务） 3. 策略格式服务名称:客户机地址列表   也可用ALL:ALL如果设置某一个服务，那就直接写服务名称；如果想设置允许所有服务，就写一个ALL。如果允许所有地址，就在地址写ALL   ALL:ALL 允许所有服务被所有地址访问（在ho">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tcp wrappers">
+<meta property="og:url" content="http://niuzhiqiang90.coding.me/2015/09/13/Tcp-wrappers/index.html">
 <meta property="og:site_name" content="Just do IT">
+<meta property="og:description" content="1. 作用针对服务或程序的访问控制 2. 配置文件/etc/hosts.allow（设置允许访问的服务）/etc/hosts.deny    （设置拒绝访问的服务） 3. 策略格式服务名称:客户机地址列表   也可用ALL:ALL如果设置某一个服务，那就直接写服务名称；如果想设置允许所有服务，就写一个ALL。如果允许所有地址，就在地址写ALL   ALL:ALL 允许所有服务被所有地址访问（在ho">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-09T09:11:40.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Just do IT">
+<meta name="twitter:title" content="Tcp wrappers">
+<meta name="twitter:description" content="1. 作用针对服务或程序的访问控制 2. 配置文件/etc/hosts.allow（设置允许访问的服务）/etc/hosts.deny    （设置拒绝访问的服务） 3. 策略格式服务名称:客户机地址列表   也可用ALL:ALL如果设置某一个服务，那就直接写服务名称；如果想设置允许所有服务，就写一个ALL。如果允许所有地址，就在地址写ALL   ALL:ALL 允许所有服务被所有地址访问（在ho">
 
 
 
@@ -111,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://niuzhiqiang90.coding.me/archives/2017/02/">
+  <link rel="canonical" href="http://niuzhiqiang90.coding.me/2015/09/13/Tcp-wrappers/">
 
 
 
@@ -121,7 +126,7 @@
   };
 </script>
 
-  <title>Archive | Just do IT</title>
+  <title>Tcp wrappers | Just do IT</title>
   
 
 
@@ -169,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -241,7 +246,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -305,28 +310,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -372,322 +355,232 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://niuzhiqiang90.coding.me/2015/09/13/Tcp-wrappers/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Niu Zhiqiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Just do IT">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">Tcp wrappers
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-09-13 16:58:27" itemprop="dateCreated datePublished" datetime="2015-09-13T16:58:27+08:00">2015-09-13</time>
+            
+
+            
+          </span>
+
           
-        Nice! 52 posts in total. Keep on posting.
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/27/docker-registry/" itemprop="url">
             
-              <span itemprop="name">docker-registry</span>
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/09/13/Tcp-wrappers/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2015/09/13/Tcp-wrappers/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-27T19:44:00+08:00" content="2017-02-27">
-          02-27
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/27/docker容器/" itemprop="url">
-            
-              <span itemprop="name">docker容器</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-27T17:26:49+08:00" content="2017-02-27">
-          02-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h2 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h2><p>针对服务或程序的访问控制</p>
+<h2 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a>2. 配置文件</h2><p>/etc/hosts.allow（<strong>设置允许访问的服务</strong>）<br>/etc/hosts.deny    （<strong>设置拒绝访问的服务</strong>）</p>
+<h2 id="3-策略格式"><a href="#3-策略格式" class="headerlink" title="3. 策略格式"></a>3. 策略格式</h2><p><strong>服务名称:客户机地址列表</strong>   也可用<strong>ALL:ALL</strong><br>如果设置某一个服务，那就直接写服务名称；<br>如果想设置允许所有服务，就写一个ALL。如果允许所有地址，就在地址写ALL  </p>
+<font color="red">ALL:ALL 允许所有服务被所有地址访问（在hosts.allow文件中）<br>拒绝所有服务被所有地址访问（在hosts.deny文件中） </font><br>如果不想设置单个的IP，也不想设置所有的IP，<strong>可以用通配符?和*来设置</strong>，也可以来声明一个网段或者声明一个域名都是可以的。<br><br><strong>网段地址</strong><br>如192.168.4<font color="red">.</font> 或者192.168.1.0/255.255.255.0<font color="red">（不支持/8、/16、/24格式）</font>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/27/docker镜像/" itemprop="url">
-            
-              <span itemprop="name">docker镜像</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-27T17:15:33+08:00" content="2017-02-27">
-          02-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p><strong>区域地址</strong><br>如.abc.com</p>
+<p>例如：<br>在<code>hosts.allow</code>中添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sshd:192.168.2??.252 	（表示只要是2开头，后面有两位的网段都允许访问）</span><br><span class="line">sshd:192.168.* 表示前边是192.168后面任意的网段 </span><br><span class="line">192.168.1. 代表 192.168.1.0/255.255.255.0（192.168.1.0网段）</span><br><span class="line">sshd:www. 代表sshd服务，不能被www开头的主机访问</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sshd:192.168.2??.252</td>
+<td>（表示只要是2开头，后面有两位的网段都允许访问）</td>
+</tr>
+<tr>
+<td>sshd:192.168.*</td>
+<td>表示前边是192.168后面任意的网段</td>
+</tr>
+<tr>
+<td>192.168.1.</td>
+<td>代表 192.168.1.0/255.255.255.0（192.168.1.0网段）</td>
+</tr>
+<tr>
+<td>sshd:www.</td>
+<td>代表sshd服务，不能被www开头的主机访问</td>
+</tr>
+</tbody>
+</table>
+<p><strong><font color="red">注意：以.开头或者以.结束的格式里不能使用通配符</font></strong></p>
+<h2 id="4-规则"><a href="#4-规则" class="headerlink" title="4. 规则"></a>4. 规则</h2><ol>
+<li>不做任何配置时，默认允许访问</li>
+<li>定义网段时，不能使用/24的方式</li>
+<li>可以使用<strong><font color="red">.</font></strong>作为开始或结</li>
+<li>以<strong><font color="red">.</font></strong>开头或者以<strong><font color="red">.</font></strong>结束的格式里<strong><font color="red">不能使用通配符</font></strong></li>
+<li>应用顺序，先allow，后den</li>
+<li>允许个别，拒绝所有时，在allow文件中添加<strong>服务名称:允许的主机IP</strong>后，在deny文件中添加<strong>服务名称:ALL</strong></li>
+<li>允许所有，拒绝个别时，allow中为空即可</li>
+</ol>
+<p><strong>例</strong><br>在主机A上编辑<code>/etc/hosts.deny</code>添加  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh:主机B的地址</span><br></pre></td></tr></table></figure>
+<p><strong>不需要重启任何服务，它是即时生效的</strong><br>此时，之前可以ssh连接到主机A的主机B，已经不能再通过ssh服务连接到主机A了<br>把同样的内容写入<code>/etc/hosts.allow</code>就是代表允许主机B通过ssh访问主机A<br><strong>一般设置允许的话，不需要这样做，因为默认就是允许的</strong><br><strong><font color="red">先看allow后看deny，如果同一条策略两个文件里都写了，那么allow里的文件生效</font></strong></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/27/docker安装/" itemprop="url">
-            
-              <span itemprop="name">docker安装</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-27T17:03:14+08:00" content="2017-02-27">
-          02-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/14/linux添加swap/" itemprop="url">
-            
-              <span itemprop="name">linux添加swap</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-14T14:39:33+08:00" content="2017-02-14">
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/07/ubuntu指定默认编辑器/" itemprop="url">
-            
-              <span itemprop="name">ubuntu指定默认编辑器</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-07T13:28:17+08:00" content="2017-02-07">
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/07/ubuntu修改网卡名称/" itemprop="url">
-            
-              <span itemprop="name">ubuntu修改网卡名称</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-07T11:21:00+08:00" content="2017-02-07">
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2017/02/07/python指定字符编码/" itemprop="url">
-            
-              <span itemprop="name">python指定字符编码</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-07T09:37:14+08:00" content="2017-02-07">
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/17/Samba/" rel="prev" title="Samba">
+                Samba <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -708,8 +601,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -896,6 +798,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-作用"><span class="nav-text">1. 作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置文件"><span class="nav-text">2. 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-策略格式"><span class="nav-text">3. 策略格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-规则"><span class="nav-text">4. 规则</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1017,6 +936,10 @@
   
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
@@ -1046,6 +969,30 @@
 
   
 
+  
+    <script>
+    function renderGitment(){
+      var gitment = new Gitmint({
+        id: window.location.pathname,
+        owner: 'niuzhiqiang90',
+        repo: 'niuzhiqiang90.github.io',
+        
+        lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+        
+        oauth: {
+        
+        
+          client_secret: '7173a08d26e2e9d68f34964f37daf1cc58c4c759',
+        
+          client_id: '66d495baec5be06e195e'
+        }});
+      gitment.render('gitment-container');
+    }
+
+    
+      renderGitment();
+    
+    </script>
   
 
 
