@@ -16,8 +16,6 @@ search:
     field: post
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: 
-    http://niuzhiqiang90.coding.me
 github_url:
     http://niuzhiqiang90.github.io
 root: /
@@ -78,7 +76,6 @@ deploy:
   type: git
   repo: 
       github: git@github.com:niuzhiqiang90/niuzhiqiang90.github.io.git
-      coding: git@git.coding.net:niuzhiqiang90/niuzhiqiang90.coding.me.git
   branch: master
 
       

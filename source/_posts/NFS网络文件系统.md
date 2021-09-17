@@ -49,3 +49,4 @@ $ cat /etc/exports
 ```
 $ mount -t nfs 192.168.13.0/24:/data0 /var/html
 ```
+
