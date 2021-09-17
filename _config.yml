@@ -16,7 +16,7 @@ search:
     field: post
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-github_url:
+url:
     http://niuzhiqiang90.github.io
 root: /
 permalink: :year/:month/:day/:title/
